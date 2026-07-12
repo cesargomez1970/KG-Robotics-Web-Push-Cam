@@ -1,0 +1,42 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  title: string;
+  bio: string;
+  ring?: boolean;
+}
+
+const { slug, name, title, bio, ring = false } = Astro.props;
+const photoSrc = `/assets/team/${slug}.jpg`;
+---
+
+<article class="team-card">
+  <div class:list={['team-avatar', { 'team-avatar-ring': ring }]}>
+    <img
+      src={photoSrc}
+      alt={name}
+      class="team-photo"
+      loading="lazy"
+      onerror="this.classList.add('is-missing')"
+    />
+    <svg
+      class="team-photo-fallback"
+      viewBox="0 0 200 200"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Profile placeholder"
+    >
+      <circle cx="100" cy="100" r="98" fill="none" stroke="currentColor" stroke-width="3"></circle>
+      <circle cx="100" cy="78" r="34" fill="none" stroke="currentColor" stroke-width="3"></circle>
+      <path
+        d="M 38 172 Q 38 118 100 118 Q 162 118 162 172"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"></path>
+    </svg>
+  </div>
+  <h3 class="team-name">{name}</h3>
+  <p class="team-title">{title}</p>
+  <p class="team-bio">{bio}</p>
+</article>

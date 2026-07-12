@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import products from '../../data/products.json';
+
+export function getStaticPaths() {
+  return Object.keys(products).map((slug) => ({ params: { slug } }));
+}
+
+const FAM_OF = {"sewerlight-600":"led","sewerlight-1200":"led","sewerchain-2400":"led","nanolight-100":"led","sewercut-100":"cutting","sewercut-200":"cutting","rapido-pro":"inspection","pipecruiser-hd-100":"inspection","pipecruiser-hd-200":"inspection","van-fitting":"inspection","sewerzoom":"inspection","rapido-pro-atex":"industrial","pipecruiser-hd-100-atex":"industrial"};
+
+const { slug } = Astro.params;
+const content = products[slug];
+if (!content) return Astro.redirect('/');
+
+const fam = FAM_OF[slug] ?? null;
+const title = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) + ' — KG Robotics';
+const description = 'KG Robotics product details.';
+---
+<BaseLayout title={title} description={description} activeFam={fam}>
+  <Fragment set:html={content} />
+</BaseLayout>

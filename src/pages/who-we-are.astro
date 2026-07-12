@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TeamMember from '../components/TeamMember.astro';
+import team from '../data/team.json';
+
+const title = "KG's Management — KG Robotics";
+const description =
+  'The team behind KG Robotics — decades of combined experience in robotic inspection and trenchless rehabilitation technology.';
+---
+
+<BaseLayout title={title} description={description} activeFam="about">
+  <section id="who-we-are" class="block">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span class="sep">/</span><span>KG's Management</span></div>
+      <div class="sec-head">
+        <span class="eyebrow muted">Company</span>
+        <h1>KG<span class="title-light">'s</span> Management</h1>
+        <p>The team behind KG Robotics — decades of combined experience in robotic inspection and trenchless rehabilitation technology.</p>
+      </div>
+      <div class="team-grid">
+        {team.map((member) => (
+          <TeamMember
+            slug={member.slug}
+            name={member.name}
+            title={member.title}
+            bio={member.bio}
+            ring={member.slug === 'gomez'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

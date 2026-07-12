@@ -1,0 +1,11 @@
+---
+interface Props {
+  variant?: 'default' | 'light';
+}
+
+const { variant = 'default' } = Astro.props;
+const src = variant === 'light' ? '/images/logo-light.svg' : '/images/logo.svg';
+---
+<a class="brand" href="/" aria-label="KG Robotics — home">
+  <img src={src} alt="KG Robotics" />
+</a>

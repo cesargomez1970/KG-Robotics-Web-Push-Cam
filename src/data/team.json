@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "kuzniar",
+    "name": "Sławomir Kuźniar",
+    "title": "Director of Design & Production — Board Member",
+    "bio": "Sławomir leads our design and production plant in Poland, heading the team that takes our products from concept to finished machine. He has spent most of his career designing and manufacturing robotic solutions for the inspection and maintenance of sewer networks, and many of his designs in LED curing technology are protected by patents granted in Europe and the United States. Before KG Robotics, he founded KANRES, a manufacturer of robotic visual inspection systems, and co-founded Sewertronics, specialists in LED curing systems — experience he now brings to everything we build."
+  },
+  {
+    "slug": "gomez",
+    "name": "César Gómez",
+    "title": "Strategy, Marketing & Sales — Board Member",
+    "bio": "As a member of our management board, César drives the company's strategic direction, marketing and sales. He brings more than 25 years of experience in the manufacturing and distribution of equipment and instrumentation, and a close understanding of this industry and its customers. He is the founder and director of several companies — among them Panatec, a technology distribution group operating in Portugal, Spain, France and Switzerland — and co-founder of Sewertronics Sp. z o.o."
+  },
+  {
+    "slug": "fajger",
+    "name": "Marcin Fajger",
+    "title": "Head of After-Sales Service",
+    "bio": "Marcin heads our after-sales service and contributes to quality control for prototypes and new designs, making sure every unit performs as promised long after it leaves the factory. An engineer by training, he has managed after-sales operations for several companies; at Sewertronics in Poland, he built the repair department from the ground up, earning a reputation for service excellence across the entire distribution network — a standard he now upholds at KG Robotics."
+  },
+  {
+    "slug": "stys",
+    "name": "Adrian Styś",
+    "title": "Director of Production",
+    "bio": "Adrian oversees our production line, working closely with the quality team and supporting the development of new products. Over the past fifteen years he has built and developed production departments for several companies, including KANRES, manufacturer of visual inspection equipment for sewer networks, and Sewertronics, where he led assembly and quality for the SpeedyLight+ LED curing systems. His focus is simple: ensuring that every machine we ship meets the standard our name stands for."
+  }
+]

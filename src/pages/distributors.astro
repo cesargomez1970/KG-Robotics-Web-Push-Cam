@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Distributors — KG Robotics';
+const description =
+  'Find KG Robotics distributors or enquire about becoming a distribution partner for sewer inspection and rehabilitation systems.';
+const content = `<section class="block"><div class="wrap">
+    <div class="crumbs"><a href="/">Home</a><span class="sep">/</span><span>Distributors</span></div>
+    <div class="sec-head"><span class="eyebrow muted">Partners</span><h1>Distributors</h1><p>KG Robotics works with distributors across Europe to deliver inspection, rehabilitation and robotics systems for sewer networks.</p></div>
+    <div class="about-body" style="max-width:760px">
+      <p>Our team has worked across leading European manufacturers and distributors of sewer inspection and CIPP rehabilitation systems. We understand the field environment and build equipment that performs reliably in real operating conditions.</p>
+      <p>If you are interested in distributing KG Robotics products in your region, or need to find a local partner, get in touch and we will connect you with the right contact.</p>
+      <p><a href="/contact" class="btn btn-accent">Contact Us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </div></section>`;
+---
+<BaseLayout title={title} description={description}>
+  <Fragment set:html={content} />
+</BaseLayout>

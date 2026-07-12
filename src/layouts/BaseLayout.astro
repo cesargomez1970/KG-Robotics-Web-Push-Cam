@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+import Logo from '../components/Logo.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  activeFam?: string | null;
+}
+
+const { title, description, activeFam = null } = Astro.props;
+
+function famClass(id: string) {
+  return activeFam === id ? 'has active' : 'has';
+}
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/images/logo.png" />
+  <meta property="og:image" content="/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="topbar"><div class="wrap">
+  <div class="tb-left"></div>
+  <div class="tb-right">
+    <span class="langsel">
+      <a data-lang="en" class="on" href="#">EN</a>
+      <a data-lang="pl" href="#">PL</a>
+      <a data-lang="de" href="#">DE</a>
+      <a data-lang="fr" href="#">FR</a>
+    </span>
+    <a href="/contact" class="tb-cta">Book a Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</div></div>
+<header class="site">
+  <div class="wrap nav">
+    <Logo />
+    <ul class="menu" id="menu">
+      <li class={activeFam === 'about' ? 'has active' : 'has'} data-fam="about"><a href="/about">About Us<span class="bar"></span></a><div class="dropdown"><a href="/who-we-are">Who we are</a><a href="/history">History</a><a href="/ip">IP</a></div></li>
+      <li class={famClass('led')} data-fam="led"><a href="/family/led">LED Curing<span class="bar"></span></a><div class="dropdown"><a href="/product/sewerlight-600">SewerLight 600</a><a href="/product/sewerlight-1200">SewerLight 1200</a><a href="/product/sewerchain-2400">SewerChain 2400</a><a href="/product/nanolight-100">NanoLight 100</a></div></li>
+      <li class={famClass('cutting')} data-fam="cutting"><a href="/family/cutting">Cutting<span class="bar"></span></a><div class="dropdown"><a href="/product/sewercut-100">SewerCut 100</a><a href="/product/sewercut-200">SewerCut 200</a></div></li>
+      <li class={famClass('inspection')} data-fam="inspection"><a href="/family/inspection">Inspecting<span class="bar"></span></a><div class="dropdown"><a href="/product/rapido-pro">Rapido Pro</a><a href="/product/pipecruiser-hd-100">PipeCruiser HD 100</a><a href="/product/pipecruiser-hd-200">PipeCruiser HD 200</a><a href="/product/van-fitting">Van Fitting</a><a href="/product/sewerzoom">SewerZoom</a></div></li>
+      <li class={famClass('industrial')} data-fam="industrial"><a href="/family/industrial">Industrial/RVI<span class="bar"></span></a><div class="dropdown"><a href="/product/rapido-pro-atex">Rapido Pro ATEX</a><a href="/product/pipecruiser-hd-100-atex">PipeCruiser HD 100 ATEX</a></div></li>
+      <li><a href="/distributors">Distributors</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="app">
+  <slot />
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <Logo variant="light" />
+        <p class="fdesc">Inspection, rehabilitation and robotics systems for sewer networks. Engineered and manufactured in Poland to make advanced technology accessible.</p>
+      </div>
+      <div><h4>Products</h4><ul>
+        <li><a href="/family/led">LED Curing Systems</a></li>
+        <li><a href="/family/cutting">Cutting Solutions</a></li>
+        <li><a href="/family/inspection">Visual Inspection</a></li>
+        <li><a href="/family/industrial">Industrial / RVI</a></li>
+      </ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/ip">Intellectual Property</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/contact">Book a Demo</a></li>
+      </ul></div>
+      <div><h4>Contact</h4><ul>
+        <li><a href="tel:+48665004022">+48 665 004 022</a></li>
+        <li><a href="mailto:office@kg-robotics.com">office@kg-robotics.com</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>KG Robotics Sp. z o.o. &middot; 146U, 37-114 Białobrzegi, Poland</span>
+      <span>&copy; 2026 &middot; KRS 0001161950 &middot; NIP 8151823169 &middot; REGON 541180670</span>
+    </div>
+  </div>
+</footer>
+<script is:inline src="/js/i18n.js"></script>
+<script is:inline src="/js/site.js"></script>
+</body>
+</html>

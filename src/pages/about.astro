@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About Us — KG Robotics';
+const description = 'About KG Robotics — European engineering for sewer inspection and rehabilitation.';
+---
+
+<BaseLayout title={title} description={description} activeFam="about">
+  <section class="block">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span class="sep">/</span><span>About Us</span></div>
+      <div class="sec-head">
+        <span class="eyebrow muted">Company</span>
+        <h1>About KG Robotics</h1>
+      </div>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>KG Robotics is a Polish company backed by European capital, founded by entrepreneurial engineers with more than 25 years of combined experience in the manufacturing and distribution of equipment and systems for the inspection and maintenance of sewer networks.</p>
+          <p>The company was created with a clear mission: to make visual inspection and pipe-rehabilitation technologies genuinely accessible — improving their performance and increasing their efficiency in the working environment. Manufacturing in Poland, KG Robotics engineers its systems to lower the barrier of entry for utility and service companies, reducing CAPEX requirements and, in doing so, democratizing access to these solutions while lowering the environmental footprint of the operators who use them.</p>
+          <p>Our team has worked across leading European manufacturers and distributors of sewer inspection and CIPP rehabilitation systems. We understand our customers' environment and their needs from the inside — and we build for them.</p>
+        </div>
+        <div class="about-side">
+          <h3>Why KG Robotics</h3>
+          <ul>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg><span><b>European engineering</b> — designed and manufactured in Poland with EU-sourced capital.</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg><span><b>Deep domain expertise</b> — 25+ years in inspection and CIPP rehabilitation.</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg><span><b>Accessible technology</b> — performance without prohibitive capital cost.</span></li>
+            <li><svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg><span><b>Sustainability by design</b> — lighter, more efficient systems reduce footprint.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
