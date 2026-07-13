@@ -35,10 +35,10 @@
   header.site.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.35)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:88px;gap:24px}
   .brand{cursor:pointer;display:inline-flex;align-items:center}
-  .brand img{height:67.5px;width:auto}
+  .brand img{height:67.5px;width:auto;display:block}
   .menu{display:flex;align-items:center;gap:2px;height:100%}
   .menu>li{list-style:none;position:relative;height:100%;display:flex;align-items:center}
-  .menu>li>a{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.04em;text-transform:uppercase;padding:0 15px;height:100%;display:flex;align-items:center;color:var(--ink-2);position:relative;transition:color .2s;cursor:pointer}
+  .menu>li>a{font-family:"Barlow",sans-serif;font-weight:700;font-size:16px;letter-spacing:.02em;text-transform:uppercase;padding:0 15px;height:100%;display:flex;align-items:center;color:var(--ink-2);position:relative;transition:color .2s;cursor:pointer}
   .menu>li>a:hover,.menu>li.active>a{color:var(--ink)}
   .menu>li.has>a::after{content:"";display:inline-block;width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);margin-left:9px;opacity:.5}
   .menu>li>a .bar{position:absolute;left:15px;right:15px;bottom:26px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s}
@@ -46,7 +46,8 @@
   .dropdown{position:absolute;top:100%;left:0;min-width:268px;background:var(--ink);border-top:3px solid var(--accent);padding:10px 0;opacity:0;visibility:hidden;transform:translateY(8px);transition:.22s;box-shadow:0 30px 60px -25px rgba(0,0,0,.6)}
   .menu>li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
   .dropdown a{display:flex;align-items:center;gap:12px;padding:6px 22px;color:#c9ccd1;font-size:14.5px;font-weight:500;transition:.18s;cursor:pointer}
-  .dropdown a.ov{color:#fff;font-family:var(--display);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:14px;padding-bottom:9px;margin-bottom:5px;border-bottom:1px solid #2c2f37}
+  .menu .dropdown a{font-family:"Barlow",sans-serif}
+  .dropdown a.ov{color:#fff;font-family:"Barlow",sans-serif;font-weight:700;letter-spacing:.02em;text-transform:uppercase;font-size:14px;padding-bottom:9px;margin-bottom:5px;border-bottom:1px solid #2c2f37}
   .dropdown a:hover{background:var(--ink-2);color:#fff;padding-left:26px}
   .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
   .burger span{width:26px;height:2px;background:var(--ink);transition:.3s}
@@ -195,6 +196,10 @@
   .form-field input,.form-field textarea{width:100%;padding:13px 15px;border:1px solid var(--line);background:var(--paper);font-family:var(--body);font-size:15px;color:var(--ink);transition:.2s}
   .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--accent)}
   .map-strip{margin-top:14px;height:170px;background:repeating-linear-gradient(45deg,rgba(0,0,0,.02) 0 14px,transparent 14px 28px),var(--paper-2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+
+  .dist-map{margin-bottom:48px;border:1px solid var(--line);background:var(--paper-3);padding:32px 28px 24px}
+  .dist-map img{width:100%;max-width:100%;height:auto;display:block;margin:0 auto;aspect-ratio:2/1}
+  .dist-map-cap{margin-top:16px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center}
 
   footer{background:#0f1013;color:#9a9ea6;padding:72px 0 30px}
   .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}

@@ -7,5 +7,5 @@ const { variant = 'default' } = Astro.props;
 const src = variant === 'light' ? '/images/logo-light.svg' : '/images/logo.svg';
 ---
 <a class="brand" href="/" aria-label="KG Robotics — home">
-  <img src={src} alt="KG Robotics" />
+  <img src={src} alt="KG Robotics" class:list={{ 'logo-light': variant === 'light' }} />
 </a>
