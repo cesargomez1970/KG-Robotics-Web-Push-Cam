@@ -13,6 +13,10 @@ const { title, description, activeFam = null } = Astro.props;
 function famClass(id: string) {
   return activeFam === id ? 'has active' : 'has';
 }
+
+function renovationClass() {
+  return activeFam === 'led' || activeFam === 'cutting' ? 'has active' : 'has';
+}
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +30,7 @@ function famClass(id: string) {
   <meta property="og:image" content="/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@700&family=Saira+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Roboto:wght@700;900&display=swap" rel="stylesheet" />
 </head>
 <body>
 <div class="topbar"><div class="wrap">
@@ -46,8 +50,33 @@ function famClass(id: string) {
     <Logo />
     <ul class="menu" id="menu">
       <li class={activeFam === 'about' ? 'has active' : 'has'} data-fam="about"><a href="/about">About Us<span class="bar"></span></a><div class="dropdown"><a href="/who-we-are">Who we are</a><a href="/history">History</a><a href="/ip">IP</a></div></li>
-      <li class={famClass('led')} data-fam="led"><a href="/family/led">LED Curing<span class="bar"></span></a><div class="dropdown"><a href="/product/sewerlight-600">SewerLight 600</a><a href="/product/sewerlight-1200">SewerLight 1200</a><a href="/product/sewerchain-2400">SewerChain 2400</a><a href="/product/nanolight-100">NanoLight 100</a></div></li>
-      <li class={famClass('cutting')} data-fam="cutting"><a href="/family/cutting">Cutting<span class="bar"></span></a><div class="dropdown"><a href="/product/sewercut-100">SewerCut 100</a><a href="/product/sewercut-200">SewerCut 200</a></div></li>
+      <li class={renovationClass()} data-fam="renovation">
+        <a href="/family/led">Pipe Renovation<span class="bar"></span></a>
+        <div class="dropdown dropdown-mega">
+          <div class="dropdown-col">
+            <div class="dropdown-group has-sub">
+              <a href="/family/led" class="dropdown-group-hd">LED Curing</a>
+              <div class="dropdown-sub">
+                <a href="/product/sewerlight-600">SewerLight 600</a>
+                <a href="/product/sewerlight-1200">SewerLight 1200</a>
+                <a href="/product/sewerchain-2400">SewerChain 2400</a>
+                <a href="/product/nanolight-100">NanoLight 100</a>
+              </div>
+            </div>
+            <div class="dropdown-group has-sub">
+              <a href="/family/cutting" class="dropdown-group-hd">Cutting Robots</a>
+              <div class="dropdown-sub">
+                <a href="/product/sewercut-100">SewerCut 100</a>
+                <a href="/product/sewercut-200">SewerCut 200</a>
+              </div>
+            </div>
+            <div class="dropdown-group">
+              <span class="dropdown-group-hd is-static">Liners &amp; Resins</span>
+              <p class="dropdown-note">Range coming soon</p>
+            </div>
+          </div>
+        </div>
+      </li>
       <li class={famClass('inspection')} data-fam="inspection"><a href="/family/inspection">Inspecting<span class="bar"></span></a><div class="dropdown"><a href="/product/rapido-pro">Rapido Pro</a><a href="/product/pipecruiser-hd-100">PipeCruiser HD 100</a><a href="/product/pipecruiser-hd-200">PipeCruiser HD 200</a><a href="/product/van-fitting">Van Fitting</a><a href="/product/sewerzoom">SewerZoom</a></div></li>
       <li class={famClass('industrial')} data-fam="industrial"><a href="/family/industrial">Industrial<span class="bar"></span></a><div class="dropdown"><a href="/product/rapido-pro-atex">Rapido Pro ATEX</a><a href="/product/pipecruiser-hd-100-atex">PipeCruiser HD 100 ATEX</a></div></li>
       <li><a href="/distributors">Distributors</a></li>

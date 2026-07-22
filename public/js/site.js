@@ -15,6 +15,16 @@ var header=document.querySelector('header.site');
     },true);
   });
 
+  // mobile nested groups inside mega menu
+  document.querySelectorAll('.dropdown-group.has-sub>.dropdown-group-hd').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(window.innerWidth<=860){
+        var group=a.parentElement;
+        if(!group.classList.contains('gopen')){ e.stopImmediatePropagation(); e.preventDefault(); group.classList.add('gopen'); }
+      }
+    },true);
+  });
+
   
   var heroSlides=document.querySelectorAll('.hero-slide');
   var heroOverlay=document.querySelector('.hero-overlay');
