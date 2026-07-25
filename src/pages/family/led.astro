@@ -1,11 +1,156 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const title = "LED Curing Systems — KG Robotics";
-const description = "Patent-pending LED light-curing systems for trenchless sewer rehabilitation.";
-const content = "<section class=\"block\"><div class=\"wrap\">\n    <div class=\"crumbs\"><a href=\"/\">Home</a><span class=\"sep\">/</span><span>LED Curing Systems</span></div>\n    <div class=\"sec-head\"><span class=\"eyebrow muted\">Product Family</span><h1>LED Curing Systems</h1><p>Patent-pending LED light-curing systems for trenchless rehabilitation of sewer networks, from 80 mm.</p></div>\n    <div class=\"family-intro\">\n      <div class=\"family-img\"><img src=\"/images/img-004.jpg\" alt=\"LED Curing Systems\"/></div>\n      <div class=\"copy\"><p>KG Robotics has developed a complete family of LED curing systems for sewer networks, suitable for diameters from as small as 80 mm. Our patent-pending LED technology is integrated into every system and meaningfully improves on the solutions currently available on the market.</p><p>As LED specialists, we have increased the efficiency of the UV radiation head through a new cooling design that also reduces cooling-air demand by up to 40% — allowing auxiliary equipment (compressor, dryer and cooler) to be significantly smaller or, as with the dryer, removed entirely. Cooling runs through independent channels, fully isolated from the UV-emitting LEDs, guaranteeing a completely sealed radiation head.</p><p>Every component has been re-engineered to reduce total system weight — improving operator comfort and expanding the range of sites the system can reach. Because the emitted wavelength is the industry standard, all KG Robotics LED systems are compatible with single-component UV epoxy and VE resins.</p></div>\n    </div>\n    <div class=\"product-grid\"><a class=\"card\" href=\"/product/sewerlight-600\"><div class=\"ph\"><img src=\"/images/sewerlight-600.png\" alt=\"SewerLight 600\" loading=\"lazy\"/></div><div class=\"card-body\"><div class=\"pname\">SewerLight 600</div><div class=\"ptag\">Laterals & small mainlines</div><p>Compact LED curing system for laterals and small-to-mid diameter mainlines. A lightweight head enables fast deployment and reliable, repeatable cures from 80 mm.</p><span class=\"card-link\">View product <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a><a class=\"card\" href=\"/product/sewerlight-1200\"><div class=\"ph\"><img src=\"/images/img-009.jpg\" alt=\"SewerLight 1200\" loading=\"lazy\"/></div><div class=\"card-body\"><div class=\"pname\">SewerLight 1200</div><div class=\"ptag\">Larger mainlines</div><p>Higher-output LED system for larger mainline diameters, delivering even, controlled radiation across the full length of the liner.</p><span class=\"card-link\">View product <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a><a class=\"card\" href=\"/product/sewerchain-2400\"><div class=\"ph\"><img src=\"/images/img-010.jpg\" alt=\"SewerChain 2400\" loading=\"lazy\"/></div><div class=\"card-body\"><div class=\"pname\">SewerChain 2400</div><div class=\"ptag\">Manholes & large diameters</div><p>Modular LED curing chain engineered for manhole and large-diameter rehabilitation, scaling emitter coverage to the geometry of the structure.</p><span class=\"card-link\">View product <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a><a class=\"card\" href=\"/product/nanolight-100\"><div class=\"ph\"><img src=\"/images/img-008.jpg\" alt=\"NanoLight 100\" loading=\"lazy\"/></div><div class=\"card-body\"><div class=\"pname\">NanoLight 100</div><div class=\"ptag\">Tight diameters from 80 mm</div><p>Our most compact curing solution, purpose-built for the tightest diameters and house connections — bringing LED curing where bulkier systems cannot reach.</p><span class=\"card-link\">View product <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></div></a></div>\n  </div></section>";
-const activeFam = "led";
+const title = 'LED Curing Systems — KG Robotics';
+const description =
+  'Patent-pending LED light-curing systems for trenchless sewer rehabilitation — engineered for lower CAPEX, higher efficiency and field-proven reliability.';
+
+const advantages = [
+  {
+    title: 'Quick-release connector on every head',
+    body: 'Every head in the range shares a universal quick-release connector — the single most requested improvement from operators in the field. All connector parts are machined from aluminium, maintaining the mechanical durability of previous designs while the D-sub interface is fully enclosed and no longer exposed to moisture, dirt or handling damage on site.',
+  },
+  {
+    title: 'Cooling air never contacts the LEDs',
+    body: 'In the new head architecture, compressed air is routed through independent sealed channels that never enter the optical cavity. Moisture and humidity inside the pipe can no longer reach the LED diodes — directly addressing one of the most frequent reliability complaints on earlier-generation curing heads.',
+  },
+  {
+    title: 'Anodized aluminium heads',
+    body: 'Every head is anodized for a clean, professional finish that holds up on the job site. The hard-wearing surface layer protects the aluminium body and presents well to clients — equipment that looks as capable as it performs.',
+  },
+  {
+    title: 'Tool-free glass replacement',
+    body: 'The protective glass can be swapped in minutes without tools — even on high-power heads where glass changes could mean significant workshop downtime. A damaged or contaminated window no longer stops a cure: crews replace it on site and carry on.',
+  },
+  {
+    title: 'AHD 1080p camera in every head',
+    body: 'Every head integrates an AHD 1080p camera for sharp, high-definition footage during deployment and cure monitoring. Operators can verify liner position, track progress and document the job with image quality that was simply not available on previous-generation systems.',
+  },
+  {
+    title: 'High-brightness monitors',
+    body: 'The control unit is fitted with high-brightness displays readable in direct sunlight and bright outdoor conditions. The image stays visible at the manhole, on the van and on site — not washed out the moment you step outside.',
+  },
+  {
+    title: 'Built-in recording with instant USB transfer',
+    body: 'Cure and inspection video is recorded onboard and transferred instantly via USB — no proprietary software, no slow wireless downloads. Footage is ready for client reports, quality records or internal review as soon as the job is done.',
+  },
+];
+
+const products = [
+  {
+    slug: 'sewerlight-600',
+    image: '/images/sewerlight-600.png',
+    name: 'SewerLight 600',
+    tag: 'Laterals & small mainlines',
+    desc: 'Compact LED curing system for laterals and small-to-mid diameter mainlines. A lightweight head enables fast deployment and reliable, repeatable cures from 80 mm.',
+  },
+  {
+    slug: 'sewerlight-1200',
+    image: '/images/img-009.jpg',
+    name: 'SewerLight 1200',
+    tag: 'Larger mainlines',
+    desc: 'Higher-output LED system for larger mainline diameters, delivering even, controlled radiation across the full length of the liner.',
+  },
+  {
+    slug: 'sewerchain-2400',
+    image: '/images/img-010.jpg',
+    name: 'SewerChain 2400',
+    tag: 'Manholes & large diameters',
+    desc: 'Modular LED curing chain engineered for manhole and large-diameter rehabilitation, scaling emitter coverage to the geometry of the structure.',
+  },
+  {
+    slug: 'nanolight-100',
+    image: '/images/img-008.jpg',
+    name: 'NanoLight 100',
+    tag: 'Tight diameters from 80 mm',
+    desc: 'Our most compact curing solution, purpose-built for the tightest diameters and house connections — bringing LED curing where bulkier systems cannot reach.',
+  },
+];
 ---
-<BaseLayout title={title} description={description} activeFam={activeFam}>
-  <Fragment set:html={content} />
+
+<BaseLayout title={title} description={description} activeFam="led">
+  <section class="block">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span><span>LED Curing Systems</span>
+      </div>
+      <div class="sec-head">
+        <span class="eyebrow muted">Product Family</span>
+        <h1>LED Curing Systems</h1>
+        <p>Patent-pending LED light-curing systems for trenchless rehabilitation of sewer networks, from 80 mm.</p>
+      </div>
+      <div class="family-intro">
+        <div class="family-img">
+          <img src="/images/img-004.jpg" alt="LED Curing Systems" />
+        </div>
+        <div class="copy">
+          <p>
+            KG Robotics has developed a complete family of LED curing systems for sewer networks, suitable for diameters from as small as 80 mm. Our patent-pending LED technology is integrated into every system and meaningfully improves on the solutions currently available on the market.
+          </p>
+          <p>
+            The team behind these products defined LED curing for sewer rehabilitation in Europe — designing, manufacturing and supporting systems that set the category standard. KG Robotics carries that experience forward with a new generation of platforms focused on efficiency, accessibility and field reliability.
+          </p>
+          <p>
+            As LED specialists, we have increased the efficiency of the UV radiation head through a new cooling design that also reduces cooling-air demand by up to 40% — allowing auxiliary equipment to be significantly smaller or, as with the dryer, removed entirely. Cooling runs through independent channels, fully isolated from the UV-emitting LEDs, guaranteeing a completely sealed radiation head.
+          </p>
+          <p>
+            Every component has been re-engineered to reduce total system weight — improving operator comfort and expanding the range of sites the system can reach. Because the emitted wavelength is the industry standard, all KG Robotics LED systems are compatible with single-component UV epoxy and VE resins.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="family-advantages">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Engineering advantage</span>
+        <h2>Why operators choose KG Robotics LED curing</h2>
+        <p>
+          Every detail below responds to real feedback from the field — the improvements operators asked for most, built into a new generation of LED curing heads.
+        </p>
+      </div>
+      <div class="advantages-grid">
+        {
+          advantages.map((item) => (
+            <article class="advantage">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Product range</span>
+        <h2>Explore the LED curing range</h2>
+      </div>
+      <div class="product-grid">
+        {
+          products.map((product) => (
+            <a class="card" href={`/product/${product.slug}`}>
+              <div class="ph">
+                <img src={product.image} alt={product.name} loading="lazy" />
+              </div>
+              <div class="card-body">
+                <div class="pname">{product.name}</div>
+                <div class="ptag">{product.tag}</div>
+                <p>{product.desc}</p>
+                <span class="card-link">
+                  View product{' '}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>

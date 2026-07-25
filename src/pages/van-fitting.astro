@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Van Fitting — KG Robotics';
+const description =
+  'Turnkey design and supply of CCTV inspection vans equipped with KG Robotics visual inspection systems — your mobile HQ for sewer network surveys.';
+
+const zones = [
+  {
+    title: 'Inspection studio',
+    intro: 'A private, comfortable workspace where operators review footage, prepare reports and stay productive between manholes.',
+    items: [
+      'Ergonomic seating for one or two operators',
+      'High-brightness anti-glare monitors',
+      'Integrated control units and PC housings',
+      'LED studio lighting and climate control',
+      'Viewing window to the rear workspace',
+      'Intercom between cab, studio and rear deck',
+    ],
+  },
+  {
+    title: 'Rear workspace',
+    intro: 'Purpose-built storage and handling areas for crawlers, reels, accessories and everything needed on a live survey.',
+    items: [
+      'Heavy-duty slider units for robotic crawlers',
+      'Cable reel racks and secure lash points',
+      'Lockable cabinets, drawers and cubbies',
+      'Impact-resistant, washable work surfaces',
+      'LED floodlighting for night operations',
+      'Storage for cones, signs and manhole tools',
+    ],
+  },
+  {
+    title: 'On-board power',
+    intro: 'Reliable electrical infrastructure to run inspection systems, auxiliary equipment and daily van operations off-grid.',
+    items: [
+      'Mains distribution and consumer unit',
+      'Inverter / battery system with status monitoring',
+      'Dedicated circuits for inspection equipment',
+      'Power outlets throughout studio and workspace',
+      'Optional solar top-up for extended field days',
+      'Concealed routing for a clean, serviceable install',
+    ],
+  },
+  {
+    title: 'KG Robotics systems',
+    intro: 'Every fit-out is designed around our own inspection platforms — integrated, cabled and ready to work from delivery day.',
+    items: [
+      'Rapido Pro push-camera systems',
+      'PipeCruiser HD 100 & HD 200 crawlers',
+      'SewerZoom manhole zoom cameras',
+      'Unified control, recording and USB export',
+      'AHD 1080p imaging across the range',
+      'Reporting software configuration on request',
+    ],
+  },
+];
+
+const steps = [
+  {
+    n: '01',
+    title: 'Consultation',
+    body: 'We review your fleet plans, typical survey scope, crew size and the KG Robotics systems you want on board — from laterals to mainlines.',
+  },
+  {
+    n: '02',
+    title: 'Layout design',
+    body: 'A bespoke interior specification is produced for your chassis: studio layout, storage, power budget and equipment positions — before a single panel is cut.',
+  },
+  {
+    n: '03',
+    title: 'Build & integration',
+    body: 'Cabinetry, electrical first-fix, upholstery, system mounting and cable routing are completed to a single standard — ready for years of daily use.',
+  },
+  {
+    n: '04',
+    title: 'Commissioning',
+    body: 'Inspection systems are tested, operators briefed and the vehicle delivered turnkey — roll off the line and go straight to site.',
+  },
+];
+
+const options = [
+  'Chapter 8 high-visibility markings',
+  'Amber LED beacons and work-area lighting',
+  'Reversing camera and external CCTV',
+  'Security locks, alarms and armour plating',
+  'Towbar and rear access step',
+  'Hot / cold handwash or washdown facility',
+  'Air compressor for crawlers and tools',
+  'Solar panels for auxiliary charging',
+];
+---
+
+<BaseLayout title={title} description={description} activeFam="inspection">
+  <section class="block">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span><a href="/family/inspection">Inspecting</a><span class="sep">/</span><span>Van Fitting</span>
+      </div>
+      <div class="sec-head">
+        <span class="eyebrow muted">Turnkey service</span>
+        <h1>Van Fitting</h1>
+        <p>
+          Design and supply of fully equipped CCTV inspection vans — integrating KG Robotics push cameras, crawlers and zoom systems into a mobile workstation built around how your crews actually work.
+        </p>
+      </div>
+      <div class="family-intro van-fit-hero">
+        <div class="family-img">
+          <img src="/images/van-fitting-workshop.png" alt="KG Robotics van fitting workshop" />
+        </div>
+        <div class="copy">
+          <p>
+            Your inspection van is more than transport — it is the hub of every survey. We design and deliver complete fit-outs that bring together workspace, power, storage and KG Robotics visual inspection equipment in one coherent package.
+          </p>
+          <p>
+            From compact vans for lateral and house-connection work to larger chassis configured for mainline crawlers and dual-operator studios, every project starts with your deployment needs and ends with a vehicle ready for the field.
+          </p>
+          <p>
+            Inspired by the best practices in the industry — all-in-one mobile studios, organised rear workspaces and dependable on-board power — but engineered around KG Robotics systems and the lower-CAPEX philosophy that defines everything we build.
+          </p>
+          <div class="van-fit-hero-actions">
+            <a href="/contact" class="btn btn-accent">
+              Request a specification <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="/family/inspection" class="btn btn-dark">View inspection systems</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="van-fit-steps">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">How it works</span>
+        <h2>From brief to turnkey delivery</h2>
+      </div>
+      <div class="steps-grid">
+        {steps.map((step) => (
+          <article class="step-card">
+            <span class="step-n">{step.n}</span>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="van-fit-gallery">
+    <div class="wrap">
+      <div class="van-fit-gallery-grid">
+        <figure class="van-fit-gallery-item">
+          <img src="/images/van-fitting-workshop.png" alt="Van fitting workshop — build in progress" loading="lazy" />
+          <figcaption>Build &amp; integration — workshop fit-out in progress</figcaption>
+        </figure>
+        <figure class="van-fit-gallery-item">
+          <img src="/images/van-fitting-interior.png" alt="Finished KG Robotics inspection van interior" loading="lazy" />
+          <figcaption>Turnkey delivery — equipped rear workspace ready for site</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="family-advantages">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">What we deliver</span>
+        <h2>Everything in one place</h2>
+        <p>
+          When you are on the job, the van becomes your lifeline. We configure each zone — studio, workspace, power and systems — so crews have what they need without compromise.
+        </p>
+      </div>
+      <div class="van-zones">
+        {zones.map((zone) => (
+          <article class="van-zone">
+            <h3>{zone.title}</h3>
+            <p class="van-zone-intro">{zone.intro}</p>
+            <ul>
+              {zone.items.map((item) => (
+                <li>
+                  <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4 4L19 7" /></svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-body">
+          <span class="eyebrow muted">Applications</span>
+          <h2 style="font-size:clamp(28px,3.6vw,42px);margin-top:14px">From house connections to main sewer surveys</h2>
+          <p>
+            A single well-configured van can cover laterals from DN50, mainline crawler inspections and manhole zoom surveys — depending on the KG Robotics systems specified at the design stage.
+          </p>
+          <p>
+            Utilities, contractors and service companies across Europe use mobile inspection units to reduce setup time, protect equipment and present a professional image to clients. We help you specify the right combination of chassis, layout and systems for the work you do most.
+          </p>
+        </div>
+        <div class="about-side">
+          <h3>Popular options</h3>
+          <ul>
+            {options.map((option) => (
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 13 4 4L19 7" /></svg>
+                <span>{option}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Systems on board</span>
+        <h2>KG Robotics equipment we integrate</h2>
+      </div>
+      <div class="chip-row">
+        <a class="chip" href="/product/rapido-pro">Rapido Pro <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+        <a class="chip" href="/product/pipecruiser-hd-100">PipeCruiser HD 100 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+        <a class="chip" href="/product/pipecruiser-hd-200">PipeCruiser HD 200 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+        <a class="chip" href="/product/sewerzoom">SewerZoom <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+      </div>
+      <div class="van-fit-cta">
+        <p>Tell us about your fleet requirements and we will prepare a layout proposal for your next inspection van.</p>
+        <a href="/contact" class="btn btn-accent">
+          Book a demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

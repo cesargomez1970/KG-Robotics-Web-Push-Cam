@@ -9,6 +9,8 @@ export function getStaticPaths() {
 const FAM_OF = {"sewerlight-600":"led","sewerlight-1200":"led","sewerchain-2400":"led","nanolight-100":"led","sewercut-100":"cutting","sewercut-200":"cutting","rapido-pro":"inspection","pipecruiser-hd-100":"inspection","pipecruiser-hd-200":"inspection","van-fitting":"inspection","sewerzoom":"inspection","rapido-pro-atex":"industrial","pipecruiser-hd-100-atex":"industrial"};
 
 const { slug } = Astro.params;
+if (slug === 'van-fitting') return Astro.redirect('/van-fitting');
+
 const content = products[slug];
 if (!content) return Astro.redirect('/');
 
