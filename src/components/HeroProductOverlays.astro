@@ -1,0 +1,17 @@
+---
+const slides = [
+  { src: '/images/hero-overlay-uv-system.png', alt: 'SewerLight UV LED curing system' },
+  { src: '/images/hero-overlay-crawlers.png', alt: 'PipeCruiser robotic crawlers' },
+  { src: '/images/hero-overlay-rapido.png', alt: 'Rapido push camera system' },
+];
+---
+
+<div class="hero-product-slides" aria-hidden="true">
+  {
+    slides.map((slide, i) => (
+      <div class={`hero-product-slide${i === 0 ? ' active' : ''}`}>
+        <img src={slide.src} alt={slide.alt} width="800" height="800" loading="eager" decoding="async" />
+      </div>
+    ))
+  }
+</div>

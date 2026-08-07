@@ -1,14 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroProductOverlays from '../components/HeroProductOverlays.astro';
 
 const title = "KG Robotics — Inspection & Rehabilitation Systems for Sewer Networks";
-const description = "KG Robotics designs and manufactures LED curing systems, cutting solutions and visual inspection equipment for sewer networks. Made in Poland, engineered for low CAPEX.";
+const description = "KG Robotics designs and manufactures UV LED curing systems, cutting solutions and visual inspection equipment for sewer networks. Made in Poland, engineered for low CAPEX.";
 ---
 
 <BaseLayout title={title} description={description}>
   <section class="hero">
     <div class="hero-slides">
-      <div class="hero-slide active" style="background-image:url('/images/img-001.jpg')"></div>
+      <div class="hero-slide active" style="background-image:url('/images/hero-street-cipp.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('/images/img-001.jpg')"></div>
       <div class="hero-slide" style="background-image:url('/images/img-002.jpg')"></div>
       <div class="hero-slide" style="background-image:url('/images/img-003.jpg')"></div>
       <div class="hero-slide" style="background-image:url('/images/hero-manhole.png')"></div>
@@ -22,7 +24,7 @@ const description = "KG Robotics designs and manufactures LED curing systems, cu
             <span class="hero-h1-line hero-h1-line--down">CIPP <span class="o">Trenchless</span> Solutions</span>
             <span class="hero-h1-line hero-h1-line--up">AND <span class="o">SEWER</span> Visual Inspection</span>
           </h1>
-          <p class="lead">Cure-in-Place-Pipe LED curing systems, cutting robots and visual inspection equipment — engineered in Poland to deliver reliable performance at a fraction of the CAPEX.</p>
+          <p class="lead">Cure-in-Place-Pipe UV LED curing systems, cutting robots and visual inspection equipment — engineered in Poland to deliver reliable performance at a fraction of the CAPEX.</p>
           <div class="hero-actions">
             <a href="/family/led" class="btn btn-accent">Explore Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
             <a href="/about" class="btn btn-ghost">About KG Robotics</a>
@@ -30,6 +32,7 @@ const description = "KG Robotics designs and manufactures LED curing systems, cu
         </div>
       </div>
     </div>
+    <HeroProductOverlays />
   </section>
 
   <div class="values">
@@ -37,7 +40,7 @@ const description = "KG Robotics designs and manufactures LED curing systems, cu
       <div class="grid values-grid">
         <div class="value">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6m0 0 3-3m-3 3L9 5"/><rect x="4" y="8" width="16" height="13" rx="2"/><path d="M9 13h6M9 17h6"/></svg>
-          <h3>LED Curing</h3>
+          <h3>UV LED Curing</h3>
           <p>Patent-pending LED systems for trenchless rehabilitation — from laterals at 80 mm to large-diameter mainlines.</p>
           <a href="/product/sewerlight-600" class="value-product">
             <img src="/images/sewerlight-600.png" alt="SewerLight 600" />
@@ -57,9 +60,9 @@ const description = "KG Robotics designs and manufactures LED curing systems, cu
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
           <h3>Visual Inspection</h3>
           <p>Push cameras, HD crawlers and zoom systems — field-proven imaging at a fraction of the CAPEX.</p>
-          <a href="/product/pipecruiser-hd-100" class="value-product">
-            <img src="/images/pipecruiser-hd-100.png" alt="PipeCruiser HD 100" />
-            <span class="value-product-label">PipeCruiser HD 100</span>
+          <a href="/product/pipecruiser-250" class="value-product">
+            <img src="/images/pipecruiser-hd-100.png" alt="PipeCruiser 250" />
+            <span class="value-product-label">PipeCruiser 250</span>
           </a>
         </div>
         <div class="value">
@@ -84,9 +87,9 @@ const description = "KG Robotics designs and manufactures LED curing systems, cu
       </div>
       <div class="fam-grid">
         <a class="fam-card" href="/family/led">
-          <img src="/images/img-004.jpg" alt="LED Curing Systems" />
+          <img src="/images/img-004.jpg" alt="UV LED Curing Systems" />
           <div class="fc-body">
-            <h3>LED Curing Systems</h3>
+            <h3>UV LED Curing Systems</h3>
             <p>Patent-pending LED light-curing systems for trenchless rehabilitation of sewer networks, from 80 mm.</p>
             <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </div>
@@ -108,7 +111,7 @@ const description = "KG Robotics designs and manufactures LED curing systems, cu
           </div>
         </a>
         <a class="fam-card" href="/family/industrial">
-          <img src="/images/img-007.jpg" alt="Industrial / RVI" />
+          <img src="/images/hero-industrial-2.png" alt="Industrial / RVI" />
           <div class="fc-body">
             <h3>Industrial / RVI</h3>
             <p>Visual Testing (VT) and Remote Visual Inspection (RVI) for industrial pipe networks.</p>

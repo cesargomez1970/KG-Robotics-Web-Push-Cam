@@ -28,15 +28,34 @@ var header=document.querySelector('header.site');
   
   var heroSlides=document.querySelectorAll('.hero-slide');
   var heroOverlay=document.querySelector('.hero-overlay');
+  var heroProductSlides=document.querySelectorAll('.hero-product-slide');
   if(heroSlides.length>1){
     var hsi=0;
     setInterval(function(){
       heroSlides[hsi].classList.remove('active');
+      if(heroProductSlides.length){
+        heroProductSlides[hsi % heroProductSlides.length].classList.remove('active');
+      }
       hsi=(hsi+1)%heroSlides.length;
       heroSlides[hsi].classList.add('active');
+      if(heroProductSlides.length){
+        heroProductSlides[hsi % heroProductSlides.length].classList.add('active');
+      }
       if(heroOverlay) heroOverlay.classList.toggle('light', hsi!==0);
     },5000);
   }
+
+  document.querySelectorAll('.pd-carousel').forEach(function(root){
+    var slides=root.querySelectorAll('.pd-carousel-slide');
+    if(slides.length<2) return;
+    var ms=Number(root.getAttribute('data-interval'))||5200;
+    var idx=0;
+    setInterval(function(){
+      slides[idx].classList.remove('active');
+      idx=(idx+1)%slides.length;
+      slides[idx].classList.add('active');
+    },ms);
+  });
 
   // ---- i18n engine ----
   var TX=[], HX=[], PH=[];
