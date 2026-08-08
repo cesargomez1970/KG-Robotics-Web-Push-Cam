@@ -343,6 +343,8 @@
   .pd-carousel{position:absolute;inset:22px;display:flex;align-items:center;justify-content:center}
   .pd-carousel-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;background:transparent;opacity:0;transition:opacity 1.3s ease;transform:none}
   .pd-carousel-slide.active{opacity:1;z-index:1}
+  .pd-video{position:absolute;inset:22px;display:flex;align-items:center;justify-content:center;background:#000}
+  .pd-video video{width:100%;height:100%;max-height:100%;object-fit:contain;display:block}
   .sl600-heads-intro{margin-bottom:8px}
   .sl600-heads-foot{margin-top:40px}
   .curing-head-spec-block h4{font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
@@ -359,6 +361,8 @@
   .pc-wheels-gallery--4{grid-template-columns:repeat(4,1fr)}
   .pc-wheels-gallery figure{margin:0;background:#fff;padding:20px;display:flex;align-items:center;justify-content:center}
   .pc-wheels-gallery img{width:100%;max-width:100%;height:auto;object-fit:contain;display:block}
+  .pc-wheels-single{margin:0;border:1px solid var(--line);background:#fff;padding:24px;max-width:720px}
+  .pc-wheels-single img{width:100%;height:auto;display:block;object-fit:contain}
   .pd-info h1{font-size:clamp(36px,5vw,58px);font-weight:800;margin-top:12px}
   .pd-info .ptag{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:10px}
   .pd-info .desc{font-size:17px;color:#3a3d44;margin-top:22px}
@@ -415,6 +419,7 @@
     .pd-img{border-right:none;border-bottom:1px solid var(--line)}
     .pd-img--carousel{min-height:min(92vw,520px);aspect-ratio:1;align-self:auto}
     .pd-carousel{inset:18px}
+    .pd-video{inset:18px}
     .pd-info{padding:28px 24px}
     .pc-wheels-gallery,.pc-wheels-gallery--4{grid-template-columns:1fr}
     .hero-v3-intro{flex-direction:column;gap:20px}

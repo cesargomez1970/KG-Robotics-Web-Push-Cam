@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'SewerZoom — KG Robotics';
+const description =
+  'High-zoom manhole camera for rapid surface-level inspection — survey structures safely without confined-space entry.';
+---
+
+<BaseLayout title={title} description={description} activeFam="inspection">
+  <section class="block">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span><a href="/family/inspection">Visual Inspection Systems</a><span class="sep">/</span><span
+          >SewerZoom</span
+        >
+      </div>
+      <div class="pd-grid">
+        <div class="pd-img pd-img--carousel pd-img--video">
+          <div class="pd-video">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="/images/img-017.jpg"
+              aria-label="SewerZoom — system components overview"
+            >
+              <source src="/videos/sewerzoom-componentes-sistema.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+            </video>
+          </div>
+        </div>
+        <div class="pd-info">
+          <span class="eyebrow muted">Visual Inspection Systems</span>
+          <h1>SewerZoom</h1>
+          <div class="ptag">Zoom manhole camera</div>
+          <p class="desc">
+            A high-zoom camera for rapid manhole inspection from the surface — survey structures quickly and safely without confined-space entry.
+          </p>
+          <div class="pd-specs">
+            <div class="row">
+              <span class="k">Category</span><span class="v">Zoom manhole camera</span>
+            </div>
+            <div class="row">
+              <span class="k">Specifications</span><span class="v">Available on request</span>
+            </div>
+            <div class="row">
+              <span class="k">Origin</span><span class="v">Made in Poland (EU)</span>
+            </div>
+          </div>
+          <div class="pd-actions">
+            <a href="/contact" class="btn btn-accent">
+              Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="/family/inspection" class="btn btn-dark">Back to overview</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pd-more">
+        <h3>More in this family</h3>
+        <div class="chip-row">
+          <a class="chip" href="/product/rapido-pro">
+            Rapido Pro <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/product/pipecruiser-150">
+            PipeCruiser 150 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/product/pipecruiser-250">
+            PipeCruiser 250 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/van-fitting">
+            Van Fitting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

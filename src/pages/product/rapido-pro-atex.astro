@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Rapido Pro ATEX — KG Robotics';
+const description =
+  'ATEX-rated Rapido Pro+ Full HD push-camera system for hazardous areas — push inspection from 40 mm to 300 mm with the same HD platform as Rapido Pro.';
+
+const heroImage = {
+  src: '/images/rapido-pro-atex-system-01.png',
+  alt: 'Rapido Pro ATEX — push camera system with blue rod for hazardous-area inspection',
+};
+---
+
+<BaseLayout title={title} description={description} activeFam="industrial">
+  <section class="block">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span><a href="/family/industrial">Industrial / RVI</a><span class="sep">/</span><span
+          >Rapido Pro ATEX</span
+        >
+      </div>
+      <div class="pd-grid">
+        <div class="pd-img pd-img--contain">
+          <img src={heroImage.src} alt={heroImage.alt} width="1024" height="1024" loading="eager" />
+        </div>
+        <div class="pd-info">
+          <span class="eyebrow muted">Industrial / RVI</span>
+          <h1>Rapido Pro ATEX</h1>
+          <div class="ptag">Push camera · ATEX-rated · Full HD</div>
+          <p class="desc">
+            Rapido Pro ATEX is the explosion-proof variant of Rapido Pro+ Full HD — the same push-mode architecture (control unit, reel and KG41 camera)
+            engineered for visual inspection in potentially explosive atmospheres. Inspect pipelines from approximately 40 mm to 300 mm in industrial zones
+            where standard equipment cannot be deployed, with 1080p imaging, distance documentation and a compact wheeled platform identified by the
+            high-visibility blue push rod specified for ATEX configurations.
+          </p>
+          <div class="pd-specs">
+            <div class="row">
+              <span class="k">Category</span><span class="v">Push camera system · hazardous areas</span>
+            </div>
+            <div class="row">
+              <span class="k">Certification</span><span class="v">ATEX-rated for hazardous atmospheres</span>
+            </div>
+            <div class="row">
+              <span class="k">Inspecting range</span><span class="v">Approx. 40–300 mm (1½″–12″)</span>
+            </div>
+            <div class="row">
+              <span class="k">Camera head</span><span class="v">KG41, 1080p Full HD, auto axial levelling</span>
+            </div>
+            <div class="row">
+              <span class="k">Optics &amp; lighting</span><span class="v">105° horizontal FOV, 4-LED focused ring</span>
+            </div>
+            <div class="row">
+              <span class="k">Push rod &amp; reel</span><span class="v">Ø 11 mm × 60 m, quick-change connectors (ATEX rod)</span>
+            </div>
+            <div class="row">
+              <span class="k">Reel features</span><span class="v">512 Hz sonde, metre counter, adjustable brake, quick-mount wheels</span>
+            </div>
+            <div class="row">
+              <span class="k">Control unit</span><span class="v">10.1″ 1080p touchscreen, keyboard shortcuts, USB or internal storage</span>
+            </div>
+            <div class="row">
+              <span class="k">Power</span><span class="v">Milwaukee battery pack or mains adapter</span>
+            </div>
+            <div class="row">
+              <span class="k">Pipe bends</span><span class="v">From DN75 at 90° (with centreing skids)</span>
+            </div>
+            <div class="row">
+              <span class="k">Origin</span><span class="v">Made in Poland (EU)</span>
+            </div>
+          </div>
+          <div class="pd-actions">
+            <a href="/contact" class="btn btn-accent">
+              Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="/family/industrial" class="btn btn-dark">Back to overview</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-wheels">
+        <div class="pc-wheels-head">
+          <span class="eyebrow muted">ATEX</span>
+          <h2>Safe push inspection in classified zones</h2>
+          <p class="pc-wheels-lead">Hazardous-area RVI</p>
+          <p>
+            ATEX certification addresses the ignition risks present in many industrial environments — flammable gases, vapours or dusts where a spark or hot
+            surface could trigger an incident. Rapido Pro ATEX keeps the proven Rapido workflow (push, view, record, measure) while using components and assemblies
+            assessed for use in defined explosive atmospheres. Teams gain remote visual access to pipes and ducts without entering confined or classified spaces
+            unnecessarily, supporting integrity programmes in refineries, chemical plants, utilities and other ATEX-regulated sites.
+          </p>
+          <p>
+            Operation, permitted zones and maintenance intervals must follow the equipment certificate and your site’s DSEAR / ATEX procedures. Contact KG
+            Robotics for the exact marking and zone suitability for your application.
+          </p>
+        </div>
+        <figure class="pc-wheels-single">
+          <img src={heroImage.src} alt={heroImage.alt} loading="lazy" width="1024" height="1024" />
+        </figure>
+      </div>
+
+      <div class="pd-more">
+        <h3>More in this family</h3>
+        <div class="chip-row">
+          <a class="chip" href="/product/pipecruiser-hd-100-atex">
+            PipeCruiser 100 HD ATEX <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/product/rapido-pro">
+            Rapido Pro <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/family/industrial">
+            Industrial / RVI overview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
