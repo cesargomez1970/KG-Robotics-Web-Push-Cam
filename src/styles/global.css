@@ -353,6 +353,8 @@
   .pc-wheels-head p{color:#3a3d44;font-size:16.5px;line-height:1.65;margin:0}
   .pc-wheels-lead{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;font-weight:500}
   .pc-wheels-head p:not(.pc-wheels-lead){margin-top:0}
+  .pc-wheels-head a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+  .pc-wheels-head a:hover{color:var(--ink)}
   .pc-wheels-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
   .pc-wheels-gallery--4{grid-template-columns:repeat(4,1fr)}
   .pc-wheels-gallery figure{margin:0;background:#fff;padding:20px;display:flex;align-items:center;justify-content:center}

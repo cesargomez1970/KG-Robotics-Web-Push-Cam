@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'PipeCruiser 150 — KG Robotics';
+const description =
+  'Entry-level PipeCruiser with KG97 crawler and compact pan-tilt-zoom camera for pipes from 75 mm — same control platform, expandable to the larger KG100 chassis and full-size camera.';
+
+const systemGallery = [
+  { src: '/images/pipecruiser-hd-100-system-01.png', alt: 'PipeCruiser 150 — compact crawler, reel and control unit' },
+  { src: '/images/pipecruiser-hd-100-system-03.png', alt: 'PipeCruiser 150 — entry-level mobile inspection system' },
+];
+
+const configGallery = [
+  { src: '/images/pipecruiser-250-config-01.png', alt: 'PipeCruiser 150 — KG97 crawler with compact pan-tilt camera' },
+  { src: '/images/pipecruiser-250-config-04.png', alt: 'PipeCruiser platform — compact and full-size configurations' },
+];
+
+const wheelGallery = [
+  { src: '/images/pipecruiser-250-wheels-01.png', alt: 'PipeCruiser — KG97 crawler with interchangeable wheel sets' },
+  { src: '/images/pipecruiser-250-wheels-02.png', alt: 'PipeCruiser — compact camera head and wheel options' },
+];
+---
+
+<BaseLayout title={title} description={description} activeFam="inspection">
+  <section class="block">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span><a href="/family/inspection">Visual Inspection Systems</a><span class="sep">/</span><span
+          >PipeCruiser 150</span
+        >
+      </div>
+      <div class="pd-grid">
+        <div class="pd-img pd-img--carousel">
+          <div class="pd-carousel" data-interval="5200">
+            {
+              systemGallery.map((item, index) => (
+                <img
+                  class:list={['pd-carousel-slide', { active: index === 0 }]}
+                  src={item.src}
+                  alt={item.alt}
+                  width="1024"
+                  height="1024"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              ))
+            }
+          </div>
+        </div>
+        <div class="pd-info">
+          <span class="eyebrow muted">Visual Inspection Systems</span>
+          <h1>PipeCruiser 150</h1>
+          <div class="ptag">Entry-level robotic crawler</div>
+          <p class="desc">
+            The PipeCruiser 150 is the most accessible motorized crawler in the range: the compact <strong>KG97</strong> chassis paired with the matching
+            compact <strong>pan-tilt-zoom camera head</strong> — the smallest diameter combination we offer, optimised for laterals and small mains from
+            75&nbsp;mm (3″). You get steerable 6×6 traction, HD imaging and EN&nbsp;13508-2 reporting on the same control unit and reel architecture as the
+            rest of the family — without paying for hardware you do not need on day one.
+          </p>
+          <div class="pd-specs">
+            <div class="row">
+              <span class="k">Category</span><span class="v">Robotic crawler for sewer pipes</span>
+            </div>
+            <div class="row">
+              <span class="k">Inspecting range</span><span class="v">From 75 mm (3″) — compact chassis</span>
+            </div>
+            <div class="row">
+              <span class="k">Control unit</span><span class="v">IP54 rated, reporting software, image/video storage, keyboard</span>
+            </div>
+            <div class="row">
+              <span class="k">Camera</span><span class="v">Compact KG97 head, pan-tilt-zoom</span>
+            </div>
+            <div class="row">
+              <span class="k">Crawler</span><span class="v">KG97, 6×6 steerable, interchangeable wheels</span>
+            </div>
+            <div class="row">
+              <span class="k">Cable reel</span><span class="v">Portable, manual or motorized</span>
+            </div>
+            <div class="row">
+              <span class="k">Cable length</span><span class="v">100 m or 200 m (typical entry package)</span>
+            </div>
+            <div class="row">
+              <span class="k">Expansion</span><span class="v">KG100 crawler &amp; full-size camera — see PipeCruiser 250</span>
+            </div>
+          </div>
+          <div class="pd-actions">
+            <a href="/contact" class="btn btn-accent">
+              Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="/family/inspection" class="btn btn-dark">Back to overview</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-wheels">
+        <div class="pc-wheels-head">
+          <span class="eyebrow muted">Configuration</span>
+          <h2>Compact crawler, compact camera</h2>
+          <p class="pc-wheels-lead">The PipeCruiser 150 package</p>
+          <p>
+            PipeCruiser 150 is defined by a single, coherent pairing: the <strong>KG97</strong> crawler — our smaller 6×6 platform for tight laterals — and the
+            <strong>compact camera head</strong> designed for that chassis. The head keeps a slimmer profile than the full-size zoom unit, but retains pan, tilt
+            and zoom control and the HD picture quality operators expect for condition grading. Combined with a manual reel (typically 200&nbsp;m), it is a
+            practical first crawler system for contractors building motorized capability or for utilities standardising on one control platform across crews.
+          </p>
+        </div>
+        <div class="pc-wheels-gallery">
+          {
+            configGallery.map((item) => (
+              <figure>
+                <img src={item.src} alt={item.alt} loading="lazy" width="1024" height="1024" />
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="pc-wheels">
+        <div class="pc-wheels-head">
+          <span class="eyebrow muted">Upgrade path</span>
+          <h2>Built to grow with your programme</h2>
+          <p>
+            The 150 is an entry configuration, not a dead end. Control electronics, reporting software, umbilical reels and operator training carry forward
+            when you add the <strong>KG100</strong> larger crawler and the <strong>full-size pan-tilt-zoom camera</strong> — the combination at the heart of
+            <a href="/product/pipecruiser-250">PipeCruiser 250</a>. Swap chassis and camera on the same cart; extend reach with longer cable options up to
+            300&nbsp;m; widen the inspecting envelope toward 500&nbsp;mm (20″) mains. You invest once in the workflow and expand hardware only when survey
+            scope demands it.
+          </p>
+        </div>
+      </div>
+
+      <div class="pc-wheels">
+        <div class="pc-wheels-head">
+          <span class="eyebrow muted">Crawler configuration</span>
+          <h2>Interchangeable wheels</h2>
+          <p>
+            Even on the compact KG97 chassis, PipeCruiser uses interchangeable wheel sets so you can adapt traction and ground clearance to the pipe you are
+            in — from rough cast iron to smooth PVC or a freshly cured liner.
+          </p>
+        </div>
+        <div class="pc-wheels-gallery">
+          {
+            wheelGallery.map((item) => (
+              <figure>
+                <img src={item.src} alt={item.alt} loading="lazy" width="1024" height="1024" />
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="pd-more">
+        <h3>More in this family</h3>
+        <div class="chip-row">
+          <a class="chip" href="/product/pipecruiser-250">
+            PipeCruiser 250 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/product/rapido-pro">
+            Rapido Pro <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/product/pipecruiser-800">
+            PipeCruiser 800 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a class="chip" href="/product/sewerzoom">
+            SewerZoom <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
