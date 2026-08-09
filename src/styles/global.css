@@ -37,6 +37,7 @@
   .nav{display:flex;align-items:center;justify-content:space-between;height:88px;gap:24px}
   .brand{cursor:pointer;display:inline-flex;align-items:center}
   .brand img{height:67.5px;width:auto;display:block}
+  .brand img.logo-light{filter:brightness(0) invert(1)}
   .menu{display:flex;align-items:center;gap:2px;height:100%}
   .menu>li{list-style:none;position:relative;height:100%;display:flex;align-items:center;flex-shrink:0}
   .menu>li>a{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;flex-shrink:0;padding:0 12px;height:100%;display:flex;align-items:center;color:var(--ink-2);position:relative;transition:color .2s;cursor:pointer}
