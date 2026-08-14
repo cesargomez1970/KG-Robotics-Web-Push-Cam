@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroProductOverlays from '../components/HeroProductOverlays.astro';
+import HeroBackgroundSlides from '../components/HeroBackgroundSlides.astro';
 
 const title = 'KG Robotics — Inspect · Rehab · Inspect';
 const description =
@@ -58,13 +58,7 @@ const flowColumns = [
 
 <BaseLayout title={title} description={description}>
   <section class="hero hero-v2">
-    <div class="hero-slides">
-      <div class="hero-slide active" style="background-image:url('/images/hero-street-cipp.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/img-001.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/img-002.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/img-003.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/hero-manhole.png')"></div>
-    </div>
+    <HeroBackgroundSlides />
     <div class="hero-overlay"></div>
     <div class="wrap">
       <div class="hero-grid">
@@ -109,12 +103,12 @@ const flowColumns = [
               Book a Demo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
             <a href="/" class="btn btn-ghost">Home v1</a>
+            <a href="/index-v4" class="btn btn-ghost">Home v4</a>
             <a href="/index-v3" class="btn btn-ghost">Home v3</a>
           </div>
         </div>
       </div>
     </div>
-    <HeroProductOverlays />
   </section>
 
   <section class="block">

@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'DryCore™ Tech — KG Robotics';
+const description =
+  'DryCore™ isolates compressed-air cooling from LED emitters and optics — stable irradiance, longer maintenance intervals and fewer unplanned stoppages on CIPP sites.';
+
+const pathways = [
+  {
+    title: 'Oil carry-over',
+    body: 'Aerosolised lubricant deposits as a micron-scale film on the emitter surface and secondary optics, where it attenuates UV transmission. The head does not fail. It simply under-irradiates — and the loss is invisible to the operator until an under-cured section is identified after the liner is already in place.',
+  },
+  {
+    title: 'Moisture and condensation',
+    body: 'Expanding compressed air drops in temperature. Where the dew point of the supply exceeds board surface temperature, condensation forms directly on the PCB. The result is track and solder-joint corrosion and ion migration between adjacent pads: progressive, intermittent, and difficult to diagnose in the field.',
+  },
+  {
+    title: 'Particulate',
+    body: 'Entrained solids abrade and foul the optical surfaces, compounding the transmission loss already caused by oil deposition.',
+  },
+];
+
+const benefits = [
+  {
+    title: 'Predictable cure times',
+    body: 'Consistent output means consistent linear cure speed, and installation cycles you can plan against.',
+  },
+  {
+    title: 'Longer maintenance intervals',
+    body: 'No optical cleaning regime driven by air-supply contamination.',
+  },
+  {
+    title: 'Reduced filtration dependency',
+    body: 'Cure quality no longer hangs on whether the compressor’s separator was serviced.',
+  },
+  {
+    title: 'Fewer unplanned stoppages',
+    body: 'The real cost of a failed head is not the repair. It is a lost site day with an impregnated liner already committed.',
+  },
+];
+
+const verified = [
+  { k: 'Steady-state junction temperature at nominal drive current', v: '— °C' },
+  { k: 'Emitter manufacturer maximum rating', v: '— °C' },
+  { k: 'Operating margin', v: '— K' },
+  { k: 'Measured irradiance retention after field service hours', v: '— %' },
+];
+---
+
+<BaseLayout title={title} description={description} activeFam="led">
+  <section class="block drycore-hero">
+    <div class="wrap">
+      <div class="crumbs">
+        <a href="/">Home</a><span class="sep">/</span><a href="/family/led">Pipe Renovation</a><span class="sep">/</span><span class="title-mixed">DryCore™ Tech</span>
+      </div>
+      <div class="sec-head drycore-hero-head">
+        <span class="eyebrow muted">Cooling technology</span>
+        <h1 class="title-mixed">DryCore™</h1>
+        <p class="drycore-lead">Cooling air that never touches the light.</p>
+        <p>
+          Every LED UV curing head has to be cooled, and on site the only cooling medium available is compressed air. DryCore™ uses that air without ever
+          exposing the emitters to it.
+        </p>
+        <div class="drycore-hero-actions">
+          <a href="/contact" class="btn btn-accent">
+            Request the technical datasheet
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+          <a href="/contact" class="btn btn-dark">Talk to an engineer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Field reality</span>
+        <h2>Site air is not clean air</h2>
+        <p>
+          Compressed air on a rehabilitation site comes from mobile compressors that are, in the overwhelming majority of cases, oil-lubricated. Separators,
+          filters and dryers are specified on paper. Under field conditions they are rarely maintained to schedule.
+        </p>
+        <p>
+          Conventional curing heads route that supply directly across the PCBs carrying the LED emitters. Whatever the compressor delivers, the emitters
+          receive.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="family-advantages drycore-pathways">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Contamination</span>
+        <h2>Three contamination pathways, one shared consequence</h2>
+      </div>
+      <div class="advantages-grid">
+        {pathways.map((item) => (
+          <article class="advantage">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+      <p class="drycore-bridge">
+        All three degrade irradiance before they ever cause a visible failure. By the time a head is obviously defective, cure quality has been drifting for a
+        long time.
+      </p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="drycore-split">
+        <div class="copy">
+          <div class="sec-head drycore-split-head">
+            <span class="eyebrow muted">Architecture</span>
+            <h2>Separate the air from the light</h2>
+          </div>
+          <p>
+            DryCore™ physically isolates the compressed-air circuit from the optical and electronic assembly. Heat generated at the emitters is removed by
+            conduction through the head structure to a dedicated heat-transfer interface, where the airflow carries it away.
+          </p>
+          <p>The air does its thermal work. It never reaches a PCB, an emitter or an optical surface.</p>
+          <p>
+            This eliminates all three contamination pathways at the design stage, rather than mitigating each one downstream through filtration whose
+            effectiveness depends on site discipline that manufacturers cannot control.
+          </p>
+        </div>
+        <figure class="drycore-figure">
+          <img src="/images/sewerlight-600-system-04.png" alt="SewerLight curing head — optical assembly separate from cooling airflow" loading="lazy" />
+          <figcaption>DryCore™ airflow — the cooling circuit is sealed from the optical chamber. Heat crosses by conduction only.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Operator outcomes</span>
+        <h2>Stable irradiance across service life</h2>
+      </div>
+      <div class="advantages-grid">
+        {benefits.map((item) => (
+          <article class="advantage">
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block drycore-verified">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Thermal design</span>
+        <h2>Verified performance</h2>
+        <p>
+          Indirect cooling introduces additional thermal resistance into the junction-to-ambient path. DryCore™ was dimensioned specifically to absorb it.
+          Full figures are provided on the technical datasheet — request a copy for your configuration.
+        </p>
+      </div>
+      <div class="drycore-specs">
+        {verified.map((row) => (
+          <div class="row">
+            <span class="k">{row.k}</span><span class="v">{row.v}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Product range</span>
+        <h2 class="title-mixed">DryCore™ across the SewerLight range</h2>
+        <p>
+          DryCore™ cooling is standard on SewerLight UV LED curing systems. Head dimensions, power classes and cure-diameter ranges are listed on the
+          individual product pages.
+        </p>
+        <p class="drycore-range-link">
+          <a href="/family/led" class="btn btn-dark">
+            See the SewerLight curing range
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="van-fit-cta drycore-cta">
+        <div>
+          <h2 class="drycore-cta-title">Specify a system</h2>
+          <p>
+            Tell us your typical diameter range, liner types and daily production targets, and we will size a configuration and send the full technical
+            documentation.
+          </p>
+        </div>
+        <a href="/contact" class="btn btn-accent">
+          Contact engineering <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

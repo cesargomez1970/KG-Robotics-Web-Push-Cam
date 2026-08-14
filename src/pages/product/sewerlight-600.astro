@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { curingHeads } from '../../data/curing-heads';
+import { resolveAccessory, sewerlightAccessories } from '../../data/sewerlight-accessories';
+import SewerLightBrand from '../../components/SewerLightBrand.astro';
 
 const title = 'SewerLight 600 — KG Robotics';
 const description =
-  'SewerLight 600 — UV LED curing for laterals and small-to-mid mainlines. DryCore™ isolates site compressed air from LED emitters for stable irradiance and longer maintenance intervals.';
+  'SewerLight 600 — UV LED curing for laterals and small-to-mid mainlines. DryCore™ isolates compressed air from the optical assembly for stable irradiance and longer maintenance intervals.';
 
 const systemGallery = [
   { src: '/images/sewerlight-600-system-01.png', alt: 'SewerLight 600 — complete UV LED curing system' },
@@ -13,6 +15,10 @@ const systemGallery = [
   { src: '/images/sewerlight-600-system-04.png', alt: 'SewerLight 600 — rugged control case and curing assembly' },
   { src: '/images/sewerlight-600-system-05.png', alt: 'SewerLight 600 — mobile platform with monitor and reel' },
 ];
+
+const accessories = sewerlightAccessories.map(resolveAccessory);
+const featuredAccessory = accessories.find((item) => item.featured) ?? accessories[0];
+const accessoryGrid = accessories.filter((item) => item !== featuredAccessory);
 ---
 
 <BaseLayout title={title} description={description} activeFam="led">
@@ -42,14 +48,13 @@ const systemGallery = [
         </div>
         <div class="pd-info">
           <span class="eyebrow muted">UV LED Curing Systems</span>
-          <h1>SewerLight 600</h1>
+          <h1 class="sl600-title"><SewerLightBrand /> <span class="sl600-num-wrap"><span class="sl600-drycore">DryCore™</span>600</span></h1>
           <div class="ptag">Laterals & small mainlines</div>
           <p class="desc">
             UV LED curing system for laterals and small-to-mid diameter mainlines. Interchangeable ZENITH heads, mobile reel cart and rugged control
             electronics. Ultra-efficient head design for faster curing involving less air flow and a smaller compressor. DryCore™ LED elements cooling
-            technology isolates the compressed-air circuit entirely from the optical and electronic assembly. The LED emitters and their PCBs are never
-            exposed to the moisture, oil carry-over or particulate typically present in site air supplies. The result is stable irradiance throughout the
-            service life of the equipment, longer maintenance intervals and fewer unplanned stoppages on site.
+            technology isolates the compressed-air circuit entirely from the optical and electronic assembly. The result is stable irradiance throughout
+            the service life of the equipment, longer maintenance intervals and fewer unplanned stoppages on site.
           </p>
           <div class="pd-specs">
             <div class="row">
@@ -86,7 +91,42 @@ const systemGallery = [
     </div>
   </section>
 
-  <section class="block alt" id="curing-heads">
+  <section class="block alt" id="accessories">
+    <div class="wrap">
+      <div class="sec-head sl600-accessories-intro">
+        <span class="eyebrow muted">Accessories</span>
+        <h2>ACCESSORIES</h2>
+      </div>
+
+      <div class="sl600-accessories-layout">
+        <article class="sl600-accessory-featured">
+          <div class="sl600-accessory-featured-visual">
+            <img src={featuredAccessory.image} alt={featuredAccessory.imageAlt} loading="lazy" />
+          </div>
+          <div class="sl600-accessory-featured-copy">
+            <h3>{featuredAccessory.name}</h3>
+            {featuredAccessory.summary && <p>{featuredAccessory.summary}</p>}
+          </div>
+        </article>
+
+        <div class="sl600-accessories-grid">
+          {
+            accessoryGrid.map((item) => (
+              <article class="sl600-accessory-cell">
+                <div class="sl600-accessory-thumb">
+                  <img src={item.image} alt={item.imageAlt} loading="lazy" />
+                </div>
+                <h3>{item.name}</h3>
+                {item.summary && <p>{item.summary}</p>}
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="curing-heads">
     <div class="wrap">
       <div class="sec-head sl600-heads-intro">
         <span class="eyebrow muted">Interchangeable heads</span>

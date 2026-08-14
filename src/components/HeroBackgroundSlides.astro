@@ -1,0 +1,27 @@
+---
+const slides = [
+  { base: 'hero-calle-a', w: 1024, h: 576 },
+  { base: 'hero-calle-b', w: 1024, h: 576 },
+  { base: 'hero-calle-c', w: 1024, h: 576 },
+];
+---
+
+<div class="hero-slides">
+  {
+    slides.map((slide, index) => (
+      <div class:list={['hero-slide', { active: index === 0 }]}>
+        <img
+          src={`/images/${slide.base}.png`}
+          srcset={`/images/${slide.base}.png ${slide.w}w, /images/${slide.base}-2048.png 2048w, /images/${slide.base}-3840.png 3840w`}
+          sizes="100vw"
+          alt=""
+          width={slide.w}
+          height={slide.h}
+          loading={index === 0 ? 'eager' : 'lazy'}
+          decoding="async"
+          fetchpriority={index === 0 ? 'high' : 'auto'}
+        />
+      </div>
+    ))
+  }
+</div>

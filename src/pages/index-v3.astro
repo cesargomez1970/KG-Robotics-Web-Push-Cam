@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroProductOverlays from '../components/HeroProductOverlays.astro';
+import HeroBackgroundSlides from '../components/HeroBackgroundSlides.astro';
 
 const title = 'KG Robotics — Diagnose & Renovate Sewer Networks';
 const description =
@@ -21,13 +21,7 @@ const inspectItems = [
 
 <BaseLayout title={title} description={description}>
   <section class="hero hero-v3">
-    <div class="hero-slides">
-      <div class="hero-slide active" style="background-image:url('/images/hero-street-cipp.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/img-001.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/img-002.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/img-003.jpg')"></div>
-      <div class="hero-slide" style="background-image:url('/images/hero-manhole.png')"></div>
-    </div>
+    <HeroBackgroundSlides />
     <div class="hero-overlay"></div>
     <div class="wrap">
       <div class="hero-v3-intro">
@@ -82,9 +76,9 @@ const inspectItems = [
         <a href="/contact" class="btn btn-ghost">Book a Demo</a>
         <a href="/" class="hero-v3-alt">Home v1</a>
         <a href="/index-v2" class="hero-v3-alt">Home v2</a>
+        <a href="/index-v4" class="hero-v3-alt">Home v4</a>
       </div>
     </div>
-    <HeroProductOverlays />
   </section>
 
   <div class="values">
@@ -113,7 +107,7 @@ const inspectItems = [
           <h3>Visual Inspection</h3>
           <p>Push cameras, HD crawlers and zoom systems — field-proven imaging at a fraction of the CAPEX.</p>
           <a href="/product/pipecruiser-250" class="value-product">
-            <img src="/images/pipecruiser-hd-100.png" alt="PipeCruiser 250" />
+            <img src="/images/pipecruiser-250-crawler.png" alt="PipeCruiser 250" />
             <span class="value-product-label">PipeCruiser 250</span>
           </a>
         </div>

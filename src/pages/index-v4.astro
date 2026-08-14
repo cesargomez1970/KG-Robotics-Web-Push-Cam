@@ -1,28 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroBackgroundSlides from '../components/HeroBackgroundSlides.astro';
 
-const title = "KG Robotics — Inspection & Rehabilitation Systems for Sewer Networks";
-const description = "KG Robotics designs and manufactures UV LED curing systems, cutting solutions and visual inspection equipment for sewer networks. Made in Poland, engineered for low CAPEX.";
+const title = 'KG Robotics — Inspection & Rehabilitation Systems for Sewer Networks';
+const description =
+  'KG Robotics designs and manufactures UV LED curing systems, cutting solutions and visual inspection equipment for sewer networks. Made in Poland, engineered for low CAPEX.';
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="hero">
-    <HeroBackgroundSlides />
-    <div class="hero-overlay"></div>
+  <section class="hero hero-v4">
     <div class="wrap">
-      <div class="hero-grid">
-        <div>
+      <div class="hero-grid hero-v4-grid">
+        <div class="hero-v4-copy">
           <span class="eyebrow">Inspect → Renovate → Validate</span>
           <h1 data-i18n-html="heroH1">
             <span class="hero-h1-line hero-h1-line--down">CIPP <span class="o">Trenchless</span> Solutions</span>
             <span class="hero-h1-line hero-h1-line--up">AND <span class="o">SEWER</span> Visual Inspection</span>
           </h1>
-          <p class="lead">Cure-in-Place-Pipe UV LED curing systems, cutting robots and visual inspection equipment — engineered in Poland to deliver reliable performance at a fraction of the CAPEX.</p>
+          <p class="lead">
+            Cure-in-Place-Pipe UV LED curing systems, cutting robots and visual inspection equipment — engineered in Poland to deliver reliable
+            performance at a fraction of the CAPEX.
+          </p>
           <div class="hero-actions">
-            <a href="/family/led" class="btn btn-accent">Explore Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a href="/family/led" class="btn btn-accent">
+              Explore Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
             <a href="/about" class="btn btn-ghost">About KG Robotics</a>
+            <a href="/" class="btn btn-ghost">Home v1</a>
           </div>
+        </div>
+        <div class="hero-v4-showcase">
+          <img
+            src="/images/hero-rapido-inspection-system.png?v=3"
+            alt="Rapido Pro, PipeCruiser and SewerZoom inspection systems"
+            width="916"
+            height="511"
+            loading="eager"
+            decoding="async"
+          />
         </div>
       </div>
     </div>
@@ -84,7 +98,7 @@ const description = "KG Robotics designs and manufactures UV LED curing systems,
           <div class="fc-body">
             <h3>UV LED Curing Systems</h3>
             <p>Patent-pending LED light-curing systems for trenchless rehabilitation of sewer networks, from 80 mm.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
           </div>
         </a>
         <a class="fam-card" href="/family/cutting">
@@ -92,7 +106,7 @@ const description = "KG Robotics designs and manufactures UV LED curing systems,
           <div class="fc-body">
             <h3>Cutting Robots</h3>
             <p>Robust, air-powered cutters for milling and lateral reinstatement during pipe rehabilitation.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
           </div>
         </a>
         <a class="fam-card" href="/family/inspection">
@@ -100,7 +114,7 @@ const description = "KG Robotics designs and manufactures UV LED curing systems,
           <div class="fc-body">
             <h3>Sewer Inspection Systems</h3>
             <p>Push cameras, robotic crawlers and zoom manhole cameras — field-proven, low-CAPEX inspection.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
           </div>
         </a>
         <a class="fam-card" href="/family/industrial">
@@ -108,7 +122,7 @@ const description = "KG Robotics designs and manufactures UV LED curing systems,
           <div class="fc-body">
             <h3>Industrial / RVI</h3>
             <p>Visual Testing (VT) and Remote Visual Inspection (RVI) for industrial pipe networks.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span>
           </div>
         </a>
       </div>
