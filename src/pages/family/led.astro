@@ -46,10 +46,10 @@ const products = [
   },
   {
     slug: 'sewerlight-1200',
-    image: '/images/img-009.jpg',
+    image: '/images/sewerlight-1200-system.png',
     name: 'SewerLight 1200',
     tag: 'Larger mainlines',
-    desc: 'Higher-output LED system for larger mainline diameters, delivering even, controlled radiation across the full length of the liner.',
+    desc: 'Higher-output LED system for larger mainline diameters. Interchangeable ZENITH heads up to 1200 W of high-efficiency LEDs equipped with DryCore™ cooling technology. Due to the interchangeability of the curing heads, the SewerLight 1200 can work from 2″ up to 16″ (DN400) while curing invertible liners, and up to 32″ curing fibre-glass preimpregnated liners.',
   },
   {
     slug: 'sewerchain-2400',
@@ -74,14 +74,27 @@ const products = [
       <div class="crumbs">
         <a href="/">Home</a><span class="sep">/</span><span>UV LED Curing Systems</span>
       </div>
-      <div class="sec-head">
-        <span class="eyebrow muted">Product Family</span>
-        <h1>UV LED Curing Systems</h1>
-        <p>Patent-pending LED light-curing systems for trenchless rehabilitation of sewer networks, from 80 mm.</p>
+      <div class="family-page-head">
+        <span class="eyebrow muted family-page-eyebrow">Product Family</span>
+        <div class="family-page-head-main">
+          <div class="family-page-head-copy">
+            <h1 class="family-page-title">UV LED Curing Systems</h1>
+            <p class="family-page-lead">Patent-pending LED light-curing systems for trenchless rehabilitation of sewer networks, from 80 mm.</p>
+          </div>
+          <figure class="family-page-head-img">
+            <img
+              src="/images/uv-led-curing-head.png"
+              alt="UV LED curing head with integrated camera"
+              loading="eager"
+              width="697"
+              height="453"
+            />
+          </figure>
+        </div>
       </div>
-      <div class="family-intro">
+      <div class="family-intro family-intro--tight">
         <div class="family-img">
-          <img src="/images/img-004.jpg" alt="UV LED Curing Systems" />
+          <img src="/images/uv-led-curing-site.png" alt="UV LED curing system deployed on site with mobile control unit and reel" />
         </div>
         <div class="copy">
           <p>
@@ -98,34 +111,8 @@ const products = [
           </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="family-advantages">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow muted">Engineering advantage</span>
-        <h2>Why operators choose KG Robotics UV LED curing</h2>
-        <p>
-          Every detail below responds to real feedback from the field — the improvements operators asked for most, built into a new generation of UV LED curing heads.
-        </p>
-      </div>
-      <div class="advantages-grid">
-        {
-          advantages.map((item) => (
-            <article class="advantage">
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head sec-head--follow">
         <span class="eyebrow muted">Product range</span>
         <h2>Explore the UV LED curing range</h2>
       </div>
@@ -148,6 +135,28 @@ const products = [
                 </span>
               </div>
             </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="family-advantages">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Engineering advantage</span>
+        <h2>Why operators choose KG Robotics UV LED curing</h2>
+        <p>
+          Every detail below responds to real feedback from the field — the improvements operators asked for most, built into a new generation of UV LED curing heads.
+        </p>
+      </div>
+      <div class="advantages-grid">
+        {
+          advantages.map((item) => (
+            <article class="advantage">
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
           ))
         }
       </div>

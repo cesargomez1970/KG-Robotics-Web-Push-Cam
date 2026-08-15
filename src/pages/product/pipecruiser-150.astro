@@ -11,8 +11,24 @@ const systemGallery = [
 ];
 
 const configGallery = [
-  { src: '/images/pipecruiser-250-config-01.png', alt: 'PipeCruiser 150 — KG97 crawler with compact pan-tilt camera' },
-  { src: '/images/pipecruiser-250-config-04.png', alt: 'PipeCruiser platform — compact and full-size configurations' },
+  {
+    src: '/images/pipecruiser-150-kg97-wheels.png',
+    alt: 'PipeCruiser 150 — KG97 crawler with interchangeable wheel sets',
+    caption:
+      'The KG97 crawler, KG77 pan-tilt-zoom camera and interchangeable wheel sets let you match the inspection platform to the pipe diameter on site. Dedicated traction wheels are available for smooth, low-friction surfaces — including freshly cured liners.',
+  },
+  {
+    src: '/images/pipecruiser-150-kg97-vs-kg130.png',
+    alt: 'PipeCruiser 150 — KG97 and KG130 crawler size comparison',
+    caption:
+      'Side-by-side comparison of PipeCruiser 150 and PipeCruiser 250 — both fitted with the smallest wheel sets for the minimum working diameter in their range.',
+  },
+  {
+    src: '/images/pipecruiser-150-control-unit.png',
+    alt: 'PipeCruiser 150 — control unit, keyboard and joysticks',
+    caption:
+      'Control unit with anti-glare monitor, keyboard and operator joysticks. IP54 splash protection. The illustration shows the control unit mounted on the transport trolley.',
+  },
 ];
 
 const wheelGallery = [
@@ -93,18 +109,13 @@ const wheelGallery = [
           <span class="eyebrow muted">Configuration</span>
           <h2>Compact crawler, compact camera</h2>
           <p class="pc-wheels-lead">The PipeCruiser 150 package</p>
-          <p>
-            PipeCruiser 150 is defined by a single, coherent pairing: the <strong>KG97</strong> crawler — our smaller 6×6 platform for tight laterals — and the
-            <strong>compact camera head</strong> designed for that chassis. The head keeps a slimmer profile than the full-size zoom unit, but retains pan, tilt
-            and zoom control and the HD picture quality operators expect for condition grading. Combined with a manual reel (typically 200&nbsp;m), it is a
-            practical first crawler system for contractors building motorized capability or for utilities standardising on one control platform across crews.
-          </p>
         </div>
         <div class="pc-wheels-gallery">
           {
             configGallery.map((item) => (
-              <figure>
+              <figure class:list={[{ 'has-caption': item.caption }]}>
                 <img src={item.src} alt={item.alt} loading="lazy" width="1024" height="1024" />
+                {item.caption && <figcaption>{item.caption}</figcaption>}
               </figure>
             ))
           }
@@ -112,16 +123,25 @@ const wheelGallery = [
       </div>
 
       <div class="pc-wheels">
-        <div class="pc-wheels-head">
-          <span class="eyebrow muted">Upgrade path</span>
-          <h2>Built to grow with your programme</h2>
-          <p>
-            The 150 is an entry configuration, not a dead end. Control electronics, reporting software, umbilical reels and operator training carry forward
-            when you add the <strong>KG100</strong> larger crawler and the <strong>full-size pan-tilt-zoom camera</strong> — the combination at the heart of
-            <a href="/product/pipecruiser-250">PipeCruiser 250</a>. Swap chassis and camera on the same cart; extend reach with longer cable options up to
-            300&nbsp;m; widen the inspecting envelope toward 500&nbsp;mm (20″) mains. You invest once in the workflow and expand hardware only when survey
-            scope demands it.
-          </p>
+        <div class="drycore-split pc-upgrade-split">
+          <figure class="drycore-figure">
+            <img
+              src="/images/pipecruiser-150-upgrade-crawlers.png"
+              alt="PipeCruiser — KG97 compact crawler chassis and KG130 full-size crawler chassis"
+              loading="lazy"
+              width="1024"
+              height="1024"
+            />
+          </figure>
+          <div class="copy pc-upgrade-copy">
+            <div class="pc-wheels-head pc-upgrade-head">
+              <span class="eyebrow muted">Upgrade path</span>
+              <h2>Built to grow with your programme</h2>
+            </div>
+            <p>
+              The 150 is an entry configuration, not a dead end. Control electronics, reporting software, umbilical cable &amp; reel are compatible with the <strong>KG130</strong> larger crawler and the full-size pan-tilt-zoom camera — the combination at the heart of <a href="/product/pipecruiser-250">PipeCruiser 250</a>. Swap chassis and camera on the same cart; extend reach with longer cable options up to 300&nbsp;m; widen the inspecting envelope toward 500&nbsp;mm (20″) mains. You invest once in the workflow and expand hardware only when survey scope demands it.
+            </p>
+          </div>
         </div>
       </div>
 
