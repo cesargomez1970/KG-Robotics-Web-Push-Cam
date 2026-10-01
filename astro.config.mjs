@@ -9,4 +9,8 @@ export default defineConfig({
   server: {
     port: 4321,
   },
+  redirects: {
+    '/product/sewerlight-600': '/',
+    '/product/sewerlight-1200': '/',
+  },
 });

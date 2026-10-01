@@ -1,29 +1,190 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroBackgroundSlides from '../components/HeroBackgroundSlides.astro';
 
-const title = "KG Robotics — Inspection & Rehabilitation Systems for Sewer Networks";
-const description = "KG Robotics designs and manufactures UV LED curing systems, cutting solutions and visual inspection equipment for sewer networks. Made in Poland, engineered for low CAPEX.";
+const title = 'Rapido Pro — Push Camera for Sewer Inspection | KG Robotics';
+const description =
+  'Rapido Pro Full HD is a push-camera system for sewer inspection from 40 mm to 300 mm. 60 m reel, KG41 camera with automatic up-right sensor position and a portable control unit. Made in Poland.';
+
+const fieldPhotos = [
+  { src: '/images/rapido/07-screen.jpg', alt: 'Control screen showing the pipe interior during a push inspection', portrait: false },
+  { src: '/images/rapido/06-camera-head.jpg', alt: 'KG41 camera head resting on the red push-rod reel', portrait: false },
+  { src: '/images/rapido/09-feeding.jpg', alt: 'Operator holding the camera head at the manhole, reel cart behind', portrait: false },
+  { src: '/images/rapido/10-operator.jpg', alt: 'Operator feeding the red push rod from the reel into the manhole', portrait: false },
+  { src: '/images/rapido/11-watching.jpg', alt: 'Operator watching the inspection on the Rapido Pro screen', portrait: false },
+  { src: '/images/rapido/12-skid.jpg', alt: 'Operator fitting a centering skid on the camera head', portrait: false },
+];
+
+const infographics = [
+  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — push camera reel, control unit and camera head' },
+  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — complete mobile push inspection system' },
+  { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — control case, screen and keyboard' },
+  { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — wheeled reel cart with the monitor closed' },
+];
+
+const systemGallery = [
+  { src: '/images/rapido-pro.png', alt: 'Rapido Pro — complete push-camera system, front three-quarter view' },
+  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — reel cart, control unit and camera head' },
+  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — side view with battery pack, keyboard and camera head' },
+  { src: '/images/hero-overlay-rapido.png', alt: 'Rapido Pro — wheeled reel with monitor open and push rod' },
+  { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — rear view with the monitor closed and camera head extended' },
+  { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — 10.1 inch touchscreen and keyboard' },
+];
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class="hero">
-    <HeroBackgroundSlides />
-    <div class="hero-overlay"></div>
+<BaseLayout title={title} description={description} activeFam="push">
+  <section class="hero hero-plain">
     <div class="wrap">
       <div class="hero-grid">
-        <div>
-          <span class="eyebrow">Inspect → Renovate → Validate</span>
-          <h1 data-i18n-html="heroH1">
-            <span class="hero-h1-line hero-h1-line--down">CIPP <span class="o">Trenchless</span> Solutions</span>
-            <span class="hero-h1-line hero-h1-line--up">AND <span class="o">SEWER</span> Visual Inspection</span>
-          </h1>
-          <p class="lead">Cure-in-Place-Pipe UV LED curing systems, cutting robots and visual inspection equipment — engineered in Poland to deliver reliable performance at a fraction of the CAPEX.</p>
-          <div class="hero-actions">
-            <a href="/family/led" class="btn btn-accent">Explore Products <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a href="/about" class="btn btn-ghost">About KG Robotics</a>
+        <span class="eyebrow">Push camera · Full HD</span>
+        <h1>
+          <span class="hero-h1-line hero-h1-line--down">Rapido <span class="o">Pro</span></span>
+          <span class="hero-h1-line hero-h1-line--up"><span class="o">HD</span> push camera</span>
+        </h1>
+        <p class="lead">Rapido Pro Full HD inspects pipelines from 40 mm to 300 mm, laterals, house connections and small mains. It includes a wheeled coiler with 60 m of umbilical push cable, a HD KG41 camera with automatic axial levelling, and a portable Full HD control unit.</p>
+        <div class="hero-actions">
+          <a href="/contact" class="btn btn-accent">Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="#system" class="btn btn-ghost">See the system</a>
+        </div>
+        <div class="hero-aside">
+          <p><span class="hero-aside-name">RAPIDO <span class="o">PRO</span></span>is the first product from KG ROBOTICS. This push camera begins a series of systems for sewer inspection and trenchless rehabilitation.</p>
+          <p>Stay tuned for what's coming next...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="system">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">Rapido Pro Full HD</span>
+        <h2>Push inspection, one platform</h2>
+        <p>Feed the rod, track distance, and record video and stills with date, time and project overlays — from a compact cart built for daily contractor use.</p>
+      </div>
+      <div class="pd-grid">
+        <div class="pd-img pd-img--carousel">
+          <div class="pd-carousel" data-interval="2600">
+            {
+              systemGallery.map((item, index) => (
+                <img
+                  class:list={['pd-carousel-slide', { active: index === 0 }]}
+                  src={item.src}
+                  alt={item.alt}
+                  width="1024"
+                  height="1024"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              ))
+            }
           </div>
         </div>
+        <div class="pd-info">
+          <span class="eyebrow muted">Push camera system</span>
+          <h2>Rapido Pro</h2>
+          <div class="ptag">Full HD · 40–300 mm</div>
+          <p class="desc">
+            The reel cart, control console and camera head work as a single field system. The stainless KG41 body and steel frame are built for the pipe, and centering skids for DN75 and DN150 keep the head on axis in typical lateral sizes.
+          </p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Inspecting range</span><span class="v">DN40–DN300 mm (1½″–12″)</span></div>
+            <div class="row"><span class="k">Camera head</span><span class="v">KG41, 1080p Full HD, automatic up-right sensor position</span></div>
+            <div class="row"><span class="k">Optics &amp; lighting</span><span class="v">105° horizontal FOV, 4-LED focused ring</span></div>
+            <div class="row"><span class="k">Push rod &amp; reel</span><span class="v">60 m, 512 Hz sonde, metre counter</span></div>
+            <div class="row"><span class="k">Control unit</span><span class="v">10.1″ 1080p touchscreen, USB or internal storage</span></div>
+            <div class="row"><span class="k">Power</span><span class="v">Milwaukee battery pack or mains adapter</span></div>
+            <div class="row"><span class="k">Pipe bends</span><span class="v">From DN75 at 90° (with centering skids)</span></div>
+          </div>
+          <div class="pd-actions">
+            <a href="/contact" class="btn btn-accent">
+              Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+            </a>
+            <a href="/distributors" class="btn btn-dark">Find a distributor</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pc-wheels">
+        <div class="pc-wheels-head">
+          <span class="eyebrow muted">System</span>
+          <h2>Built to push, view and record</h2>
+          <p class="pc-wheels-lead">Control unit · reel · KG41 camera</p>
+          <p>
+            Capture video and stills with on-screen documentation, export from USB or internal memory, and locate the head with the 512 Hz sonde. Rapido Pro is the complete push-camera system for everyday sewer inspection.
+          </p>
+        </div>
+        <div class="pc-wheels-gallery pc-wheels-gallery--4">
+          {
+            infographics.map((item) => (
+              <figure>
+                <img src={item.src} alt={item.alt} loading="lazy" width="1024" height="1024" />
+              </figure>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="camera">
+    <div class="wrap camera-stack">
+      <div class="camera-feature">
+        <figure class="camera-feature-visual">
+          <img src="/images/rapido-kg41-camera.jpg" alt="KG41 camera head with a focused LED ring around the lens" width="1024" height="1024" />
+        </figure>
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Camera head</span>
+          <h2>KG41 Full HD</h2>
+          <p>The picture comes from the KG41, a stainless head on the end of the rod. It records 1080p. Automatic up-right sensor position keeps the image upright as the head rolls through the pipe. A 105° horizontal view and a focused 4-LED ring light the wall ahead, from 40 mm laterals to 300 mm mains.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Image</span><span class="v">1080p Full HD</span></div>
+            <div class="row"><span class="k">Sensor position</span><span class="v">Automatic up-right</span></div>
+            <div class="row"><span class="k">Optics</span><span class="v">105° horizontal field of view</span></div>
+            <div class="row"><span class="k">Lighting</span><span class="v">4-LED focused ring</span></div>
+            <div class="row"><span class="k">Body</span><span class="v">Stainless steel</span></div>
+            <div class="row"><span class="k">In the pipe</span><span class="v">DN40–DN300, skids for DN75 and DN150</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="camera-feature camera-feature--bend">
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">90° bends</span>
+          <h2>Through the elbow</h2>
+          <p>A sprung neck sits between the head and the rod. It flexes as the KG41 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° elbow and the survey continues past it.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Bends</span><span class="v">90° from DN75</span></div>
+            <div class="row"><span class="k">Skids</span><span class="v">DN75 and DN150</span></div>
+            <div class="row"><span class="k">Neck</span><span class="v">Sprung, between head and rod</span></div>
+          </div>
+        </div>
+        <figure class="camera-feature-visual">
+          <img src="/images/rapido-kg41-spring.jpg" alt="Sprung neck of the KG41 camera head, built to flex through a bend" width="1024" height="1024" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow muted">On site</span>
+        <h2>One operator, from the surface</h2>
+        <p>The reel cart stays at the manhole. Feed the rod, watch the head on the control screen, and record the survey without a second crew.</p>
+      </div>
+      <div class="field-videos">
+        <video controls playsinline preload="metadata" poster="/videos/rapido-push-wide.jpg">
+          <source src="/videos/rapido-push-wide.mp4" type="video/mp4" />
+        </video>
+        <video controls playsinline preload="metadata" poster="/videos/rapido-push-close.jpg">
+          <source src="/videos/rapido-push-close.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="field-gallery">
+        {
+          fieldPhotos.map((item) => (
+            <figure>
+              <img class:list={{ 'is-portrait': item.portrait }} src={item.src} alt={item.alt} width="1024" height="768" loading="lazy" />
+            </figure>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -32,86 +193,27 @@ const description = "KG Robotics designs and manufactures UV LED curing systems,
     <div class="wrap">
       <div class="grid values-grid">
         <div class="value">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6m0 0 3-3m-3 3L9 5"/><rect x="4" y="8" width="16" height="13" rx="2"/><path d="M9 13h6M9 17h6"/></svg>
-          <h3>UV LED Curing</h3>
-          <p>Patent-pending LED systems for trenchless rehabilitation — from laterals at 80 mm to large-diameter mainlines.</p>
-          <a href="/product/sewerlight-600" class="value-product">
-            <img src="/images/sewerlight-600.png" alt="SewerLight 600" />
-            <span class="value-product-label">SewerLight 600</span>
-          </a>
-        </div>
-        <div class="value">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
-          <h3>Cutting Robots</h3>
-          <p>Air-powered cutters for milling obstructions and lateral reinstatement during pipe rehabilitation.</p>
-          <a href="/product/sewercut-100" class="value-product">
-            <img src="/images/img-011.jpg" alt="SewerCut 100" />
-            <span class="value-product-label">SewerCut 100</span>
-          </a>
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <h3>DN40–DN300</h3>
+          <p>Laterals, house connections and small mains, from 1½″ to 12″. Centering skids keep the head aligned through 90° bends from DN75.</p>
         </div>
         <div class="value">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-          <h3>Visual Inspection</h3>
-          <p>Push cameras, HD crawlers and zoom systems — field-proven imaging at a fraction of the CAPEX.</p>
-          <a href="/product/pipecruiser-250" class="value-product">
-            <img src="/images/pipecruiser-250-crawler.png" alt="PipeCruiser 250" />
-            <span class="value-product-label">PipeCruiser 250</span>
-          </a>
+          <h3>KG41 Full HD</h3>
+          <p>1080p camera head with automatic up-right sensor position, a 105° horizontal field of view and a 4-LED focused ring.</p>
         </div>
         <div class="value">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 17h8M6 11h12M7 7h10"/><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 17v2M17 17v2"/></svg>
-          <h3>Van Fitting</h3>
-          <p>Turnkey design and supply of CCTV inspection vans — your mobile HQ with KG Robotics systems integrated.</p>
-          <a href="/van-fitting" class="value-product">
-            <img src="/images/van-fitting-interior.png" alt="Van Fitting" />
-            <span class="value-product-label">Van Fitting</span>
-          </a>
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+          <h3>60 m reel</h3>
+          <p>Red push rod on a steel wheeled cart, with a metre counter and a 512 Hz sonde for locating the head from the surface.</p>
+        </div>
+        <div class="value">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          <h3>Field control</h3>
+          <p>10.1″ 1080p touchscreen, keyboard shortcuts and recording to USB or internal storage. Milwaukee battery pack or mains adapter.</p>
         </div>
       </div>
     </div>
   </div>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow muted">Product Range</span>
-        <h2>Explore our product families</h2>
-        <p>Four families covering trenchless rehabilitation, milling, and visual inspection — for sewer networks and industrial assets.</p>
-      </div>
-      <div class="fam-grid">
-        <a class="fam-card" href="/family/led">
-          <img src="/images/img-004.jpg" alt="UV LED Curing Systems" />
-          <div class="fc-body">
-            <h3>UV LED Curing Systems</h3>
-            <p>Patent-pending LED light-curing systems for trenchless rehabilitation of sewer networks, from 80 mm.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-        <a class="fam-card" href="/family/cutting">
-          <img src="/images/img-005.jpg" alt="Cutting Robots" />
-          <div class="fc-body">
-            <h3>Cutting Robots</h3>
-            <p>Robust, air-powered cutters for milling and lateral reinstatement during pipe rehabilitation.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-        <a class="fam-card" href="/family/inspection">
-          <img src="/images/img-006.jpg" alt="Sewer Inspection Systems" />
-          <div class="fc-body">
-            <h3>Sewer Inspection Systems</h3>
-            <p>Push cameras, robotic crawlers and zoom manhole cameras — field-proven, low-CAPEX inspection.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-        <a class="fam-card" href="/family/industrial">
-          <img src="/images/hero-industrial-2.png" alt="Industrial / RVI" />
-          <div class="fc-body">
-            <h3>Industrial / RVI</h3>
-            <p>Visual Testing (VT) and Remote Visual Inspection (RVI) for industrial pipe networks.</p>
-            <span class="more">Explore the range <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
 </BaseLayout>

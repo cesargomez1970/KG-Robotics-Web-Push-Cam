@@ -23,7 +23,7 @@ export const curingHeads: CuringHead[] = [
     image: '/images/curing-head-xs-1.png',
     imageAlt: 'Technical drawing — Extra Small curing head, 41×50×313 mm',
     summary:
-      'ZENITH 300W UV-C curing head for the KG SewerLight UV LED Lite system, built for DN75–DN150 pipe rehabilitation with integrated live-view inspection.',
+      'ZENITH 300W UV-C curing head for the KG UltraLUX UV LED Lite system, built for DN75–DN150 pipe rehabilitation with integrated live-view inspection.',
     highlights: [
       { label: 'Total power', value: '300 W' },
       { label: 'UV LED diodes', value: '120' },
@@ -62,7 +62,7 @@ export const curingHeads: CuringHead[] = [
         rows: [
           ['Glass', 'Rapid replacement'],
           ['Hose', 'Flexible'],
-          ['Compatibility', 'SewerLight UV LED Lite'],
+          ['Compatibility', 'UltraLUX UV LED Lite'],
         ],
       },
     ],
@@ -74,7 +74,7 @@ export const curingHeads: CuringHead[] = [
     image: '/images/curing-head-s-1.png',
     imageAlt: 'Technical drawing — Small curing head, 61×61×97 mm',
     summary:
-      'ZENITH 600W higher-output UV-C curing head for the KG SewerLight UV LED Lite system, scaled for DN100–DN250 pipe rehabilitation with integrated live-view inspection.',
+      'ZENITH 600W higher-output UV-C curing head for the KG UltraLUX UV LED Lite system, scaled for DN100–DN250 pipe rehabilitation with integrated live-view inspection.',
     highlights: [
       { label: 'Total power', value: '600 W' },
       { label: 'UV LED diodes', value: '240' },
@@ -113,7 +113,7 @@ export const curingHeads: CuringHead[] = [
         rows: [
           ['Glass', 'Rapid replacement'],
           ['Head design', 'QRC quick-release'],
-          ['Compatibility', 'SewerLight UV LED Lite'],
+          ['Compatibility', 'UltraLUX UV LED Lite'],
         ],
       },
     ],

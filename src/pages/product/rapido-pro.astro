@@ -3,29 +3,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Rapido Pro — KG Robotics';
 const description =
-  'Rapido Pro+ Full HD push-camera system for sewer inspection from 40 mm to 300 mm — 60 m reel, KG41 camera with auto levelling and portable control unit.';
+  'Rapido Pro Full HD push-camera system for sewer inspection from 40 mm to 300 mm — 60 m reel, KG41 camera with automatic up-right sensor position and portable control unit.';
 
 const systemGallery = [
-  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — push camera reel, control unit and camera head' },
-  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — complete mobile push inspection system' },
-  { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — rugged control case and red push rod reel' },
-  { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — wheeled reel cart with monitor and keyboard' },
+  { src: '/images/rapido-pro.png', alt: 'Rapido Pro — complete push-camera system, front three-quarter view' },
+  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — reel cart, control unit and camera head' },
+  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — side view with battery pack, keyboard and camera head' },
+  { src: '/images/hero-overlay-rapido.png', alt: 'Rapido Pro — wheeled reel with monitor open and push rod' },
+  { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — rear view with the monitor closed and camera head extended' },
+  { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — 10.1 inch touchscreen and keyboard' },
 ];
 
-const gallery = systemGallery;
+const infographics = [
+  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — push camera reel, control unit and camera head' },
+  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — complete mobile push inspection system' },
+  { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — control case, screen and keyboard' },
+  { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — wheeled reel cart with the monitor closed' },
+];
+
+const fieldPhotos = [
+  { src: '/images/rapido/07-screen.jpg', alt: 'Control screen showing the pipe interior during a push inspection', portrait: false },
+  { src: '/images/rapido/06-camera-head.jpg', alt: 'KG41 camera head resting on the red push-rod reel', portrait: false },
+  { src: '/images/rapido/09-feeding.jpg', alt: 'Operator holding the camera head at the manhole, reel cart behind', portrait: false },
+  { src: '/images/rapido/10-operator.jpg', alt: 'Operator feeding the red push rod from the reel into the manhole', portrait: false },
+  { src: '/images/rapido/11-watching.jpg', alt: 'Operator watching the inspection on the Rapido Pro screen', portrait: false },
+  { src: '/images/rapido/12-skid.jpg', alt: 'Operator fitting a centering skid on the camera head', portrait: false },
+];
 ---
 
-<BaseLayout title={title} description={description} activeFam="inspection">
+<BaseLayout title={title} description={description} activeFam="push">
   <section class="block">
     <div class="wrap">
       <div class="crumbs">
-        <a href="/">Home</a><span class="sep">/</span><a href="/family/inspection">Sewer Inspection Systems</a><span class="sep">/</span><span
-          >Rapido Pro</span
-        >
+        <a href="/">Home</a><span class="sep">/</span><span>Rapido Pro</span>
       </div>
       <div class="pd-grid">
         <div class="pd-img pd-img--carousel">
-          <div class="pd-carousel" data-interval="5200">
+          <div class="pd-carousel" data-interval="2600">
             {
               systemGallery.map((item, index) => (
                 <img
@@ -41,12 +55,12 @@ const gallery = systemGallery;
           </div>
         </div>
         <div class="pd-info">
-          <span class="eyebrow muted">Sewer Inspection Systems</span>
+          <span class="eyebrow muted">Push camera system</span>
           <h1>Rapido Pro</h1>
           <div class="ptag">Push camera system · Full HD</div>
           <p class="desc">
-            Rapido Pro+ Full HD is a push-mode video inspection system for pipelines from approximately <strong>40 mm to 300 mm</strong> — laterals, house
-            connections and small mains. A portable control unit, 60&nbsp;m reel and KG41 camera head with automatic axial levelling deliver 1080p imaging,
+            Rapido Pro Full HD is a push-mode video inspection system for pipelines from approximately <strong>40 mm to 300 mm</strong> — laterals, house
+            connections and small mains. A portable control unit, 60&nbsp;m reel and KG41 camera head with automatic up-right sensor position deliver 1080p imaging,
             on-screen documentation and straightforward field handling from a compact, wheeled platform.
           </p>
           <div class="pd-specs">
@@ -54,7 +68,7 @@ const gallery = systemGallery;
               <span class="k">Inspecting range</span><span class="v">DN40–DN300 mm (1½″–12″)</span>
             </div>
             <div class="row">
-              <span class="k">Camera head</span><span class="v">KG41, 1080p Full HD, auto axial levelling</span>
+              <span class="k">Camera head</span><span class="v">KG41, 1080p Full HD, automatic up-right sensor position</span>
             </div>
             <div class="row">
               <span class="k">Optics &amp; lighting</span><span class="v">105° horizontal FOV, 4-LED focused ring</span>
@@ -79,7 +93,7 @@ const gallery = systemGallery;
             <a href="/contact" class="btn btn-accent">
               Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
             </a>
-            <a href="/family/inspection" class="btn btn-dark">Back to overview</a>
+            <a href="/distributors" class="btn btn-dark">Find a distributor</a>
           </div>
         </div>
       </div>
@@ -88,7 +102,7 @@ const gallery = systemGallery;
         <div class="pc-wheels-head">
           <span class="eyebrow muted">System</span>
           <h2>Push inspection, one platform</h2>
-          <p class="pc-wheels-lead">Rapido Pro+ Full HD</p>
+          <p class="pc-wheels-lead">Rapido Pro Full HD</p>
           <p>
             The reel cart, control console and camera head are designed to work as a single field system: feed the red push rod, track distance on the counter,
             capture video and stills with date, time and project overlays, and export from USB or internal memory. Centreing skids for DN75 and DN150 keep the
@@ -97,31 +111,69 @@ const gallery = systemGallery;
         </div>
         <div class="pc-wheels-gallery pc-wheels-gallery--4">
           {
-            gallery.map((item) => (
+            infographics.map((item) => (
               <figure>
                 <img src={item.src} alt={item.alt} loading="lazy" width="1024" height="1024" />
               </figure>
             ))
           }
         </div>
+        <div class="field-videos">
+          <video controls playsinline preload="metadata" poster="/videos/rapido-push-wide.jpg">
+            <source src="/videos/rapido-push-wide.mp4" type="video/mp4" />
+          </video>
+          <video controls playsinline preload="metadata" poster="/videos/rapido-push-close.jpg">
+            <source src="/videos/rapido-push-close.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="field-gallery">
+          {
+            fieldPhotos.map((item) => (
+              <figure>
+                <img class:list={{ 'is-portrait': item.portrait }} src={item.src} alt={item.alt} width="1024" height="768" loading="lazy" />
+              </figure>
+            ))
+          }
+        </div>
       </div>
 
-      <div class="pd-more">
-        <h3>More in this family</h3>
-        <div class="chip-row">
-          <a class="chip" href="/product/pipecruiser-150">
-            PipeCruiser 150 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
-          <a class="chip" href="/product/pipecruiser-250">
-            PipeCruiser 250 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
-          <a class="chip" href="/product/sewerzoom">
-            SewerZoom <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
-          <a class="chip" href="/van-fitting">
-            Van Fitting <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </a>
+    </div>
+  </section>
+
+  <section class="block" id="camera">
+    <div class="wrap camera-stack">
+      <div class="camera-feature">
+        <figure class="camera-feature-visual">
+          <img src="/images/rapido-kg41-camera.jpg" alt="KG41 camera head with a focused LED ring around the lens" width="1024" height="1024" />
+        </figure>
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Camera head</span>
+          <h2>KG41 Full HD</h2>
+          <p>The picture comes from the KG41, a stainless head on the end of the rod. It records 1080p. Automatic up-right sensor position keeps the image upright as the head rolls through the pipe. A 105° horizontal view and a focused 4-LED ring light the wall ahead, from 40 mm laterals to 300 mm mains.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Image</span><span class="v">1080p Full HD</span></div>
+            <div class="row"><span class="k">Sensor position</span><span class="v">Automatic up-right</span></div>
+            <div class="row"><span class="k">Optics</span><span class="v">105° horizontal field of view</span></div>
+            <div class="row"><span class="k">Lighting</span><span class="v">4-LED focused ring</span></div>
+            <div class="row"><span class="k">Body</span><span class="v">Stainless steel</span></div>
+            <div class="row"><span class="k">In the pipe</span><span class="v">DN40–DN300, skids for DN75 and DN150</span></div>
+          </div>
         </div>
+      </div>
+      <div class="camera-feature camera-feature--bend">
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">90° bends</span>
+          <h2>Through the elbow</h2>
+          <p>A sprung neck sits between the head and the rod. It flexes as the KG41 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° elbow and the survey continues past it.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Bends</span><span class="v">90° from DN75</span></div>
+            <div class="row"><span class="k">Skids</span><span class="v">DN75 and DN150</span></div>
+            <div class="row"><span class="k">Neck</span><span class="v">Sprung, between head and rod</span></div>
+          </div>
+        </div>
+        <figure class="camera-feature-visual">
+          <img src="/images/rapido-kg41-spring.jpg" alt="Sprung neck of the KG41 camera head, built to flex through a bend" width="1024" height="1024" />
+        </figure>
       </div>
     </div>
   </section>
