@@ -40,14 +40,13 @@ const systemGallery = [
           <span class="hero-h1-line hero-h1-line--down">Rapido <span class="o">Pro</span></span>
           <span class="hero-h1-line hero-h1-line--up"><span class="o">HD</span> push camera</span>
         </h1>
+        <figure class="hero-cutout">
+          <img src="/images/rapido-pro-hero-cutout.png" alt="Rapido Pro push camera, side view of the reel, control unit and camera head" width="564" height="965" />
+        </figure>
         <p class="lead">Rapido Pro Full HD inspects pipelines from 40 mm to 300 mm, laterals, house connections and small mains. It includes a wheeled coiler with 60 m of umbilical push cable, a HD KG41 camera with automatic axial levelling, and a portable Full HD control unit.</p>
         <div class="hero-actions">
           <a href="/contact" class="btn btn-accent">Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a href="#system" class="btn btn-ghost">See the system</a>
-        </div>
-        <div class="hero-aside">
-          <p><span class="hero-aside-name">RAPIDO <span class="o">PRO</span></span>is the first product from KG ROBOTICS. This push camera begins a series of systems for sewer inspection and trenchless rehabilitation.</p>
-          <p>Stay tuned for what's coming next...</p>
         </div>
       </div>
     </div>
@@ -55,12 +54,17 @@ const systemGallery = [
 
   <section class="block" id="system">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow muted">Rapido Pro Full HD</span>
-        <h2>Push inspection, one platform</h2>
-        <p>Feed the rod, track distance, and record video and stills with date, time and project overlays — from a compact cart built for daily contractor use.</p>
+      <div class="sec-head sec-head--intro">
+        <p><span class="sec-head-name">RAPIDO <span class="o">PRO</span></span>is the first product from KG ROBOTICS. This push camera begins a series of systems for sewer inspection and trenchless rehabilitation.</p>
+        <p>Stay tuned for what's coming next...</p>
       </div>
-      <div class="pd-grid">
+      <nav class="section-links" aria-label="On this page">
+        <a href="#platform"><span>Rapido Pro<small>The system</small></span></a>
+        <a href="#record"><span>Built to push<small>View and record</small></span></a>
+        <a href="#camera"><span>KG41 Full HD<small>Camera and 90° bends</small></span></a>
+        <a href="#onsite"><span>On site<small>One operator</small></span></a>
+      </nav>
+      <div class="pd-grid" id="platform">
         <div class="pd-img pd-img--carousel">
           <div class="pd-carousel" data-interval="2600">
             {
@@ -102,7 +106,7 @@ const systemGallery = [
         </div>
       </div>
 
-      <div class="pc-wheels">
+      <div class="pc-wheels" id="record">
         <div class="pc-wheels-head">
           <span class="eyebrow muted">System</span>
           <h2>Built to push, view and record</h2>
@@ -162,7 +166,7 @@ const systemGallery = [
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="onsite">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow muted">On site</span>
