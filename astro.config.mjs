@@ -8,6 +8,8 @@ export default defineConfig({
   },
   server: {
     port: 4321,
+    host: true,
+    allowedHosts: true,
   },
   redirects: {
     '/product/sewerlight-600': '/',
