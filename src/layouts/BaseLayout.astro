@@ -9,14 +9,6 @@ interface Props {
 }
 
 const { title, description, activeFam = null } = Astro.props;
-
-function famClass(id: string) {
-  return activeFam === id ? 'has active' : 'has';
-}
-
-function renovationClass() {
-  return activeFam === 'led' || activeFam === 'cutting' ? 'has active' : 'has';
-}
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -49,39 +41,8 @@ function renovationClass() {
   <div class="wrap nav">
     <Logo />
     <ul class="menu" id="menu">
-      <li class={activeFam === 'about' ? 'has active' : 'has'} data-fam="about"><a href="/about">About Us<span class="bar"></span></a><div class="dropdown"><a href="/who-we-are">Who we are</a><a href="/history">History</a><a href="/ip">IP</a></div></li>
-      <li class={renovationClass()} data-fam="renovation">
-        <a href="/family/led">Pipe Renovation<span class="bar"></span></a>
-        <div class="dropdown dropdown-mega">
-          <div class="dropdown-col">
-            <div class="dropdown-group has-sub">
-              <a href="/family/led" class="dropdown-group-hd">UV LED Curing</a>
-              <a href="/why-cipp" class="dropdown-cipp">Why CIPP?</a>
-              <a href="/drycore-tech" class="dropdown-cipp">DryCore™ Tech</a>
-              <a href="/curing-heads-range" class="dropdown-cipp">LED heads range</a>
-              <div class="dropdown-sub">
-                <a href="/product/sewerlight-600">SewerLight 600</a>
-                <a href="/product/sewerlight-1200">SewerLight 1200</a>
-                <a href="/product/sewerchain-2400">SewerChain 2400</a>
-                <a href="/product/nanolight-100">NanoLight 100</a>
-              </div>
-            </div>
-            <div class="dropdown-group has-sub">
-              <a href="/family/cutting" class="dropdown-group-hd">Cutting Robots</a>
-              <div class="dropdown-sub">
-                <a href="/product/sewercut-100">SewerCut 100</a>
-                <a href="/product/sewercut-200">SewerCut 200</a>
-              </div>
-            </div>
-            <div class="dropdown-group">
-              <span class="dropdown-group-hd is-static">Liners &amp; Resins</span>
-              <p class="dropdown-note">Range coming soon</p>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class={famClass('inspection')} data-fam="inspection"><a href="/family/inspection">Inspecting<span class="bar"></span></a><div class="dropdown"><a href="/product/rapido-pro">Rapido Pro</a><a href="/product/pipecruiser-150">PipeCruiser 150</a><a href="/product/pipecruiser-250">PipeCruiser 250</a><a href="/product/pipecruiser-800">PipeCruiser 800</a><a href="/van-fitting">Van Fitting</a><a href="/product/sewerzoom">SewerZoom</a></div></li>
-      <li class={famClass('industrial')} data-fam="industrial"><a href="/family/industrial">Industrial<span class="bar"></span></a><div class="dropdown"><a href="/product/rapido-pro-atex">Rapido Pro ATEX</a><a href="/product/pipecruiser-hd-100-atex">PipeCruiser 100 HD ATEX</a></div></li>
+      <li class={activeFam === 'push' ? 'has active' : 'has'} data-fam="push"><a href="/#system">Push Cameras<span class="bar"></span></a><div class="dropdown"><a href="/#system">Rapido</a><a href="/product/rapido-pro">Rapido Pro</a></div></li>
+      <li class={activeFam === 'about' ? 'has active' : 'has'} data-fam="about"><a href="/about">About Us<span class="bar"></span></a><div class="dropdown"><a href="/who-we-are">Who we are</a><a href="/history">History</a></div></li>
       <li><a href="/distributors">Distributors</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
@@ -96,17 +57,15 @@ function renovationClass() {
     <div class="foot-grid">
       <div>
         <Logo variant="light" />
-        <p class="fdesc">Inspection, rehabilitation and robotics systems for sewer networks. Engineered and manufactured in Poland to make advanced technology accessible.</p>
+        <p class="fdesc">Rapido Pro Full HD push-camera systems for sewer inspection. Engineered and manufactured in Poland.</p>
       </div>
-      <div><h4>Products</h4><ul>
-        <li><a href="/family/led">UV LED Curing Systems</a></li>
-        <li><a href="/family/cutting">Cutting Solutions</a></li>
-        <li><a href="/family/inspection">Visual Inspection</a></li>
-        <li><a href="/family/industrial">Industrial / RVI</a></li>
+      <div><h4>Product</h4><ul>
+        <li><a href="/#system">Rapido Pro</a></li>
       </ul></div>
       <div><h4>Company</h4><ul>
         <li><a href="/about">About Us</a></li>
         <li><a href="/ip">Intellectual Property</a></li>
+        <li><a href="/distributors">Distributors</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/contact">Book a Demo</a></li>
       </ul></div>
