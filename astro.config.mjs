@@ -52,11 +52,8 @@ export default defineConfig({
   },
   server: {
     port: 4321,
-  },
-  vite: {
-    server: {
-      allowedHosts: ['.trycloudflare.com'],
-    },
+    host: true,
+    allowedHosts: true,
   },
   redirects: {
     '/product/sewerlight-600': '/',

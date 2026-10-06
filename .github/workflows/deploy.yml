@@ -1,9 +1,16 @@
 name: Deploy to GitHub Pages
 
+# One-time setup (repo owner): Settings → Pages → Build and deployment → Source: GitHub Actions
+# Live URL: https://cesargomez1970.github.io/KG-Robotics-Web-ASTRO/
+
 on:
   push:
     branches: [KG-Robotics-Push-cam]
   workflow_dispatch:
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
 
 permissions:
   contents: read
