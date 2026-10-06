@@ -13,13 +13,13 @@ Open http://localhost:4321/
 
 ## GitHub Pages (public URL)
 
-**Site (after deploy):** https://cesargomez1970.github.io/KG-Robotics-Web-ASTRO/
+**Site (after deploy):** https://cesargomez1970.github.io/KG-Robotics-Web-Push-Cam/
 
 Deploys run on push to **`main`** via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Develop on `KG-Robotics-Push-cam`, then merge into `main` to publish.
 
 ### One-time enable (repository owner)
 
-1. Open [Repository Settings → Pages](https://github.com/cesargomez1970/KG-Robotics-Web-ASTRO/settings/pages).
+1. Open [Repository Settings → Pages](https://github.com/cesargomez1970/KG-Robotics-Web-Push-Cam/settings/pages).
 2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 3. Push to `KG-Robotics-Push-cam` or run **Deploy to GitHub Pages** manually under Actions.
 

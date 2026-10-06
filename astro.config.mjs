@@ -4,7 +4,8 @@ import { extname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 
-const pagesBase = '/KG-Robotics-Web-ASTRO';
+const pagesBase = '/KG-Robotics-Web-Push-Cam';
+const pagesPathPrefix = pagesBase.slice(1);
 const publishToGitHubPages = process.env.GITHUB_PAGES === 'true';
 
 function prefixPublicUrls() {
@@ -36,10 +37,10 @@ async function prefixTree(directory) {
 
 function prefixRootUrls(text) {
   return text
-    .replace(/(href|src|content|poster|srcset)(=["'])\/(?!\/|KG-Robotics-Web-ASTRO\/)/g, `$1$2${pagesBase}/`)
+    .replace(new RegExp(`(href|src|content|poster|srcset)(=["'])\\/(?!\\/|${pagesPathPrefix}\\/)`, 'g'), `$1$2${pagesBase}/`)
     .replace(/, \/(images|assets)\//g, `, ${pagesBase}/$1/`)
-    .replace(/url\((["']?)\/(?!\/|KG-Robotics-Web-ASTRO\/)/g, `url($1${pagesBase}/`)
-    .replace(/url=\/(?!\/|KG-Robotics-Web-ASTRO\/)/g, `url=${pagesBase}/`);
+    .replace(new RegExp(`url\\((["']?)\\/(?!\\/|${pagesPathPrefix}\\/)`, 'g'), `url($1${pagesBase}/`)
+    .replace(new RegExp(`url=\\/(?!\\/|${pagesPathPrefix}\\/)`, 'g'), `url=${pagesBase}/`);
 }
 
 // https://astro.build/config

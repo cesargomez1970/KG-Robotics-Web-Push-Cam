@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 # Setup: Settings → Pages → Source: GitHub Actions
 # Deploys from `main` (github-pages environment allows the default branch by default)
-# Live URL: https://cesargomez1970.github.io/KG-Robotics-Web-ASTRO/
+# Live URL: https://cesargomez1970.github.io/KG-Robotics-Web-Push-Cam/
 
 on:
   push:
