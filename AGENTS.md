@@ -3,10 +3,22 @@
 When starting the dev server, use background mode:
 
 ```
-astro dev --background
+astro dev --background --port 4321 --host 0.0.0.0
 ```
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
+
+### Cursor Cloud Agents Window preview
+
+The right-side preview needs port **4321** forwarded:
+
+1. Keep the site bound to `0.0.0.0:4321` (not `127.0.0.1`).
+2. In the Agents Window, open **Forwarded Ports** (plug icon).
+3. Turn on **Auto-Forward Ports**, or manually forward **4321**.
+4. Choose **Open in internal browser** for that port.
+5. If the panel still says it cannot connect, run **Developer: Reload Window** and reopen the agent tab.
+
+`npm run preview` builds then serves on `0.0.0.0:4321`. Declared in `.cursor/environment.json` as port `web`.
 
 ## Documentation
 
