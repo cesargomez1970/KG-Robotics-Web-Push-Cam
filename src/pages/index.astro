@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SalesCtas from '../components/SalesCtas.astro';
 
 const title = 'Rapido Pro — Push Camera for Sewer Inspection | KG Robotics';
 const description =
@@ -15,10 +16,24 @@ const fieldPhotos = [
 ];
 
 const infographics = [
-  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — push camera reel, control unit and camera head' },
+  { src: '/images/rapido-control-unit.jpg', alt: 'Rapido Pro control unit with screen and keyboard' },
   { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — complete mobile push inspection system' },
   { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — control case, screen and keyboard' },
   { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — wheeled reel cart with the monitor closed' },
+];
+
+const rangeSpecs = [
+  { label: 'Camera', values: ['KG41 Full HD', 'KG41 Full HD', 'KG41 Full HD'] },
+  { label: 'Diameter', values: ['40–300 mm', '40–300 mm', '40–300 mm'] },
+  { label: 'Image', values: ['Full HD', 'Full HD', 'Full HD'] },
+  { label: 'Push cable', values: ['30 m', '60 m', '90 m'] },
+  { label: 'Cable diameter', values: ['9 mm', '11 mm', '12 mm'] },
+  { label: 'Sensor position', values: ['Automatic up-right', 'Automatic up-right', 'Automatic up-right'] },
+  { label: 'Field of view', values: ['105°', '105°', '105°'] },
+  { label: 'Lighting', values: ['4-LED ring', '4-LED ring', '4-LED ring'] },
+  { label: 'Bends', values: ['90° from DN75', '90° from DN75', '90° from DN75'] },
+  { label: 'Control unit', values: ['Control unit with keyboard', 'Control unit with keyboard', 'Control unit with keyboard'] },
+  { label: 'Weight', values: ['20 kg', '28 kg', '36 kg'] },
 ];
 
 const systemGallery = [
@@ -41,12 +56,15 @@ const systemGallery = [
           <span class="hero-h1-line hero-h1-line--up"><span class="o">HD</span> push camera</span>
         </h1>
         <figure class="hero-cutout">
-          <img src="/images/rapido-pro-hero-cutout.png" alt="Rapido Pro push camera, side view of the reel, control unit and camera head" width="564" height="965" />
+          <div class="pd-carousel" data-interval="4000">
+            <img class="pd-carousel-slide active" src="/images/rapido-pro-hero-system.png" alt="Rapido Pro push camera system, with the control unit, reel and camera head" width="589" height="961" />
+            <img class="pd-carousel-slide" src="/images/rapido-pro-hero-rear.png" alt="Rapido Pro with the monitor closed, seen from the rear" width="589" height="961" />
+            <img class="pd-carousel-slide" src="/images/rapido-pro-hero-front.png" alt="Rapido Pro with the screen and keyboard open" width="589" height="961" />
+          </div>
         </figure>
-        <p class="lead">Rapido Pro Full HD inspects pipelines from 40 mm to 300 mm, laterals, house connections and small mains. It includes a wheeled coiler with 60 m of umbilical push cable, a HD KG41 camera with automatic axial levelling, and a portable Full HD control unit.</p>
+        <p class="lead">RAPIDO is a family of push cameras designed for sewer inspection, available in 30, 60 and 90 m. Every system includes a Full HD auto-leveling camera and a control unit with documentation capabilities, all mounted on a sturdy frame with wheels.</p>
         <div class="hero-actions">
-          <a href="/contact" class="btn btn-accent">Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a href="#system" class="btn btn-ghost">See the system</a>
+          <SalesCtas tone="dark" />
         </div>
       </div>
     </div>
@@ -55,13 +73,30 @@ const systemGallery = [
   <section class="block" id="system">
     <div class="wrap">
       <div class="sec-head sec-head--intro">
-        <p><span class="sec-head-name">RAPIDO <span class="o">PRO</span></span>is the first product from KG ROBOTICS. This push camera begins a series of systems for sewer inspection and trenchless rehabilitation.</p>
+        <p><span class="sec-head-name">RAPIDO <span class="o">PRO</span></span>is the first product from KG ROBOTICS. This push camera family begins a series of systems for sewer inspection and trenchless rehabilitation.</p>
         <p>Stay tuned for what's coming next...</p>
+      </div>
+      <div class="rapido-range" id="rapido-range">
+        <div class="rapido-range-gap"></div>
+        <img src="/images/rapido-range.jpg" alt="Three Rapido push-camera reels: Rapido 30, Rapido 60 and Rapido 90" width="875" height="317" />
+        <div class="rapido-range-gap"></div>
+        <span class="rapido-range-name">Rapido <span class="o">30</span></span>
+        <span class="rapido-range-name">Rapido <span class="o">60</span></span>
+        <span class="rapido-range-name">Rapido <span class="o">90</span></span>
+        {
+          rangeSpecs.map((spec) => (
+            <>
+              <span class="rapido-range-label">{spec.label}</span>
+              {spec.values.map((value) => <span class="rapido-range-value">{value}</span>)}
+            </>
+          ))
+        }
       </div>
       <nav class="section-links" aria-label="On this page">
         <a href="#platform"><span>Rapido Pro<small>The system</small></span></a>
-        <a href="#record"><span>Built to push<small>View and record</small></span></a>
-        <a href="#camera"><span>KG41 Full HD<small>Camera and 90° bends</small></span></a>
+        <a href="#record"><span>Built to push<small>Control unit, reel and camera</small></span></a>
+        <a href="#camera"><span>KG41 Full HD<small>Camera, bends and push cable</small></span></a>
+        <a href="#power"><span>Battery operated<small>Milwaukee pack on the control unit</small></span></a>
         <a href="#onsite"><span>On site<small>One operator</small></span></a>
       </nav>
       <div class="pd-grid" id="platform">
@@ -97,12 +132,7 @@ const systemGallery = [
             <div class="row"><span class="k">Power</span><span class="v">Milwaukee battery pack or mains adapter</span></div>
             <div class="row"><span class="k">Pipe bends</span><span class="v">From DN75 at 90° (with centering skids)</span></div>
           </div>
-          <div class="pd-actions">
-            <a href="/contact" class="btn btn-accent">
-              Request information <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            </a>
-            <a href="/distributors" class="btn btn-dark">Find a distributor</a>
-          </div>
+          <SalesCtas class="sales-ctas--actions" />
         </div>
       </div>
 
@@ -128,7 +158,7 @@ const systemGallery = [
     </div>
   </section>
 
-  <section class="block" id="camera">
+  <section class="block home-stack" id="camera">
     <div class="wrap camera-stack">
       <div class="camera-feature">
         <figure class="camera-feature-visual">
@@ -163,6 +193,57 @@ const systemGallery = [
           <img src="/images/rapido-kg41-spring.jpg" alt="Sprung neck of the KG41 camera head, built to flex through a bend" width="1024" height="1024" />
         </figure>
       </div>
+      <div class="camera-feature" id="push-cable">
+        <figure class="camera-feature-visual">
+          <div class="pd-carousel" data-interval="5000">
+            <img class="pd-carousel-slide active" src="/images/rapido-push-cable-reel.jpg" alt="Red push cable coiled on the Rapido reel cart" width="1024" height="1024" />
+            <img class="pd-carousel-slide" src="/images/rapido-push-cable-frame.jpg" alt="Rapido reel cart frame without the push cable" width="1024" height="1024" />
+          </div>
+        </figure>
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Push cable</span>
+          <h2>A diameter for each length</h2>
+          <p>Rapido 30 uses a 9 mm push cable, Rapido 60 an 11 mm cable and Rapido 90 a 12 mm cable. These diameters are specifically designed to match the geometry of the networks typically inspected with this camera, at each of the corresponding lengths.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Rapido 30</span><span class="v">9 mm · 30 m</span></div>
+            <div class="row"><span class="k">Rapido 60</span><span class="v">11 mm · 60 m</span></div>
+            <div class="row"><span class="k">Rapido 90</span><span class="v">12 mm · 90 m</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="camera-feature camera-feature--bend" id="power">
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Power</span>
+          <h2>Battery operated</h2>
+          <p>The system runs from a Milwaukee battery pack mounted on the control unit, so a survey does not need a mains socket at the manhole. The pack clips on and lifts off. When power is available on site, the same control unit also runs from the mains adapter.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Power</span><span class="v">Milwaukee battery pack</span></div>
+            <div class="row"><span class="k">Mount</span><span class="v">On the control unit</span></div>
+            <div class="row"><span class="k">Mains</span><span class="v">Adapter, when power is on site</span></div>
+          </div>
+        </div>
+        <figure class="camera-feature-visual camera-feature-visual--photo">
+          <img src="/images/rapido-battery.jpg" alt="Milwaukee battery pack mounted on the side of the Rapido control unit" width="1100" height="1100" />
+        </figure>
+      </div>
+      <div class="camera-feature" id="centering">
+        <figure class="camera-feature-visual">
+          <div class="pd-carousel" data-interval="4000">
+            <img class="pd-carousel-slide active" src="/images/rapido-adapter-75.png" alt="75 mm centering adapter for the KG41 camera head" width="1024" height="707" />
+            <img class="pd-carousel-slide" src="/images/rapido-adapter-150.png" alt="150 mm centering adapter for the KG41 camera head" width="1024" height="707" />
+          </div>
+        </figure>
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Centering</span>
+          <h2>Adapters for each diameter</h2>
+          <p>Two centering adapters hold the camera in the middle of the pipe section. Every system is supplied with a 75 mm adapter and a 150 mm adapter, so the head stays on axis in those diameters.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">75 mm</span><span class="v">Centering adapter</span></div>
+            <div class="row"><span class="k">150 mm</span><span class="v">Centering adapter</span></div>
+            <div class="row"><span class="k">Supplied</span><span class="v">Both, with the system</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -182,6 +263,7 @@ const systemGallery = [
           ))
         }
       </div>
+      <SalesCtas class="sales-ctas--after" />
     </div>
   </section>
 
@@ -200,7 +282,7 @@ const systemGallery = [
         </div>
         <div class="value">
           <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
-          <h3>60 m reel</h3>
+          <h3>30, 60 and 90 m reel</h3>
           <p>Red push rod on a steel wheeled cart, with a metre counter and a 512 Hz sonde for locating the head from the surface.</p>
         </div>
         <div class="value">

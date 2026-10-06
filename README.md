@@ -1,43 +1,33 @@
-# Astro Starter Kit: Minimal
+# KG Robotics Web (Astro)
 
-```sh
-npm create astro@latest -- --template minimal
+Push-camera site for **Rapido Pro** / **Rapido** family (30, 60, 90 m).
+
+## Local development
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Open http://localhost:4321/
 
-## 🚀 Project Structure
+## GitHub Pages (public URL)
 
-Inside of your Astro project, you'll see the following folders and files:
+**Site (after deploy):** https://cesargomez1970.github.io/KG-Robotics-Web-ASTRO/
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Deploys run on push to **`main`** via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Develop on `KG-Robotics-Push-cam`, then merge into `main` to publish.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### One-time enable (repository owner)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Open [Repository Settings → Pages](https://github.com/cesargomez1970/KG-Robotics-Web-ASTRO/settings/pages).
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push to `KG-Robotics-Push-cam` or run **Deploy to GitHub Pages** manually under Actions.
 
-Any static assets, like images, can be placed in the `public/` directory.
+If deploy fails with `Failed to create deployment (status: 404)`, Pages is not enabled yet (step 2).
 
-## 🧞 Commands
+## Branches
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Branch | Purpose |
+|--------|---------|
+| `main` | Stable baseline (merge via PR) |
+| `KG-Robotics-Push-cam` | Active push-cam site + GitHub Pages deploy |
