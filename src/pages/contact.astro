@@ -1,10 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const title = "Contact — KG Robotics";
-const description = "Contact KG Robotics — book a demo or get in touch.";
-const content = "<section class=\"block alt\"><div class=\"wrap\">\n    <div class=\"crumbs\"><a href=\"/\">Home</a><span class=\"sep\">/</span><span>Contact</span></div>\n    <div class=\"sec-head\"><span class=\"eyebrow\">Get in touch</span><h1>Contact &amp; Demo Requests</h1><p>Tell us about your application and we'll get back to you — or book a live demonstration of our systems.</p></div>\n    <div class=\"contact-grid\">\n      <div>\n        <div class=\"contact-card\"><svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/></svg><div><div class=\"l\">Address</div><div class=\"v\">146U, 37-114 Białobrzegi, Poland</div></div></div>\n        <div class=\"contact-card\"><svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z\"/></svg><div><div class=\"l\">Phone</div><div class=\"v\"><a href=\"tel:+48665004022\">+48 665 004 022</a></div></div></div>\n        <div class=\"contact-card\"><svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/></svg><div><div class=\"l\">Email</div><div class=\"v\"><a href=\"mailto:office@kg-robotics.com\">office@kg-robotics.com</a></div></div></div>\n        <div class=\"contact-card\" style=\"border-bottom:none\"><svg class=\"ic\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z\"/></svg><div style=\"flex:1\"><div class=\"l\">Company</div><div class=\"v\" style=\"font-size:16px\">KG Robotics Sp. z o.o. &middot; KRS 0001161950 &middot; NIP 8151823169</div></div></div>\n        <div class=\"map-strip\">Map placeholder — Białobrzegi, Poland</div>\n      </div>\n      <div>\n        <div class=\"form-field\"><label>Name</label><input type=\"text\" placeholder=\"Your name\" /></div>\n        <div class=\"form-field\"><label>Company</label><input type=\"text\" placeholder=\"Company\" /></div>\n        <div class=\"form-field\"><label>Email</label><input type=\"email\" placeholder=\"you@company.com\" /></div>\n        <div class=\"form-field\"><label>Message</label><textarea rows=\"4\" placeholder=\"Tell us about your application…\"></textarea></div>\n        <button class=\"btn btn-accent\" type=\"button\" onclick=\"alert('Form is a placeholder — connect to your email or CRM on deployment.');\">Send Message <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>\n      </div>\n    </div>\n  </div></section>";
+const title = 'Contact — KG Robotics';
+const description = 'Contact KG Robotics — book a demo or get in touch.';
 ---
+
 <BaseLayout title={title} description={description}>
-  <Fragment set:html={content} />
+  <section class="block alt">
+    <div class="wrap">
+      <div class="crumbs"><a href="/">Home</a><span class="sep">/</span><span>Contact</span></div>
+      <div class="sec-head">
+        <span class="eyebrow">Get in touch</span>
+        <h1>Contact &amp; Demo Requests</h1>
+        <p>Tell us about your application and we'll get back to you — or book a live demonstration of our systems.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="contact-card">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="l">Address</div>
+              <div class="v">146U, 37-114 Białobrzegi, Poland</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+            <div>
+              <div class="l">Phone</div>
+              <div class="v"><a href="tel:+48665004022">+48 665 004 022</a></div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <div>
+              <div class="l">Email</div>
+              <div class="v"><a href="mailto:office@kg-robotics.com">office@kg-robotics.com</a></div>
+            </div>
+          </div>
+          <div class="contact-card" style="border-bottom:none">
+            <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/></svg>
+            <div style="flex:1">
+              <div class="l">Company</div>
+              <div class="v" style="font-size:16px">KG Robotics Sp. z o.o. &middot; KRS 0001161950 &middot; NIP 8151823169</div>
+            </div>
+          </div>
+          <figure class="contact-building">
+            <img
+              src="/images/kg-building.jpg"
+              alt="KG Robotics headquarters at 146U, Białobrzegi, Poland"
+              width="1400"
+              height="1070"
+              loading="lazy"
+            />
+            <figcaption>KG Robotics HQ — 146U, Białobrzegi</figcaption>
+          </figure>
+        </div>
+        <div>
+          <div class="form-field"><label>Name</label><input type="text" placeholder="Your name" /></div>
+          <div class="form-field"><label>Company</label><input type="text" placeholder="Company" /></div>
+          <div class="form-field"><label>Email</label><input type="email" placeholder="you@company.com" /></div>
+          <div class="form-field"><label>Message</label><textarea rows="4" placeholder="Tell us about your application…"></textarea></div>
+          <button class="btn btn-accent" type="button" onclick="alert('Form is a placeholder — connect to your email or CRM on deployment.');">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
