@@ -15,7 +15,7 @@ Open http://localhost:4321/
 
 **Site (after deploy):** https://cesargomez1970.github.io/KG-Robotics-Web-ASTRO/
 
-Deploys run from branch **`KG-Robotics-Push-cam`** via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+Deploys run on push to **`main`** via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). Develop on `KG-Robotics-Push-cam`, then merge into `main` to publish.
 
 ### One-time enable (repository owner)
 

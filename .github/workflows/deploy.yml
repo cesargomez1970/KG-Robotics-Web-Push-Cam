@@ -1,11 +1,12 @@
 name: Deploy to GitHub Pages
 
-# One-time setup (repo owner): Settings → Pages → Build and deployment → Source: GitHub Actions
+# Setup: Settings → Pages → Source: GitHub Actions
+# Deploys from `main` (github-pages environment allows the default branch by default)
 # Live URL: https://cesargomez1970.github.io/KG-Robotics-Web-ASTRO/
 
 on:
   push:
-    branches: [KG-Robotics-Push-cam]
+    branches: [main]
   workflow_dispatch:
 
 concurrency:
