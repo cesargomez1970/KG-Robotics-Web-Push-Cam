@@ -223,7 +223,14 @@
   .sec-head h2{font-size:clamp(34px,4.6vw,56px);font-weight:800;margin-top:14px}
   .sec-head h1{font-size:clamp(40px,5.4vw,68px);font-weight:800;margin-top:14px}
   .sec-head h1 .title-light{font-weight:400}
-  .sec-head--contact h1{font-size:clamp(20px,2.7vw,34px)}
+  .sec-head.sec-head--contact{margin-bottom:36px}
+  .sec-head.sec-head--contact h1{
+    font-size:22px;
+    font-weight:700;
+    line-height:1.2;
+    margin-top:8px;
+    letter-spacing:0;
+  }
   .sec-head p{color:var(--muted);font-size:17px;margin-top:18px}
   .sec-head.sec-head--intro{max-width:920px;margin-bottom:48px;padding-left:28px;border-left:3px solid var(--accent)}
   .rapido-range{display:grid;grid-template-columns:minmax(148px,210px) repeat(3,minmax(0,1fr));column-gap:18px;align-items:center;margin:0 0 8px}
