@@ -70,8 +70,8 @@
   .page{display:block}
 
   .hero{position:relative;color:#fff;overflow:hidden;padding:115px 0 125px;background-color:var(--ink)}
-  .hero.hero-plain{padding:72px 0 64px;background-image:url('/images/rapido-hero-field.jpg');background-size:cover;background-position:50% 42%}
-  .hero.hero-plain::before{content:"";display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(13,14,17,.78) 0%,rgba(13,14,17,.5) 46%,rgba(13,14,17,.22) 100%)}
+  .hero.hero-plain{padding:48px 0 40px;min-height:clamp(440px,42vh,520px);display:flex;align-items:center;background-image:url('/images/rapido-hero-city.jpg?v=3');background-size:cover;background-position:center center}
+  .hero.hero-plain::before{content:"";display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(13,14,17,.4) 0%,rgba(13,14,17,.14) 24%,rgba(13,14,17,0) 48%)}
   .hero.hero-plain h1 .hero-h1-line,.hero.hero-plain .eyebrow,.hero.hero-plain p.lead,.hero.hero-plain .hero-actions{opacity:1;animation:none;transform:none}
   .hero.hero-plain .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(200px,.62fr);grid-template-areas:"eyebrow cutout" "title cutout" "lead cutout" "actions cutout";column-gap:clamp(36px,5vw,72px);row-gap:0;align-items:center}
   .hero.hero-plain .eyebrow{grid-area:eyebrow}
@@ -233,8 +233,11 @@
   }
   .sec-head p{color:var(--muted);font-size:17px;margin-top:18px}
   .sec-head.sec-head--intro{max-width:920px;margin-bottom:48px;padding-left:28px;border-left:3px solid var(--accent)}
-  .rapido-range{display:grid;grid-template-columns:minmax(148px,210px) repeat(3,minmax(0,1fr));column-gap:18px;align-items:center;margin:0 0 8px}
-  .rapido-range img{grid-column:2 / -1;width:100%;height:auto}
+  .sec-head.sec-head--intro .rapido-90-tease{display:block;width:min(100%,340px);height:auto;margin:22px 0 4px}
+  .rapido-range{display:grid;grid-template-columns:minmax(148px,210px) repeat(3,minmax(0,1fr));column-gap:18px;align-items:end;margin:0 0 8px}
+  .rapido-range-shot{width:100%;height:280px;margin-bottom:24px;object-fit:contain;object-position:center bottom}
+  .rapido-range-shot--60{height:302px}
+  .rapido-range-shot--90{height:398px;transform:translateY(24px)}
   .rapido-range-name{padding:6px 0 10px;text-align:center;font-family:"Roboto",sans-serif;font-weight:800;font-size:clamp(18px,1.5vw,22px);letter-spacing:-.01em;line-height:1.15;color:#15161a}
   .rapido-range-name .o{color:var(--accent)}
   .rapido-range-label,.rapido-range-value{border-top:1px solid var(--line);padding:6px 0;font-family:var(--body);font-size:15px;line-height:1.25}
@@ -245,12 +248,12 @@
   .sec-head.sec-head--intro p+p{margin-top:1.15em}
   .sec-head-name{display:block;margin-bottom:.2em;color:#15161a;font-family:"Roboto",sans-serif;font-size:clamp(21px,3.2vw,44px);font-weight:900;letter-spacing:-.01em;line-height:1.02}
   .sec-head-name .o{color:var(--accent)}
-  .section-links{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:48px 0}
-  .section-links a{display:flex;align-items:center;min-height:108px;padding:22px 24px;border:1px solid var(--line);background:#fff;color:#15161a;min-width:0;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease}
+  .section-links{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:48px 0}
+  .section-links a{display:flex;align-items:flex-start;min-height:108px;padding:22px 16px;border:1px solid var(--line);background:#fff;color:#15161a;min-width:0;transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease}
   .section-links a:hover{border-color:var(--accent);box-shadow:0 14px 30px -22px rgba(37,99,235,.9);transform:translateY(-2px)}
   .section-links span{display:block;font-family:"Roboto",sans-serif;font-weight:800;font-size:clamp(18px,1.5vw,22px);letter-spacing:-.01em;line-height:1.15}
   .section-links small{display:block;margin-top:6px;font-family:var(--body);font-weight:500;font-size:14px;line-height:1.35;color:#3a3d44;letter-spacing:0}
-  #platform,#record,#camera,#push-cable,#power,#centering,#onsite{scroll-margin-top:104px}
+  #platform,#record,#camera,#kg60,#push-cable,#power,#centering,#onsite{scroll-margin-top:104px}
   .cipp-led-intro{margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
   .cipp-led-intro h2{font-size:clamp(26px,3.2vw,38px);font-weight:800;margin-bottom:16px}
   .cipp-led-intro p{color:var(--muted);font-size:17px;line-height:1.65;margin-top:0}
@@ -567,6 +570,7 @@
 
   @media (max-width:1024px){
     .hero-grid,.hero.hero-plain .hero-grid,.about-grid,.family-intro,.family-page-head-main,.advantages-grid,.steps-grid,.steps-grid--3,.van-zones,.van-fit-gallery-grid,.flow-grid,.ip-grid,.contact-grid,.pd-grid,.team-grid,.cipp-app-list,.curing-head-grid,.curing-head-specs,.curing-heads-overview,.drycore-split,.drycore-pathways .advantages-grid,.camera-feature{grid-template-columns:1fr;gap:36px}
+    .hero.hero-plain{background-position:74% center;min-height:420px}
     .hero.hero-plain .hero-grid{grid-template-areas:none}
     .hero.hero-plain .eyebrow,.hero.hero-plain h1,.hero.hero-plain .lead,.hero.hero-plain .hero-actions,.hero-cutout{grid-area:auto}
     .hero-cutout{justify-content:center}
@@ -590,6 +594,9 @@
     .pc-wheels-gallery,.pc-wheels-gallery--4,.field-videos{grid-template-columns:1fr}
     .section-links{grid-template-columns:1fr 1fr}
     .rapido-range{grid-template-columns:minmax(96px,120px) repeat(3,minmax(0,1fr));column-gap:8px}
+    .rapido-range-shot{height:150px;margin-bottom:12px}
+    .rapido-range-shot--60{height:162px}
+    .rapido-range-shot--90{height:210px;transform:translateY(12px)}
     .rapido-range-label,.rapido-range-value{padding:5px 0;font-size:12px}
     .hero-v3-intro{flex-direction:column;gap:20px}
     .hero-v3-lead-col{flex:1 1 auto;max-width:none}
