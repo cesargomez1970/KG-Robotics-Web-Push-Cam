@@ -1,0 +1,11 @@
+{
+  "name": "KG Robotics Astro",
+  "install": "npm ci",
+  "start": "npm run build\nexec npx astro preview --host 0.0.0.0 --port 4321",
+  "ports": [
+    {
+      "name": "web",
+      "port": 4321
+    }
+  ]
+}

@@ -37,7 +37,8 @@ public/images/logo_KG-ROBOTICS_nuevo.svg
 public/images/logo-from-pdf.png
 
 # editor / tooling
-.cursor/
+.cursor/*
+!.cursor/environment.json
 
 # deploy artifacts
 .netlify/
