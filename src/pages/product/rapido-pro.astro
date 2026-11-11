@@ -21,6 +21,21 @@ const infographics = [
   { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — wheeled reel cart with the monitor closed' },
 ];
 
+const kg60Head = [
+  { src: '/images/kg60/01c.jpg', alt: 'KG60 camera head with spring neck, LED window and locating probe' },
+  { src: '/images/kg60/01b.jpg', alt: 'KG60 camera head, close view of the LED ring around the lens' },
+  { src: '/images/kg60/01a.jpg', alt: 'KG60 camera head, three-quarter view with the lens lit' },
+  { src: '/images/kg60/02.jpg', alt: 'Rear of the KG60 camera head, showing the connector and spring neck' },
+];
+
+const kg60Skids = [
+  { src: '/images/kg60/skid-01c.jpg', alt: 'KG60 camera head fitted with a centering skid' },
+  { src: '/images/kg60/skid-01b.jpg', alt: 'KG60 with centering skid, side view of the head' },
+  { src: '/images/kg60/skid-01a.jpg', alt: 'KG60 with centering skid, three-quarter view' },
+  { src: '/images/kg60/skid-03.jpg', alt: 'KG60 with centering skid, viewed from the probe side' },
+  { src: '/images/kg60/skid-02.jpg', alt: 'Rear of the KG60 with centering skid and connector' },
+];
+
 const fieldPhotos = [
   { src: '/images/rapido/07-screen.jpg', alt: 'Control screen showing the pipe interior during a push inspection', portrait: false },
   { src: '/images/rapido/06-camera-head.jpg', alt: 'KG41 camera head resting on the red push-rod reel', portrait: false },
@@ -74,7 +89,7 @@ const fieldPhotos = [
               <span class="k">Optics &amp; lighting</span><span class="v">105° horizontal FOV, 4-LED focused ring</span>
             </div>
             <div class="row">
-              <span class="k">Push rod &amp; reel</span><span class="v">60 m, 512 Hz sonde, metre counter</span>
+              <span class="k">Push rod (cable)</span><span class="v">60 m, 512 Hz sonde, metre counter</span>
             </div>
             <div class="row">
               <span class="k">Control unit</span><span class="v">10.1″ 1080p touchscreen, keyboard shortcuts, USB or internal storage</span>
@@ -155,8 +170,8 @@ const fieldPhotos = [
       <div class="camera-feature camera-feature--bend">
         <div class="camera-feature-copy">
           <span class="eyebrow muted">90° bends</span>
-          <h2>Through the elbow</h2>
-          <p>A sprung neck sits between the head and the rod. It flexes as the KG41 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° elbow and the survey continues past it.</p>
+          <h2>Through the bend</h2>
+          <p>A sprung neck sits between the head and the rod. It flexes as the KG41 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° bend and the survey continues past it.</p>
           <div class="pd-specs">
             <div class="row"><span class="k">Bends</span><span class="v">90° from DN75</span></div>
             <div class="row"><span class="k">Skids</span><span class="v">DN75 and DN150</span></div>
@@ -166,6 +181,85 @@ const fieldPhotos = [
         <figure class="camera-feature-visual">
           <img src="/images/rapido-kg41-spring.jpg" alt="Sprung neck of the KG41 camera head, built to flex through a bend" width="1024" height="1024" />
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="block home-stack" id="kg60">
+    <div class="wrap camera-stack">
+      <div class="camera-feature">
+        <figure class="camera-feature-visual">
+          <div class="pd-carousel" data-interval="4000">
+            {
+              kg60Head.map((item, index) => (
+                <img
+                  class:list={['pd-carousel-slide', { active: index === 0 }]}
+                  src={item.src}
+                  alt={item.alt}
+                  width="1024"
+                  height="1024"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                />
+              ))
+            }
+          </div>
+        </figure>
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Pan Tilt head</span>
+          <h2>KG60</h2>
+          <p>The KG60 is a pan and tilt head on the end of the rod. Pan and rotation sit in the head, so the operator looks around the wall, into a joint and into a connecting lateral, not only straight along the pipe. In the axial view the picture stays upright. It records 1080p. A focused 4-LED ring lights the wall, from 40 mm laterals to 300 mm mains.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Head</span><span class="v">Pan and tilt</span></div>
+            <div class="row"><span class="k">Image</span><span class="v">1080p Full HD</span></div>
+            <div class="row"><span class="k">Axial view</span><span class="v">Picture stays upright</span></div>
+            <div class="row"><span class="k">Optics</span><span class="v">105° horizontal field of view</span></div>
+            <div class="row"><span class="k">Lighting</span><span class="v">4-LED focused ring</span></div>
+            <div class="row"><span class="k">In the pipe</span><span class="v">DN40–DN300</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="camera-feature camera-feature--bend">
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Laterals</span>
+          <h2>Into the connection</h2>
+          <p>A sprung neck sits between the pan tilt head and the rod. It flexes as the KG60 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° bend. Pan and tilt then look along the branch and back at the joint, and the survey continues into the connecting pipe.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Bends</span><span class="v">90° from DN75</span></div>
+            <div class="row"><span class="k">Look</span><span class="v">Along the lateral and back at the joint</span></div>
+            <div class="row"><span class="k">Neck</span><span class="v">Sprung, between head and rod</span></div>
+          </div>
+        </div>
+        <figure class="camera-feature-visual">
+          <img src="/images/kg60/03.jpg" alt="Sprung neck of the KG60 camera head, built to flex through a bend" width="1024" height="1024" />
+        </figure>
+      </div>
+      <div class="camera-feature">
+        <figure class="camera-feature-visual">
+          <div class="pd-carousel" data-interval="4000">
+            {
+              kg60Skids.map((item, index) => (
+                <img
+                  class:list={['pd-carousel-slide', { active: index === 0 }]}
+                  src={item.src}
+                  alt={item.alt}
+                  width="1024"
+                  height="1024"
+                  loading="lazy"
+                />
+              ))
+            }
+          </div>
+        </figure>
+        <div class="camera-feature-copy">
+          <span class="eyebrow muted">Centering</span>
+          <h2>On axis for the pan</h2>
+          <p>Two centering adapters hold the pan tilt head in the middle of the pipe. Every system is supplied with a 75 mm adapter and a 150 mm adapter, so a rotation sees the wall evenly and the head stays on axis in those diameters.</p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">75 mm</span><span class="v">Centering adapter</span></div>
+            <div class="row"><span class="k">150 mm</span><span class="v">Centering adapter</span></div>
+            <div class="row"><span class="k">Supplied</span><span class="v">Both, with the system</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
