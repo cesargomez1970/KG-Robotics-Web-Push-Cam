@@ -16,80 +16,297 @@ const fieldPhotos = [
 ];
 
 const infographics = [
-  { src: '/images/rapido-control-unit.jpg', alt: 'Rapido Pro control unit with screen and keyboard' },
-  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — complete mobile push inspection system' },
+  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — reel cart, control unit and camera head' },
+  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — complete mobile push inspection system with battery pack' },
   { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — control case, screen and keyboard' },
   { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — wheeled reel cart with the monitor closed' },
 ];
 
 const rangeSpecs = [
-  { label: 'Camera', values: ['KG41 Full HD', 'KG41 Full HD', 'KG41 Full HD'] },
-  { label: 'Diameter', values: ['40–300 mm', '40–300 mm', '40–300 mm'] },
+  { label: 'Camera', values: ['Axial or Pan Rotate Head', 'Axial or Pan Rotate Head', 'Axial or Pan Rotate Head'] },
+  { label: 'Axial head diameter', values: ['40 mm', '40 mm', '40 mm'], sub: true },
+  { label: 'Pan Rotate head diameter', values: ['60 mm', '60 mm', '60 mm'], sub: true },
   { label: 'Image', values: ['Full HD', 'Full HD', 'Full HD'] },
   { label: 'Push rod (cable)', values: ['30 m', '60 m', '90 m'] },
   { label: 'Cable diameter', values: ['9 mm', '11 mm', '12 mm'] },
-  { label: 'Sensor position', values: ['Automatic up-right', 'Automatic up-right', 'Automatic up-right'] },
-  { label: 'Field of view', values: ['105°', '105°', '105°'] },
-  { label: 'Lighting', values: ['4-LED ring', '4-LED ring', '4-LED ring'] },
-  { label: 'Bends', values: ['90° from DN75', '90° from DN75', '90° from DN75'] },
+  { label: 'Bends (with axial head)', values: ['90° from DN75', '90° from DN75', '90° from DN75'] },
   { label: 'Control unit', values: ['Control unit with keyboard', 'Control unit with keyboard', 'Control unit with keyboard'] },
   { label: 'Weight', values: ['20 kg', '28 kg', '36 kg'] },
 ];
 
-const kg60Head = [
-  { src: '/images/kg60/01c.jpg', alt: 'KG60 camera head with spring neck, LED window and locating probe' },
-  { src: '/images/kg60/01b.jpg', alt: 'KG60 camera head, close view of the LED ring around the lens' },
-  { src: '/images/kg60/01a.jpg', alt: 'KG60 camera head, three-quarter view with the lens lit' },
-  { src: '/images/kg60/02.jpg', alt: 'Rear of the KG60 camera head, showing the connector and spring neck' },
+const systemComponents = [
+  {
+    title: 'Control Unit',
+    src: '/images/rapido-pro-system-03.png',
+    alt: 'Rapido Pro control unit, angled view with touchscreen and keyboard',
+    infographic: true,
+    desc: 'The control console combines a 10.1″ touchscreen, physical keyboard and on-screen documentation. Record video and stills, export from USB or internal memory, and locate the head with the 512&nbsp;Hz sonde from one field station.',
+    href: '#record',
+  },
+  {
+    title: 'Axial Head',
+    src: '/images/rapido-kg41-camera.jpg',
+    alt: 'KG41 axial camera head',
+    desc: 'The KG41 axial head records 1080p Full HD with automatic up-right sensor position. A 105° horizontal view and a 4-LED focused ring light DN40–DN300, with centering skids for typical lateral sizes.',
+    href: '#camera',
+  },
+  {
+    title: 'Pan Rotate Head',
+    src: '/images/kg60/01a.jpg',
+    alt: 'KG60 pan rotate camera head',
+    desc: 'The KG60 pan rotate head looks along the pipe, into laterals and back at joints. Full HD on the same push platform as the KG41 when the survey needs more than a straight axial view.',
+    href: '#kg60',
+  },
+  {
+    title: 'Reels',
+    src: '/images/rapido-pro-system-04.png',
+    alt: 'Rapido wheeled reel cart — infographic',
+    infographic: true,
+    desc: 'Wheeled reel carts in 30, 60 and 90&nbsp;m lengths share one control platform. Push rod diameters are matched to each length for the networks typically inspected at that range.',
+    href: '#push-cable',
+  },
+  {
+    title: 'Accessories',
+    src: '/images/rapido-adapter-75.png',
+    alt: 'Centering adapter for the camera head',
+    infographic: true,
+    desc: 'Centering skids, adapters and spare parts keep the camera head on axis in the pipe. Every system ships with the adapters and skids needed for everyday lateral inspection.',
+    href: '#centering',
+  },
+  {
+    title: 'Battery Pack',
+    src: '/images/rapido-pro-system-02.png',
+    alt: 'Rapido Pro control unit with Milwaukee battery pack',
+    infographic: true,
+    desc: 'A Milwaukee battery pack clips to the control unit for surveys without a mains socket at the manhole. The same console runs from a mains adapter when power is available on site.',
+    href: '#power',
+  },
 ];
 
-const kg60Skids = [
-  { src: '/images/kg60/skid-01c.jpg', alt: 'KG60 camera head fitted with a centering skid' },
-  { src: '/images/kg60/skid-01b.jpg', alt: 'KG60 with centering skid, side view of the head' },
-  { src: '/images/kg60/skid-01a.jpg', alt: 'KG60 with centering skid, three-quarter view' },
-  { src: '/images/kg60/skid-03.jpg', alt: 'KG60 with centering skid, viewed from the probe side' },
-  { src: '/images/kg60/skid-02.jpg', alt: 'Rear of the KG60 with centering skid and connector' },
+const componentDetails = [
+  {
+    id: 'record',
+    flip: false,
+    eyebrow: 'Control unit',
+    title: 'Built to push, view and record',
+    paragraphs: [
+      'The control console combines a 10.1″ touchscreen, physical keyboard and on-screen documentation. Record video and stills, export from USB or internal memory, and locate the head with the 512&nbsp;Hz sonde from one field station.',
+      'Rapido is the complete push-camera platform for everyday sewer inspection: one operator feeds the rod, watches the head on screen and documents the survey from the manhole.',
+    ],
+    specs: [
+      { k: 'Display', v: '10.1″ touchscreen' },
+      { k: 'Input', v: 'Physical keyboard' },
+      { k: 'Recording', v: 'Video and stills, on-screen documentation' },
+      { k: 'Export', v: 'USB or internal memory' },
+      { k: 'Locate', v: '512 Hz sonde' },
+    ],
+    images: infographics,
+    interval: 5000,
+    infographic: true,
+  },
+  {
+    id: 'camera',
+    flip: false,
+    eyebrow: 'Camera head',
+    title: 'KG41 Full HD',
+    paragraphs: [
+      'The picture comes from the KG41, a stainless head on the end of the rod. It records 1080p. Automatic up-right sensor position keeps the image upright as the head rolls through the pipe. A 105° horizontal view and a focused 4-LED ring light the wall ahead, from 40&nbsp;mm laterals to 300&nbsp;mm mains.',
+      'A sprung neck sits between the head and the rod. It flexes as the KG41 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° bend and the survey continues past it.',
+    ],
+    specs: [
+      { k: 'Image', v: '1080p Full HD' },
+      { k: 'Sensor position', v: 'Automatic up-right' },
+      { k: 'Optics', v: '105° horizontal field of view' },
+      { k: 'Lighting', v: '4-LED focused ring' },
+      { k: 'Body', v: 'Stainless steel' },
+      { k: 'In the pipe', v: 'DN40–DN300, skids for DN75 and DN150' },
+      { k: 'Bends', v: '90° from DN75' },
+      { k: 'Neck', v: 'Sprung, between head and rod' },
+    ],
+    images: [
+      { src: '/images/rapido-kg41-camera.jpg', alt: 'KG41 camera head with a focused LED ring around the lens' },
+      { src: '/images/rapido-kg41-spring.jpg', alt: 'Sprung neck of the KG41 camera head, built to flex through a bend' },
+    ],
+    interval: 5000,
+  },
+  {
+    id: 'kg60',
+    flip: true,
+    eyebrow: 'Pan Tilt head',
+    title: 'KG60',
+    paragraphs: [
+      'The KG60 is a pan and tilt head on the end of the rod. Pan and rotation sit in the head, so the operator looks around the wall, into a joint and into a connecting lateral, not only straight along the pipe. In the axial view the picture stays upright. It records 1080p. A focused 4-LED ring lights the wall, from 40&nbsp;mm laterals to 300&nbsp;mm mains.',
+      'A sprung neck sits between the pan tilt head and the rod. It flexes as the KG60 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° bend. Pan and tilt then look along the branch and back at the joint, and the survey continues into the connecting pipe.',
+      'Two centering adapters hold the pan tilt head in the middle of the pipe. Every system is supplied with a 75&nbsp;mm adapter and a 150&nbsp;mm adapter, so a rotation sees the wall evenly and the head stays on axis in those diameters.',
+    ],
+    specs: [
+      { k: 'Head', v: 'Pan and tilt' },
+      { k: 'Image', v: '1080p Full HD' },
+      { k: 'Axial view', v: 'Picture stays upright' },
+      { k: 'Optics', v: '105° horizontal field of view' },
+      { k: 'Lighting', v: '4-LED focused ring' },
+      { k: 'In the pipe', v: 'DN40–DN300' },
+      { k: 'Bends', v: '90° from DN75' },
+      { k: 'Look', v: 'Along the lateral and back at the joint' },
+      { k: 'Neck', v: 'Sprung, between head and rod' },
+      { k: 'Centering', v: '75 mm and 150 mm adapters, supplied with the system' },
+    ],
+    visualLayout: 'stacked',
+    images: [
+      { src: '/images/kg60/01a.jpg', alt: 'KG60 camera head, three-quarter view with the lens lit' },
+      { src: '/images/kg60/skid-01c.jpg', alt: 'KG60 camera head fitted with a centering skid' },
+    ],
+  },
+  {
+    id: 'push-cable',
+    flip: false,
+    eyebrow: 'Push rod (cable)',
+    title: '30, 60 and 90&nbsp;m reels',
+    paragraphs: [
+      'Wheeled reel carts in 30, 60 and 90&nbsp;m lengths share one control platform. Push rod diameters are matched to each length for the networks typically inspected at that range. The reel cart stays at the manhole while the operator feeds the rod and watches the head on the control screen.',
+      'Rapido 30 uses a 9&nbsp;mm push cable, Rapido 60 an 11&nbsp;mm cable and Rapido 90 a 12&nbsp;mm cable. These diameters are specifically designed to match the geometry of the networks typically inspected with this camera, at each of the corresponding lengths.',
+    ],
+    specs: [
+      { k: 'Rapido 30', v: '9 mm · 30 m' },
+      { k: 'Rapido 60', v: '11 mm · 60 m' },
+      { k: 'Rapido 90', v: '12 mm · 90 m' },
+      { k: 'Cart', v: 'Steel wheeled reel, metre counter' },
+    ],
+    images: [
+      { src: '/images/rapido-pro-system-04.png', alt: 'Rapido wheeled reel cart with the monitor closed' },
+      { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — reel cart, control unit and camera head' },
+    ],
+    interval: 5000,
+    infographic: true,
+  },
+  {
+    id: 'centering',
+    flip: true,
+    eyebrow: 'Centering',
+    title: 'Adapters for each diameter',
+    paragraphs: [
+      'Centering skids, adapters and spare parts keep the camera head on axis in the pipe. Every system ships with the adapters and skids needed for everyday lateral inspection.',
+      'Two centering adapters hold the camera in the middle of the pipe section. Every system is supplied with a 75&nbsp;mm adapter and a 150&nbsp;mm adapter, so the head stays on axis in those diameters.',
+    ],
+    specs: [
+      { k: '75 mm', v: 'Centering adapter' },
+      { k: '150 mm', v: 'Centering adapter' },
+      { k: 'Supplied', v: 'Both, with the system' },
+    ],
+    images: [
+      { src: '/images/rapido-adapter-75.png', alt: '75 mm centering adapter for the KG41 camera head', width: 1024, height: 707 },
+      { src: '/images/rapido-adapter-150.png', alt: '150 mm centering adapter for the KG41 camera head', width: 1024, height: 707 },
+    ],
+    interval: 4000,
+    infographic: true,
+  },
+  {
+    id: 'power',
+    flip: true,
+    eyebrow: 'Power',
+    title: 'Battery operated',
+    paragraphs: [
+      'The system runs from a Milwaukee battery pack mounted on the control unit, so a survey does not need a mains socket at the manhole. The pack clips on and lifts off. When power is available on site, the same control unit also runs from the mains adapter.',
+    ],
+    specs: [
+      { k: 'Power', v: 'Milwaukee battery pack' },
+      { k: 'Mount', v: 'On the control unit' },
+      { k: 'Mains', v: 'Adapter, when power is on site' },
+    ],
+    images: [
+      { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — mobile system with Milwaukee battery pack on the control unit' },
+    ],
+    infographic: true,
+  },
 ];
 
-const systemGallery = [
-  { src: '/images/rapido-pro.png', alt: 'Rapido Pro — complete push-camera system, front three-quarter view' },
-  { src: '/images/rapido-pro-system-01.png', alt: 'Rapido Pro — reel cart, control unit and camera head' },
-  { src: '/images/rapido-pro-system-02.png', alt: 'Rapido Pro — side view with battery pack, keyboard and camera head' },
-  { src: '/images/hero-overlay-rapido.png', alt: 'Rapido Pro — wheeled reel with monitor open and push rod' },
-  { src: '/images/rapido-pro-system-04.png', alt: 'Rapido Pro — rear view with the monitor closed and camera head extended' },
-  { src: '/images/rapido-pro-system-03.png', alt: 'Rapido Pro — 10.1 inch touchscreen and keyboard' },
+const configurationControl = {
+  src: '/images/rapido-control-unit.jpg',
+  alt: 'Rapido control unit, front view with touchscreen and keyboard',
+  label: 'Control unit',
+};
+
+const configurationReels = [
+  { src: '/images/rapido-reel-carro.jpg', alt: 'Rapido 30 reel cart', label: 'Rapido 30', detail: '30 m · 9 mm push rod' },
+  { src: '/images/rapido-push-cable-reel.jpg', alt: 'Rapido 60 reel cart', label: 'Rapido 60', detail: '60 m · 11 mm push rod' },
+  { src: '/images/rapido-push-cable-frame.jpg', alt: 'Rapido 90 reel cart', label: 'Rapido 90', detail: '90 m · 12 mm push rod' },
+];
+
+const configurationHeads = [
+  { src: '/images/rapido-kg41-camera.jpg', alt: 'KG41 axial camera head', label: 'KG41', detail: 'Axial head' },
+  { src: '/images/kg60/01a.jpg', alt: 'KG60 pan rotate camera head', label: 'KG60', detail: 'Pan rotate head' },
 ];
 ---
 
 <BaseLayout title={title} description={description} activeFam="push">
-  <section class="hero hero-plain">
+  <section class="hero hero-plain" id="hero">
     <div class="wrap">
       <div class="hero-grid">
         <span class="eyebrow">Push camera · Full HD</span>
         <h1>
-          <span class="hero-h1-line hero-h1-line--down">Rapido <span class="o">Pro</span></span>
-          <span class="hero-h1-line hero-h1-line--up"><span class="o">HD</span> push camera</span>
+          <span class="hero-h1-line">RAPIDO</span>
         </h1>
-        <p class="lead">RAPIDO is a family of push cameras designed for sewer inspection, available in 30, 60 and 90 m. Every system includes a Full HD auto-leveling camera and a control unit with documentation capabilities, all mounted on a sturdy frame with wheels.</p>
-        <div class="hero-actions">
-          <SalesCtas tone="dark" />
-        </div>
+        <p class="lead">RAPIDO is a family of push cameras designed for sewer inspection, available in 30, 60 and 90&nbsp;m push rod lengths. Every system includes a Full HD auto-leveling camera or pan rotate head and a control unit with documentation capabilities. A battery pack on every system allows field operation without a mains socket on site.</p>
       </div>
     </div>
   </section>
 
   <section class="block" id="system">
     <div class="wrap">
-      <div class="sec-head sec-head--intro">
-        <p><span class="sec-head-name">RAPIDO <span class="o">PRO</span></span>is the first product from KG ROBOTICS. This push camera family begins a series of systems for sewer inspection and trenchless rehabilitation.</p>
-        <p>Stay tuned for what's coming next...</p>
-        <img class="rapido-90-tease" src="/images/rapido-90.jpg?v=2" alt="Rapido 90 push-camera reel" width="532" height="998" />
+      <div class="rapido-intro">
+        <div class="rapido-intro-video">
+          <video autoplay muted loop playsinline preload="auto" aria-label="Rapido Pro push camera system">
+            <source src="/videos/Video%20Rapido%202026-11-24%2014%20MB.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="rapido-intro-system pd-info">
+          <h2>RAPIDO</h2>
+          <p class="desc">
+            A push-camera platform for pipeline inspection from DN40 to DN300. Choose 30, 60 or 90&nbsp;m reel lengths and swap between axial and pan rotate Full HD heads depending on your inspection needs.
+          </p>
+          <p class="desc">
+            Operate the system from a control unit with on-screen documentation, image &amp; video storage and take advantage of its rechargeable battery pack to power your system in the field.
+          </p>
+          <div class="pd-specs">
+            <div class="row"><span class="k">Camera head</span><span class="v">Axial and Pan Rotate. Interchangeable.</span></div>
+            <div class="row"><span class="k">Push rod (cable)</span><span class="v">30, 60 &amp; 90 m · 512 Hz sonde</span></div>
+            <div class="row"><span class="k">Control unit</span><span class="v">10.1″ 1080p touchscreen, USB or internal storage</span></div>
+            <div class="row"><span class="k">Power</span><span class="v">Milwaukee battery pack or mains adapter</span></div>
+          </div>
+          <SalesCtas class="sales-ctas--actions" />
+        </div>
       </div>
+      <div class="rapido-features-panel" id="system-features" data-feature-reveal="0" data-feature-step="500">
+        <p class="rapido-intro-features-head"><span class="sec-head-name">RAPIDO <span class="o">SYSTEM</span> FEATURES</span></p>
+        <ul class="rapido-intro-features" aria-live="polite">
+          <li class="reveal">
+            <span class="rapido-intro-features-title">30, 60 &amp; 90 m reels</span>
+            <span class="rapido-intro-features-detail">Three wheeled reel carts on one field platform, in 30, 60 and 90&nbsp;m lengths.</span>
+          </li>
+          <li>
+            <span class="rapido-intro-features-title">Interchangeable camera heads · Axial and Pan Tilt</span>
+            <span class="rapido-intro-features-detail">KG41 Full HD keeps the axial picture upright; KG60 is a pan tilt head to look into laterals, joints and connections.</span>
+          </li>
+          <li>
+            <span class="rapido-intro-features-title">Full HD</span>
+            <span class="rapido-intro-features-detail">1080p on the control screen, 105° horizontal field of view and a 4-LED focused ring for DN40–DN300.</span>
+          </li>
+          <li>
+            <span class="rapido-intro-features-title">Battery pack on the control unit</span>
+            <span class="rapido-intro-features-detail">Field operation without a mains socket on site.</span>
+          </li>
+          <li>
+            <span class="rapido-intro-features-title">Control unit with internal memory and keyboard</span>
+            <span class="rapido-intro-features-detail">10.1″ touchscreen, on-screen documentation, physical keyboard and export from USB or internal memory.</span>
+          </li>
+        </ul>
+      </div>
+      <p class="rapido-intro-features-head rapido-range-section-head" id="characteristics"><span class="sec-head-name">TECHNICAL SPECIFICATIONS</span></p>
       <div class="rapido-range" id="rapido-range">
         <div class="rapido-range-gap"></div>
-        <img class="rapido-range-shot" src="/images/rapido-30.jpg" alt="Rapido 30 push-camera reel" width="578" height="962" />
-        <img class="rapido-range-shot rapido-range-shot--60" src="/images/rapido-60.jpg?v=2" alt="Rapido 60 push-camera reel" width="583" height="1009" />
-        <img class="rapido-range-shot rapido-range-shot--90" src="/images/rapido-90.jpg?v=2" alt="Rapido 90 push-camera reel" width="532" height="998" />
+        <img class="rapido-range-shot" src="/images/rapido-reel-carro.jpg" alt="Rapido 30 reel cart" width="1024" height="1024" />
+        <img class="rapido-range-shot rapido-range-shot--60" src="/images/rapido-push-cable-reel.jpg" alt="Rapido 60 reel cart" width="1024" height="1024" />
+        <img class="rapido-range-shot rapido-range-shot--90" src="/images/rapido-push-cable-frame.jpg" alt="Rapido 90 reel cart" width="1024" height="1024" />
         <div class="rapido-range-gap"></div>
         <span class="rapido-range-name">Rapido <span class="o">30</span></span>
         <span class="rapido-range-name">Rapido <span class="o">60</span></span>
@@ -97,244 +314,162 @@ const systemGallery = [
         {
           rangeSpecs.map((spec) => (
             <>
-              <span class="rapido-range-label">{spec.label}</span>
-              {spec.values.map((value) => <span class="rapido-range-value">{value}</span>)}
+              <span class:list={['rapido-range-label', { 'rapido-range-label--sub': spec.sub }]}>{spec.label}</span>
+              {spec.values.map((value) => (
+                <span class:list={['rapido-range-value', { 'rapido-range-value--sub': spec.sub }]}>{value}</span>
+              ))}
             </>
           ))
         }
       </div>
-      <nav class="section-links" aria-label="On this page">
-        <a href="#platform"><span>Rapido Pro<small>The system</small></span></a>
-        <a href="#record"><span>Built to push<small>Control unit, reel and camera</small></span></a>
-        <a href="#camera"><span>KG41 Full HD<small>Camera, bends and push rod (cable)</small></span></a>
-        <a href="#kg60"><span>KG60<small>Pan Tilt head</small></span></a>
-        <a href="#power"><span>Battery operated<small>Milwaukee pack on the control unit</small></span></a>
-        <a href="#onsite"><span>On site<small>One operator</small></span></a>
-      </nav>
-      <div class="pd-grid" id="platform">
-        <div class="pd-img pd-img--carousel">
-          <div class="pd-carousel" data-interval="2600">
-            {
-              systemGallery.map((item, index) => (
-                <img
-                  class:list={['pd-carousel-slide', { active: index === 0 }]}
-                  src={item.src}
-                  alt={item.alt}
-                  width="1024"
-                  height="1024"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              ))
-            }
-          </div>
-        </div>
-        <div class="pd-info">
-          <span class="eyebrow muted">Push camera system</span>
-          <h2>Rapido Pro</h2>
-          <div class="ptag">Full HD · 40–300 mm</div>
-          <p class="desc">
-            The reel cart, control console and camera head work as a single field system. The stainless KG41 body and steel frame are built for the pipe, and centering skids for DN75 and DN150 keep the head on axis in typical lateral sizes.
-          </p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">Inspecting range</span><span class="v">DN40–DN300 mm (1½″–12″)</span></div>
-            <div class="row"><span class="k">Camera head</span><span class="v">KG41, 1080p Full HD, automatic up-right sensor position</span></div>
-            <div class="row"><span class="k">Optics &amp; lighting</span><span class="v">105° horizontal FOV, 4-LED focused ring</span></div>
-            <div class="row"><span class="k">Push rod (cable)</span><span class="v">60 m, 512 Hz sonde, metre counter</span></div>
-            <div class="row"><span class="k">Control unit</span><span class="v">10.1″ 1080p touchscreen, USB or internal storage</span></div>
-            <div class="row"><span class="k">Power</span><span class="v">Milwaukee battery pack or mains adapter</span></div>
-            <div class="row"><span class="k">Pipe bends</span><span class="v">From DN75 at 90° (with centering skids)</span></div>
-          </div>
-          <SalesCtas class="sales-ctas--actions" />
-        </div>
-      </div>
-
-      <div class="pc-wheels" id="record">
-        <div class="pc-wheels-head">
-          <span class="eyebrow muted">System</span>
-          <h2>Built to push, view and record</h2>
-          <p class="pc-wheels-lead">Control unit · reel · KG41 camera</p>
-          <p>
-            Capture video and stills with on-screen documentation, export from USB or internal memory, and locate the head with the 512 Hz sonde. Rapido Pro is the complete push-camera system for everyday sewer inspection.
-          </p>
-        </div>
-        <div class="pc-wheels-gallery pc-wheels-gallery--4">
+      <p class="rapido-intro-features-head rapido-configurations-head" id="configurations"><span class="sec-head-name">SYSTEM <span class="o">CONFIGURATIONS</span></span></p>
+      <p class="configurations-lead">
+        Each Rapido system is one control unit, one wheeled reel length and one interchangeable camera head. You might configure the system with more than one reel and swap both control unit and camera from one reel to another. Choose amongst the range of centering devices and accessories to complete your system configuration.
+      </p>
+      <div class="config-diagram" id="config-diagram">
+        <svg class="config-diagram__svg" aria-hidden="true" focusable="false">
+          <g class="config-diagram__paths"></g>
+        </svg>
+        <figure class="config-node config-node--control" data-config-node="control">
+          <img src={configurationControl.src} alt={configurationControl.alt} width="400" height="400" loading="lazy" />
+          <figcaption class="config-node-label">{configurationControl.label}</figcaption>
+        </figure>
+        <div class="config-diagram__stack config-diagram__stack--reels" aria-label="Reel lengths">
           {
-            infographics.map((item) => (
-              <figure>
-                <img src={item.src} alt={item.alt} loading="lazy" width="1024" height="1024" />
+            configurationReels.map((item, index) => (
+              <figure class="config-node" data-config-node={`reel-${index}`}>
+                <img src={item.src} alt={item.alt} width="280" height="400" loading="lazy" />
+                <figcaption class="config-node-label">
+                  {item.label}
+                  <small>{item.detail}</small>
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+        <div class="config-diagram__stack config-diagram__stack--heads" aria-label="Camera heads">
+          {
+            configurationHeads.map((item, index) => (
+              <figure class="config-node" data-config-node={`head-${index}`}>
+                <img src={item.src} alt={item.alt} width="280" height="280" loading="lazy" />
+                <figcaption class="config-node-label">
+                  {item.label}
+                  <small>{item.detail}</small>
+                </figcaption>
               </figure>
             ))
           }
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="block home-stack" id="camera">
-    <div class="wrap camera-stack">
-      <div class="camera-feature">
-        <figure class="camera-feature-visual">
-          <img src="/images/rapido-kg41-camera.jpg" alt="KG41 camera head with a focused LED ring around the lens" width="1024" height="1024" />
-        </figure>
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">Camera head</span>
-          <h2>KG41 Full HD</h2>
-          <p>The picture comes from the KG41, a stainless head on the end of the rod. It records 1080p. Automatic up-right sensor position keeps the image upright as the head rolls through the pipe. A 105° horizontal view and a focused 4-LED ring light the wall ahead, from 40 mm laterals to 300 mm mains.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">Image</span><span class="v">1080p Full HD</span></div>
-            <div class="row"><span class="k">Sensor position</span><span class="v">Automatic up-right</span></div>
-            <div class="row"><span class="k">Optics</span><span class="v">105° horizontal field of view</span></div>
-            <div class="row"><span class="k">Lighting</span><span class="v">4-LED focused ring</span></div>
-            <div class="row"><span class="k">Body</span><span class="v">Stainless steel</span></div>
-            <div class="row"><span class="k">In the pipe</span><span class="v">DN40–DN300, skids for DN75 and DN150</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="camera-feature camera-feature--bend">
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">90° bends</span>
-          <h2>Through the bend</h2>
-          <p>A sprung neck sits between the head and the rod. It flexes as the KG41 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° bend and the survey continues past it.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">Bends</span><span class="v">90° from DN75</span></div>
-            <div class="row"><span class="k">Skids</span><span class="v">DN75 and DN150</span></div>
-            <div class="row"><span class="k">Neck</span><span class="v">Sprung, between head and rod</span></div>
-          </div>
-        </div>
-        <figure class="camera-feature-visual">
-          <img src="/images/rapido-kg41-spring.jpg" alt="Sprung neck of the KG41 camera head, built to flex through a bend" width="1024" height="1024" />
-        </figure>
-      </div>
-      <div class="camera-feature" id="push-cable">
-        <figure class="camera-feature-visual">
-          <div class="pd-carousel" data-interval="5000">
-            <img class="pd-carousel-slide active" src="/images/rapido-push-cable-reel.jpg" alt="Red push cable coiled on the Rapido reel cart" width="1024" height="1024" />
-            <img class="pd-carousel-slide" src="/images/rapido-push-cable-frame.jpg" alt="Rapido reel cart frame without the push cable" width="1024" height="1024" />
-          </div>
-        </figure>
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">Push rod (cable)</span>
-          <h2>A diameter for each length</h2>
-          <p>Rapido 30 uses a 9 mm push cable, Rapido 60 an 11 mm cable and Rapido 90 a 12 mm cable. These diameters are specifically designed to match the geometry of the networks typically inspected with this camera, at each of the corresponding lengths.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">Rapido 30</span><span class="v">9 mm · 30 m</span></div>
-            <div class="row"><span class="k">Rapido 60</span><span class="v">11 mm · 60 m</span></div>
-            <div class="row"><span class="k">Rapido 90</span><span class="v">12 mm · 90 m</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="camera-feature camera-feature--bend" id="power">
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">Power</span>
-          <h2>Battery operated</h2>
-          <p>The system runs from a Milwaukee battery pack mounted on the control unit, so a survey does not need a mains socket at the manhole. The pack clips on and lifts off. When power is available on site, the same control unit also runs from the mains adapter.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">Power</span><span class="v">Milwaukee battery pack</span></div>
-            <div class="row"><span class="k">Mount</span><span class="v">On the control unit</span></div>
-            <div class="row"><span class="k">Mains</span><span class="v">Adapter, when power is on site</span></div>
-          </div>
-        </div>
-        <figure class="camera-feature-visual camera-feature-visual--photo">
-          <img src="/images/rapido-battery.jpg" alt="Milwaukee battery pack mounted on the side of the Rapido control unit" width="1100" height="1100" />
-        </figure>
-      </div>
-      <div class="camera-feature" id="centering">
-        <figure class="camera-feature-visual">
-          <div class="pd-carousel" data-interval="4000">
-            <img class="pd-carousel-slide active" src="/images/rapido-adapter-75.png" alt="75 mm centering adapter for the KG41 camera head" width="1024" height="707" />
-            <img class="pd-carousel-slide" src="/images/rapido-adapter-150.png" alt="150 mm centering adapter for the KG41 camera head" width="1024" height="707" />
-          </div>
-        </figure>
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">Centering</span>
-          <h2>Adapters for each diameter</h2>
-          <p>Two centering adapters hold the camera in the middle of the pipe section. Every system is supplied with a 75 mm adapter and a 150 mm adapter, so the head stays on axis in those diameters.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">75 mm</span><span class="v">Centering adapter</span></div>
-            <div class="row"><span class="k">150 mm</span><span class="v">Centering adapter</span></div>
-            <div class="row"><span class="k">Supplied</span><span class="v">Both, with the system</span></div>
-          </div>
-        </div>
+      <div id="platform" class="rapido-page-anchor" aria-hidden="true"></div>
+      <p class="rapido-intro-features-head rapido-components-section-head" id="components"><span class="sec-head-name">SYSTEM <span class="o">COMPONENTS</span></span></p>
+      <div class="system-components-grid">
+        {
+          systemComponents.map((item) => (
+            <article class="system-component-card">
+              <figure class="system-component-card-visual">
+                <img class:list={{ 'is-infographic': item.infographic }} src={item.src} alt={item.alt} loading="lazy" width="320" height="240" />
+              </figure>
+              <div class="system-component-card-body">
+                <h3 class="system-component-card-title">{item.title}</h3>
+                <p class="system-component-card-desc" set:html={item.desc} />
+                <a href={item.href} class="system-component-card-more">
+                  Read more
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                </a>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <section class="block home-stack" id="kg60">
+  <section class="block home-stack component-details-stack" aria-label="Component details">
     <div class="wrap camera-stack">
-      <div class="camera-feature">
-        <figure class="camera-feature-visual">
-          <div class="pd-carousel" data-interval="4000">
-            {
-              kg60Head.map((item, index) => (
+      {
+        componentDetails.map((section) => {
+          const copy = (
+            <div class="camera-feature-copy">
+              <span class="eyebrow muted">{section.eyebrow}</span>
+              <h2 set:html={section.title} />
+              {section.paragraphs.map((paragraph) => (
+                <p set:html={paragraph} />
+              ))}
+              <div class="pd-specs">
+                {section.specs.map((row) => (
+                  <div class="row">
+                    <span class="k">{row.k}</span>
+                    <span class="v" set:html={row.v} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+          const visual = (
+            <figure
+              class:list={[
+                'camera-feature-visual',
+                { 'camera-feature-visual--photo': section.photoVisual },
+                { 'camera-feature-visual--stacked': section.visualLayout === 'stacked' },
+                { 'camera-feature-visual--infographic': section.infographic },
+              ]}
+            >
+              {section.visualLayout === 'stacked' ? (
+                <div class="camera-feature-visual-stack">
+                  {section.images.map((img, index) => (
+                    <img
+                      class:list={{ 'is-infographic': section.infographic }}
+                      src={img.src}
+                      alt={img.alt}
+                      width={img.width ?? 1024}
+                      height={img.height ?? 1024}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                  ))}
+                </div>
+              ) : section.images.length > 1 ? (
+                <div class="pd-carousel pd-carousel--infographic" data-interval={section.interval ?? 4000}>
+                  {section.images.map((img, index) => (
+                    <img
+                      class:list={['pd-carousel-slide', { active: index === 0 }, { 'is-infographic': section.infographic }]}
+                      src={img.src}
+                      alt={img.alt}
+                      width={img.width ?? 1024}
+                      height={img.height ?? 1024}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
+                  ))}
+                </div>
+              ) : (
                 <img
-                  class:list={['pd-carousel-slide', { active: index === 0 }]}
-                  src={item.src}
-                  alt={item.alt}
-                  width="1024"
-                  height="1024"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              ))
-            }
-          </div>
-        </figure>
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">Pan Tilt head</span>
-          <h2>KG60</h2>
-          <p>The KG60 is a pan and tilt head on the end of the rod. Pan and rotation sit in the head, so the operator looks around the wall, into a joint and into a connecting lateral, not only straight along the pipe. In the axial view the picture stays upright. It records 1080p. A focused 4-LED ring lights the wall, from 40 mm laterals to 300 mm mains.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">Head</span><span class="v">Pan and tilt</span></div>
-            <div class="row"><span class="k">Image</span><span class="v">1080p Full HD</span></div>
-            <div class="row"><span class="k">Axial view</span><span class="v">Picture stays upright</span></div>
-            <div class="row"><span class="k">Optics</span><span class="v">105° horizontal field of view</span></div>
-            <div class="row"><span class="k">Lighting</span><span class="v">4-LED focused ring</span></div>
-            <div class="row"><span class="k">In the pipe</span><span class="v">DN40–DN300</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="camera-feature camera-feature--bend">
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">Laterals</span>
-          <h2>Into the connection</h2>
-          <p>A sprung neck sits between the pan tilt head and the rod. It flexes as the KG60 enters a bend, so the camera follows the pipe instead of stopping at the corner. From DN75, centering skids hold the head on axis through a 90° bend. Pan and tilt then look along the branch and back at the joint, and the survey continues into the connecting pipe.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">Bends</span><span class="v">90° from DN75</span></div>
-            <div class="row"><span class="k">Look</span><span class="v">Along the lateral and back at the joint</span></div>
-            <div class="row"><span class="k">Neck</span><span class="v">Sprung, between head and rod</span></div>
-          </div>
-        </div>
-        <figure class="camera-feature-visual">
-          <img src="/images/kg60/03.jpg" alt="Sprung neck of the KG60 camera head, built to flex through a bend" width="1024" height="1024" />
-        </figure>
-      </div>
-      <div class="camera-feature">
-        <figure class="camera-feature-visual">
-          <div class="pd-carousel" data-interval="4000">
-            {
-              kg60Skids.map((item, index) => (
-                <img
-                  class:list={['pd-carousel-slide', { active: index === 0 }]}
-                  src={item.src}
-                  alt={item.alt}
-                  width="1024"
-                  height="1024"
+                  class:list={{ 'is-infographic': section.infographic }}
+                  src={section.images[0].src}
+                  alt={section.images[0].alt}
+                  width={section.images[0].width ?? 1024}
+                  height={section.images[0].height ?? 1024}
                   loading="lazy"
                 />
-              ))
-            }
-          </div>
-        </figure>
-        <div class="camera-feature-copy">
-          <span class="eyebrow muted">Centering</span>
-          <h2>On axis for the pan</h2>
-          <p>Two centering adapters hold the pan tilt head in the middle of the pipe. Every system is supplied with a 75 mm adapter and a 150 mm adapter, so a rotation sees the wall evenly and the head stays on axis in those diameters.</p>
-          <div class="pd-specs">
-            <div class="row"><span class="k">75 mm</span><span class="v">Centering adapter</span></div>
-            <div class="row"><span class="k">150 mm</span><span class="v">Centering adapter</span></div>
-            <div class="row"><span class="k">Supplied</span><span class="v">Both, with the system</span></div>
-          </div>
-        </div>
-      </div>
+              )}
+            </figure>
+          );
+          return (
+            <div class:list={['camera-feature', { 'camera-feature--bend': section.flip }]} id={section.id}>
+              {section.flip ? (
+                <>
+                  {copy}
+                  {visual}
+                </>
+              ) : (
+                <>
+                  {visual}
+                  {copy}
+                </>
+              )}
+            </div>
+          );
+        })
+      }
     </div>
   </section>
 

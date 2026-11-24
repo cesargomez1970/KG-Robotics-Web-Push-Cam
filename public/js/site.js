@@ -45,6 +45,25 @@ var header=document.querySelector('header.site');
     },5000);
   }
 
+  document.querySelectorAll('[data-feature-reveal]').forEach(function(root){
+    var items=root.querySelectorAll('.rapido-intro-features li');
+    if(!items.length) return;
+    var startAttr=root.getAttribute('data-feature-reveal');
+    var startMs=startAttr==null||startAttr===''?0:Number(startAttr);
+    if(isNaN(startMs)) startMs=0;
+    var stepAttr=root.getAttribute('data-feature-step');
+    var stepMs=stepAttr==null||stepAttr===''?500:Number(stepAttr);
+    if(isNaN(stepMs)) stepMs=500;
+    function run(){
+      items.forEach(function(li,idx){
+        if(li.classList.contains('reveal')) return;
+        setTimeout(function(){li.classList.add('reveal');},idx*stepMs);
+      });
+    }
+    if(startMs<=0) run();
+    else setTimeout(run,startMs);
+  });
+
   document.querySelectorAll('.pd-carousel').forEach(function(root){
     var slides=root.querySelectorAll('.pd-carousel-slide');
     if(slides.length<2) return;
@@ -56,6 +75,103 @@ var header=document.querySelector('header.site');
       slides[idx].classList.add('active');
     },ms);
   });
+
+  (function(){
+    var root=document.getElementById('config-diagram');
+    if(!root) return;
+    var svg=root.querySelector('.config-diagram__svg');
+    var paths=root.querySelector('.config-diagram__paths');
+    function imgBox(el,box){
+      var t=el.querySelector('img')||el;
+      var r=t.getBoundingClientRect();
+      return {
+        left:r.left-box.left,
+        right:r.right-box.left,
+        top:r.top-box.top,
+        bottom:r.bottom-box.top,
+        midY:r.top+r.height/2-box.top,
+      };
+    }
+    function snap(n){return Math.round(n*2)/2;}
+    function addDot(x,y){
+      var dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+      dot.setAttribute('cx',String(snap(x)));
+      dot.setAttribute('cy',String(snap(y)));
+      dot.setAttribute('r','3.5');
+      paths.appendChild(dot);
+    }
+    function horiz(x1,x2,y){
+      var ys=snap(y);
+      var xa=snap(x1),xb=snap(x2);
+      if(Math.abs(xb-xa)<0.5) return;
+      addPath('M'+xa+' '+ys+' H'+xb);
+      addDot(xa,ys);
+      addDot(xb,ys);
+    }
+    function vert(x,y1,y2){
+      var xs=snap(x);
+      var ya=snap(y1),yb=snap(y2);
+      if(Math.abs(yb-ya)<0.5) return;
+      addPath('M'+xs+' '+ya+' V'+yb);
+      addDot(xs,ya);
+      addDot(xs,yb);
+    }
+    function addPath(d){
+      var p=document.createElementNS('http://www.w3.org/2000/svg','path');
+      p.setAttribute('d',d);
+      paths.appendChild(p);
+    }
+    function draw(){
+      if(!svg||!paths) return;
+      var box=root.getBoundingClientRect();
+      var w=root.offsetWidth,h=root.offsetHeight;
+      svg.setAttribute('viewBox','0 0 '+w+' '+h);
+      svg.setAttribute('width',String(w));
+      svg.setAttribute('height',String(h));
+      paths.innerHTML='';
+      var control=root.querySelector('[data-config-node="control"]');
+      if(!control) return;
+      var reels=[].slice.call(root.querySelectorAll('[data-config-node^="reel-"]'));
+      var heads=[].slice.call(root.querySelectorAll('[data-config-node^="head-"]'));
+      if(!reels.length) return;
+      var c=imgBox(control,box);
+      var cX=snap(c.right+7);
+      var reelsData=reels.map(function(reel){
+        var b=imgBox(reel,box);
+        return {left:snap(b.left),right:snap(b.right),y:snap(b.midY)};
+      });
+      var trunk1=snap(cX+Math.max(26,(reelsData[0].left-cX)*0.34));
+      var reelYs=reelsData.map(function(d){return d.y;});
+      var bus1Min=Math.min.apply(null,reelYs);
+      var bus1Max=Math.max.apply(null,reelYs);
+      var ctrlBranchY=reelsData.length>=2?reelsData[1].y:reelsData[0].y;
+      horiz(cX,trunk1,ctrlBranchY);
+      if(bus1Max-bus1Min>0.5) vert(trunk1,bus1Min,bus1Max);
+      reelsData.forEach(function(d){horiz(trunk1,d.left,d.y);});
+      if(!heads.length) return;
+      var headsData=heads.map(function(head){
+        var b=imgBox(head,box);
+        return {left:snap(b.left),y:snap(b.midY)};
+      });
+      var trunk2=snap(reelsData[0].right+Math.max(24,(headsData[0].left-reelsData[0].right)*0.38));
+      var headYs=headsData.map(function(d){return d.y;});
+      var bus2Min=Math.min(Math.min.apply(null,reelYs),Math.min.apply(null,headYs));
+      var bus2Max=Math.max(Math.max.apply(null,reelYs),Math.max.apply(null,headYs));
+      if(bus2Max-bus2Min>0.5) vert(trunk2,bus2Min,bus2Max);
+      reelsData.forEach(function(d){horiz(d.right,trunk2,d.y);});
+      headsData.forEach(function(d){horiz(trunk2,d.left,d.y);});
+    }
+    draw();
+    var t;
+    addEventListener('resize',function(){
+      clearTimeout(t);
+      t=setTimeout(draw,120);
+    });
+    if(document.fonts&&document.fonts.ready) document.fonts.ready.then(draw);
+    root.querySelectorAll('img').forEach(function(img){
+      if(!img.complete) img.addEventListener('load',draw,{once:true});
+    });
+  })();
 
   // ---- i18n engine ----
   var TX=[], HX=[], PH=[];

@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Partner Portal — KG Robotics';
+const description = 'KG Robotics partner portal for distributors and authorised partners.';
+---
+
+<BaseLayout title={title} description={description} activeFam="partner">
+  <section class="block alt">
+    <div class="wrap">
+      <div class="sec-head" style="margin-bottom: 32px">
+        <h1>Partner Portal</h1>
+        <p>Secure access for KG Robotics distribution partners. If you need login credentials or partner materials, contact our sales team.</p>
+      </div>
+      <a href="/contact" class="btn btn-accent">Contact sales <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+    </div>
+  </section>
+</BaseLayout>
