@@ -77,7 +77,9 @@
   .page{display:block}
 
   .hero{position:relative;color:#fff;overflow:hidden;padding:115px 0 125px;background-color:var(--ink)}
-  .hero.hero-plain{padding:48px 0 40px;min-height:clamp(440px,42vh,520px);display:flex;align-items:center;background-image:url('/images/rapido-hero-city.jpg?v=3');background-size:cover;background-position:center center}
+  .hero.hero-plain{padding:48px 0 40px;min-height:clamp(440px,42vh,520px);display:flex;align-items:center;background:var(--ink)}
+  .hero.hero-plain .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .hero.hero-plain .hero-bg video{width:100%;height:100%;object-fit:cover;object-position:center center;display:block}
   .hero.hero-plain::before{content:"";display:block;position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(13,14,17,.4) 0%,rgba(13,14,17,.14) 24%,rgba(13,14,17,0) 48%)}
   .hero.hero-plain h1 .hero-h1-line,.hero.hero-plain .eyebrow,.hero.hero-plain p.lead,.hero.hero-plain .hero-actions{opacity:1;animation:none;transform:none}
   .hero.hero-plain .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(200px,.62fr);grid-template-areas:"eyebrow cutout" "title cutout" "lead cutout" "actions cutout";column-gap:clamp(36px,5vw,72px);row-gap:0;align-items:center}
@@ -639,7 +641,8 @@
   @media (max-width:1024px){
     .hero-grid,.hero.hero-plain .hero-grid,.about-grid,.family-intro,.family-page-head-main,.rapido-intro,.advantages-grid,.steps-grid,.steps-grid--3,.van-zones,.van-fit-gallery-grid,.flow-grid,.ip-grid,.contact-grid,.pd-grid,.team-grid,.cipp-app-list,.curing-head-grid,.curing-head-specs,.curing-heads-overview,.drycore-split,.drycore-pathways .advantages-grid,.camera-feature{grid-template-columns:1fr;gap:36px}
     .rapido-intro-video{max-width:600px;margin:0 auto}
-    .hero.hero-plain{background-position:74% center;min-height:420px}
+    .hero.hero-plain{min-height:420px}
+    .hero.hero-plain .hero-bg video{object-position:74% center}
     .hero.hero-plain .hero-grid{grid-template-areas:none}
     .hero.hero-plain .eyebrow,.hero.hero-plain h1,.hero.hero-plain .lead,.hero.hero-plain .hero-actions,.hero-cutout{grid-area:auto}
     .hero-cutout{justify-content:center}
